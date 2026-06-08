@@ -1,0 +1,25 @@
+.gradient-transition-2 {
+    position: relative;
+    height: 150px;
+    background: linear-gradient(180deg, 
+        #c6ac8a 0%, 
+        #bdb8a8 25%, 
+        #b5bbb8 50%, 
+        #c0c6cc 75%, 
+        #cbd2d9 100%
+    );
+    margin: 0;
+    padding: 0;
+}
+
+.gradient-overlay-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 70%
+    );
+}

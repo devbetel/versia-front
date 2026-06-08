@@ -1,0 +1,156 @@
+.about-section {
+  background-color: #cbd2d9;
+  padding: 6rem 2rem;
+  font-family: Georgia, serif;
+}
+
+.about-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  bottom:2rem
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Foto */
+/* Foto: Ajustando alinhamento */
+.about-foto-wrap {
+  position: relative;
+  padding: 0; /* Remove padding extra */
+  margin: 0 auto; /* Centra a imagem horizontalmente */
+  height: auto; /* Ajusta dinamicamente */
+  max-width: 100%; /* Garante responsividade */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;
+}
+
+.about-foto-image {
+  width: 100%;
+  height: auto;
+  border-radius: 3px; /* Mantém cantos arredondados */
+  object-fit: cover; /* Garante que a imagem fique proporcional */
+}
+
+.about-foto-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(198, 172, 138, 0.4); 
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.about-foto-line {
+  position: absolute;
+  bottom: -12px;
+  left: 50%; /* Centraliza a linha */
+  transform: translateX(-50%); /* Ajusta a centralização */
+  width: 60px; /* Tamanho da linha */
+  height: 2px;
+  background-color: #c6ac8a;
+}
+/* Conteúdo */
+.about-content {
+  padding-top: 0.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: #031931;
+  margin-bottom: 1.25rem;
+  font-family: system-ui, sans-serif;
+}
+
+.about-nome {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #131111;
+  line-height: 1.1;
+  margin: 0 0 0.4rem 0;
+}
+
+.about-titulo {
+  font-size: 0.78rem;
+  color: rgba(198, 172, 138, 0.85);
+  letter-spacing: 0.06rem;
+  margin-bottom: 2rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.about-divider {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(198, 172, 138, 0.4);
+  margin-bottom: 1.75rem;
+}
+
+.about-texto {
+  font-size: 0.93rem;
+  line-height: 1.9;
+  color: #031931;
+  margin-bottom: 1.1rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 300;
+}
+
+/* Certificações */
+.about-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.cert {
+  font-size: 0.65rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #031931;
+  border: 1px solid #05284d;
+  padding: 0.28rem 0.7rem;
+  border-radius: 2px;
+  background-color: rgba(198, 172, 138, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cert:hover {
+  background-color: rgba(117, 120, 122, 0.259);
+  border-color: #042242;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-container {
+    position: relative;
+    bottom: 6rem
+  }
+  .about-nome {
+    font-size: 2rem;
+  }
+
+  .about-foto-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

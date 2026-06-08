@@ -1,0 +1,66 @@
+.transition-gradiente-section {
+    position: relative;
+    height: 150px;
+    background: linear-gradient(180deg, 
+        #031931 0%, 
+        #04243f 20%,
+        #073455 40%,
+        #0b446d 60%,
+        #0f587d 80%,
+        #0a1628 100%
+    );
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.transition-gradiente-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, 
+        rgba(15, 24, 40, 0.5) 0%, 
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Gradiente complementar para suavizar a transição */
+.transition-gradiente-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(3, 25, 49, 1) 0%,
+        rgba(5, 35, 65, 0.9) 25%,
+        rgba(10, 50, 85, 0.7) 50%,
+        rgba(15, 65, 105, 0.5) 75%,
+        rgba(25, 70, 110, 0.3) 85%,
+        rgba(26, 35, 50, 0) 100%
+    );
+    z-index: 1;
+}
+
+.transition-gradiente-overlay {
+    z-index: 3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .transition-gradiente-section {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .transition-gradiente-section {
+        height: 100px;
+    }
+}

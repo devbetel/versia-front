@@ -1,0 +1,163 @@
+.header {
+    color: black;
+    padding: 1rem;
+    height: 4rem; /* Aumenta a altura para design mais moderno e espaçoso */
+    width: 97..2%; /* Corrige overflow horizontal */
+    position: relative;
+    display: flex;
+    background-color: #DCDCDC;
+
+    /* Borda inferior minimalista */
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Deixa logo e nav distantes */
+}
+
+.logo-header {
+    width: 13rem;
+    height: auto; /* Corrige para manter proporção da imagem */
+    margin-right: 1rem;
+}
+
+.nav {
+
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.nav a {
+    color: #041932;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out; /* Transição suave ao passar o mouse */
+}
+
+.nav a:hover {
+    color: #c6ac8a;
+    font-size: 1.1rem; /* Pequeno aumento no hover */
+}
+
+.underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.5rem;
+  height: 1.1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #041932;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger--open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-8deg);
+}
+
+/* ── MOBILE NAV ── */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background-color: #DCDCDC;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.nav-mobile--open {
+  max-height: 400px;
+  padding: 0.5rem 0;
+}
+
+.nav-mobile a {
+  color: #041932;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 200;
+  font-style: italic;
+  padding: 0.8rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-mobile a:hover {
+  color: #c6ac8a;
+  font-size: 1.1rem;
+}
+
+/* ── MOBILE RESPONSIVIDADE ── */
+@media (max-width: 768px) {
+  .header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.35s ease;
+    width: 100% !important;
+  }
+
+  .header--visible {
+    transform: translateY(0);
+  }
+
+  .header--hidden {
+    transform: translateY(-100%);
+  }
+
+  .nav {
+    display: none;
+    
+}
+
+  .hamburger {
+    display: flex;
+    position: relative;
+    right: 2rem;
+    top: 0.5rem;
+}
+
+  .nav-mobile {
+    display: flex;
+    position: relative;
+    right: 1rem;
+
+  }
+
+  .header {
+    height: auto !important;
+  }
+
+  .logo-header {
+    width: 9rem;
+  }
+}
