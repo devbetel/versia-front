@@ -1,0 +1,384 @@
+ :root {
+          --navy: #042442;
+          --gold: #c6ac8a;
+          --light: #f8f9fa;
+          --white: #ffffff;
+          --muted: #6c757d;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .pricing-mentoring-section {
+          background: #064d75;
+          padding: 6rem 1.5rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .pricing-mentoring-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(198, 172, 138, 0.3), transparent);
+        }
+
+        .pricing-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+        }
+
+        .pricing-header-mentoring {
+          text-align: center;
+          margin-bottom: 4rem;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-header-mentoring.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .pricing-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1.25rem;
+          background: rgba(198, 172, 138, 0.15);
+          color: var(--gold);
+          border-radius: 100px;
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(198, 172, 138, 0.2);
+        }
+
+        .pricing-title-mentoring {
+          font-size: clamp(2rem, 5vw, 3.25rem);
+          font-weight: 900;
+          line-height: 1.2;
+          color: var(--white);
+          margin-bottom: 0;
+        }
+
+        .pricing-title-mentoring .accent-gold {
+          color: var(--gold);
+          position: relative;
+          display: inline-block;
+        }
+
+        .pricing-grid-mentoring {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        .pricing-card-mentoring {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border-radius: 28px;
+          padding: 2.5rem;
+          position: relative;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 0;
+          transform: translateY(40px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .pricing-card-mentoring.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .pricing-card-mentoring:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+
+        .pricing-card-mentoring:nth-child(2) {
+          transition-delay: 0.2s;
+        }
+
+        .pricing-card-mentoring:hover {
+          transform: translateY(-8px);
+          border-color: rgba(198, 172, 138, 0.3);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card-mentoring.vip-card {
+          background: linear-gradient(135deg, rgba(198, 172, 138, 0.12) 0%, rgba(198, 172, 138, 0.06) 100%);
+          border: 2px solid var(--gold);
+          box-shadow: 0 24px 60px rgba(198, 172, 138, 0.15);
+        }
+
+        .pricing-card-mentoring.vip-card:hover {
+          box-shadow: 0 32px 80px rgba(198, 172, 138, 0.25);
+        }
+
+        .card-glow-mentoring {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 120px;
+          background: radial-gradient(ellipse at 50% 0%, rgba(198, 172, 138, 0.15), transparent);
+          pointer-events: none;
+          border-radius: 28px 28px 0 0;
+        }
+
+        .badge-mentoring {
+          position: absolute;
+          top: -1px;
+          right: 2rem;
+          background: linear-gradient(135deg, var(--gold) 0%, #b8a07e 100%);
+          color: var(--navy);
+          padding: 0.4rem 1rem;
+          border-radius: 0 0 12px 12px;
+          font-size: 0.7rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: 0.3rem;
+          z-index: 3;
+          box-shadow: 0 4px 12px rgba(198, 172, 138, 0.3);
+        }
+
+        .card-tag-mentoring {
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: rgba(198, 172, 138, 0.7);
+          display: block;
+          margin-bottom: 0.75rem;
+        }
+
+        .vip-card .card-tag-mentoring {
+          color: var(--gold);
+        }
+
+        .card-name-mentoring {
+          font-size: 1.75rem;
+          font-weight: 800;
+          color: var(--white);
+          margin-bottom: 1.5rem;
+          line-height: 1.2;
+        }
+
+        .card-price-wrapper-mentoring {
+          margin-bottom: 0.75rem;
+        }
+
+        .card-installment-mentoring {
+          display: flex;
+          align-items: baseline;
+          gap: 0.35rem;
+          margin-bottom: 0.35rem;
+        }
+
+        .installment-label {
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: rgba(198, 172, 138, 0.7);
+        }
+
+        .installment-price {
+          font-size: 1.75rem;
+          font-weight: 900;
+          color: var(--gold);
+          line-height: 1;
+          letter-spacing: -0.01em;
+        }
+
+        .card-cash-price {
+          font-size: 0.8rem;
+          color: rgba(248, 249, 250, 0.5);
+          margin-bottom: 1.75rem;
+        }
+
+        .card-divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(198, 172, 138, 0.2), transparent);
+          margin-bottom: 1.75rem;
+        }
+
+        .card-features-mentoring {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem;
+        }
+
+        .card-features-mentoring li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: 0.9rem;
+          color: rgba(248, 249, 250, 0.8);
+          line-height: 1.5;
+        }
+
+        .vip-card .card-features-mentoring li {
+          color: rgba(248, 249, 250, 0.95);
+        }
+
+        .card-features-mentoring li strong {
+          color: var(--white);
+          font-weight: 700;
+        }
+
+        .feature-icon {
+          width: 20px;
+          height: 20px;
+          color: var(--gold);
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .btn-card-mentoring {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.1rem 1.5rem;
+          background: rgba(198, 172, 138, 0.15);
+          color: var(--gold);
+          text-decoration: none;
+          border-radius: 16px;
+          font-weight: 800;
+          font-size: 0.85rem;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+          gap: 1rem;
+          cursor: pointer;
+          border: 2px solid rgba(198, 172, 138, 0.3);
+        }
+
+        .btn-card-mentoring:hover {
+          background: rgba(198, 172, 138, 0.25);
+          border-color: var(--gold);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(198, 172, 138, 0.3);
+        }
+
+        .vip-card .btn-card-mentoring {
+          background: linear-gradient(135deg, var(--gold) 0%, #b8a07e 100%);
+          color: var(--navy);
+          border: none;
+        }
+
+        .vip-card .btn-card-mentoring:hover {
+          background: linear-gradient(135deg, #b8a07e 0%, #a08a6a 100%);
+          box-shadow: 0 8px 24px rgba(198, 172, 138, 0.4);
+        }
+
+        .pricing-footer-mentoring {
+          text-align: center;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transition-delay: 0.3s;
+        }
+
+        .pricing-footer-mentoring.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .pricing-footer-mentoring p {
+          font-size: 0.85rem;
+          color: rgba(248, 249, 250, 0.6);
+        }
+
+        .whatsapp-link-mentoring {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--gold);
+          text-decoration: none;
+          border-bottom: 1.5px solid var(--gold);
+          padding-bottom: 2px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .whatsapp-link-mentoring:hover {
+          color: #b8a07e;
+          border-color: #b8a07e;
+          gap: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+          .pricing-mentoring-section {
+            padding: 4rem 1rem;
+          }
+
+          .pricing-grid-mentoring {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .pricing-card-mentoring {
+            padding: 1.75rem;
+          }
+
+          .card-name-mentoring {
+            font-size: 1.5rem;
+          }
+
+          .installment-price {
+            font-size: 1.5rem;
+          }
+
+          .btn-card-mentoring {
+            padding: 1rem 1.25rem;
+            font-size: 0.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .pricing-card-mentoring {
+            padding: 1.5rem;
+          }
+
+          .card-name-mentoring {
+            font-size: 1.3rem;
+          }
+
+          .installment-price {
+            font-size: 1.3rem;
+          }
+
+          .card-features-mentoring li {
+            font-size: 0.85rem;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .pricing-card-mentoring,
+          .pricing-header-mentoring,
+          .pricing-footer-mentoring,
+          .btn-card-mentoring {
+            transition: none;
+            animation: none;
+          }
+        }

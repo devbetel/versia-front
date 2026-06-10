@@ -1,0 +1,67 @@
+/* ─────────────────────────────────────────────
+   O Efeito Vérsia — styles.css (Base)
+───────────────────────────────────────────── */
+
+:root {
+  --navy: #042442;
+  --navy-dark: #031b33;
+  --gold: #c6ac8a;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --text-gray: #6b7280;
+  --text-light: rgba(248, 249, 250, 0.72);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--navy);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* ── SECTION SHARED ── */
+.section-eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.section-title--dark {
+  color: var(--navy);
+}
+
+.section-title--light {
+  color: var(--light);
+}
+
+.section-title .accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.section-subtitle {
+  color: var(--text-gray);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 430px;
+  margin: 0 auto;
+}

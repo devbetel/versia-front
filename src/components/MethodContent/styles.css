@@ -1,8 +1,15 @@
 .metodo-section {
-background-color: #0a1628;
-  padding: 8rem 2rem;
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(180deg,
+        #031931 0%,
+        #041a32 15%,
+        #051b33 30%,
+        #071c34 50%,
+        #081d35 70%,
+        #0a1628 100%
+    );
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .metodo-section::before {

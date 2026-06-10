@@ -31,9 +31,19 @@ const Main = () => {
             Aqui não tem lição de moral. Tem o caminho de volta para a sua paz financeira.
           </p>
           <div data-aos="fade-up" className="buttons-container">
-            <button className="btn-beige">CONHEÇA OS PRODUTOS</button>
-            <button className="btn-outline">QUEM SOU EU</button>
-          </div>
+    <button
+        className="btn-beige"
+        onClick={() => (window.location.href = '#products')}
+    >
+        CONHEÇA OS PRODUTOS
+    </button>
+    <button
+        className="btn-outline"
+        onClick={() => (window.location.href = '#about')}
+    >
+        QUEM SOU EU
+    </button>
+</div>
         </div>
 
         <div className="right-side">
@@ -59,7 +69,7 @@ const Main = () => {
           <div className="right-content">
             <div className="right-text">
               <span className="right-line"></span>
-              <h2 className="right-name">Danielle Borges</h2>
+              <h2 className="right-name" >Danielle Borges</h2>
               <p className="right-subtitle">
                 PLANEJADORA FINANCEIRA CFP® · ESPECIALISTA EM COMPORTAMENTO
               </p>

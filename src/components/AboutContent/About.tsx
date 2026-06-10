@@ -3,11 +3,11 @@ import { motion, useInView } from "framer-motion";
 import "./styles.css";
 import { Variants } from "framer-motion";
 
-const certifications = ["CFP®", "CPA-10", "CPA-20", "CEA", "Administração de Empresas", "Finanças Comportamentais"];
+const certifications = ["CFP®", "CEA", "CPA-20", "CPA-10", "Administração de Empresas", "Finanças Comportamentais"];
 
 const paragraphs = [
-  "Desde muito cedo, Danielle Borges já se sentia parte do mercado financeiro. Influenciada por um tio que considera como pai profissional do Banco do Brasil — em uma época em que a instituição representava grande prestígio — cresceu admirando esse universo e, aos poucos, se apaixonou pela área.",
-  "Hoje, com 19 anos de experiência no mercado financeiro e certificação CFP®, Danielle percebeu que o dinheiro ainda é tratado, muitas vezes, apenas como número, meta ou produto. Movida pelo desejo de fazer diferente, criou um espaço onde o dinheiro é uma ferramenta de transformação.",
+  "Danielle Borges cresceu respirando o mercado financeiro. Influenciada por um tio que trabalhava no Banco do Brasil e a quem vê como um pai profissional, ela se apaixonou desde cedo por esse universo de prestígio.",
+  "Hoje, com quase duas décadas de experiência na área e a certificação CFP®, Danielle percebeu que o dinheiro ainda é tratado, muitas vezes, apenas como um número, uma meta ou um produto. Movida pelo desejo de humanizar essa relação, ela criou um espaço onde as finanças se tornam uma verdadeira ferramenta de transformação.",
 ];
 
 const fadeUp: Variants = {

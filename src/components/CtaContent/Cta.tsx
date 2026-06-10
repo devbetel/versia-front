@@ -111,20 +111,7 @@ export default function Cta() {
             </motion.a>
           </motion.div>
 
-          <motion.div className="contato-garantia" variants={fadeInUp}>
-            <div className="garantia-item" data-aos="fade-up">
-              <div className="garantia-icon">✓</div>
-              <span>Resposta em até 2h</span>
-            </div>
-            <div className="garantia-item" data-aos="fade-up">
-              <div className="garantia-icon">✓</div>
-              <span>Primeira conversa gratuita</span>
-            </div>
-            <div className="garantia-item" data-aos="fade-up">
-              <div className="garantia-icon">✓</div>
-              <span>Sem compromisso</span>
-            </div>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

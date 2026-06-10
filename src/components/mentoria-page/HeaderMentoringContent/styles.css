@@ -1,0 +1,58 @@
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(198, 172, 138, 0.2);
+  padding: 0.9rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+}
+
+.header__logo {
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-style: italic;
+}
+
+.header__cta {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.55rem 1.4rem;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.header__cta:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 0.9rem 1.5rem;
+    z-index: 1000;
+  }
+  
+  /* Adiciona padding-top ao body quando header é fixo no mobile */
+  body {
+    padding-top: 60px; /* Ajuste conforme altura do header */
+  }
+}

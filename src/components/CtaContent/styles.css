@@ -50,8 +50,8 @@ background-color: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background: linear-gradient(135deg, #c6ac8a 0%, #d4bc94 100%);
   border-radius: 50%;
   color: #0f172a;
@@ -82,6 +82,7 @@ background-color: #0f172a;
   max-width: 700px;
 }
 .contato-titulo p {
+  font-size: 3.5rem;
     color: #f8fafc;
 }
 
@@ -93,6 +94,7 @@ background-color: #0f172a;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
   margin: 0.2rem 0;
+  font-size: 3.5rem;
 }
 
 .contato-titulo em {
@@ -100,7 +102,7 @@ background-color: #0f172a;
   color: rgba(198, 172, 138, 0.9);
   font-style: italic;
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 0.65em;
   margin-top: 1rem;
 }
 

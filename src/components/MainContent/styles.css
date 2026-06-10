@@ -1,12 +1,19 @@
 .main {
   background-color: #031931;
   position: relative;
-  width: 97.9%;
-  height: 32.19rem;
+  width: 100%;
+  height: 36.19rem;
   margin: 0 auto;
   padding: 0 16px;
 }
-
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  
+}
 .cursor {
   animation: blink 1s infinite;
   color: blanchedalmond;
@@ -147,8 +154,6 @@
 /* ── RIGHT SIDE ── */
 .right-side {
   position: relative;
-  left: 46rem;
-  bottom: 28.5rem;
   background: linear-gradient(
     135deg,
     rgba(5, 39, 77, 0.8) 0%,
@@ -159,10 +164,11 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(198, 172, 138, 0.3);
   width: 500px;
-  height: 460px;
+  height: 30rem;
+  top: 1.3rem;
   overflow: hidden;
+  box-sizing: border-box; /* Importante para consistência */
 }
-
 /* ── DECORATIVE ELEMENTS ── */
 .finance-deco {
   position: absolute;
@@ -373,8 +379,8 @@
 }
 
 .img-principal {
-  width: 290px !important;
-  height: 430px !important;
+  width: 280px !important;
+  height: 390px !important;
   position: relative;
   left: 0;
   bottom: 7.8rem;
@@ -386,6 +392,7 @@
 }
 
 /* ── RESPONSIVIDADE ── */
+
 
 @media (max-width: 1280px) {
   .right-side {

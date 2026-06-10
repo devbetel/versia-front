@@ -1,0 +1,115 @@
+/* ── COMO FUNCIONA ── */
+.como-funciona {
+  background: #042442;
+  padding: 5.5rem 2rem 4rem; /* Increased bottom padding */
+  position: relative;
+  overflow: hidden;
+  height: 53rem;
+  border: none;
+  margin-bottom: 0;
+}
+
+.como-funciona::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 36, 66, 0) 0%,
+    rgba(4, 36, 66, 0.2) 25%,
+    rgba(6, 77, 117, 0.5) 50%,
+    rgba(6, 77, 117, 0.8) 75%,
+    #064d75 100%
+  );
+  pointer-events: none;
+  z-index: 0; /* Changed from 1 to 0 */
+}
+
+.como-funciona__inner {
+  max-width: 840px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 2rem; /* Added padding to keep content above gradient */
+}
+
+/* Rest of your CSS remains the same */
+.como-funciona__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem; /* Added margin to separate from gradient area */
+}
+
+.stat-card {
+  border: 1px solid rgba(198, 172, 138, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.stat-card__number {
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-card__label {
+  color: var(--light);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-card__desc {
+  color: rgba(248, 249, 250, 0.55);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .como-funciona {
+    padding: 4rem 1.5rem 3rem;
+    height: 60rem;
+  }
+  
+  .como-funciona::after {
+    height: 80px;
+  }
+  
+  .como-funciona__inner {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+    
+  .stats-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
+  }
+  
+  .como-funciona::after {
+    height: 60px;
+  }
+  
+  .como-funciona__inner {
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 393px) {
+    .como-funciona {
+        height: 65rem;
+    }
+}
