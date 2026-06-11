@@ -1,38 +1,55 @@
 import React from 'react';
-import "./styles.css";
+import './styles.css';
 
-interface Module {
-  title: string;
-  description: string;
-  icon: string;
-  badge: string;
-}
-
-const ContentBusinessSection: React.FC = () => {
-  const modules: Module[] = [
+const ContentModules = () => {
+  const modules = [
     {
-      title: "Gestão de Pró-Labore",
-      description: "Rompa a ilusão da contabilidade mental. Aprenda o método exato para separar seu salário da conta jurídica e ter clareza total de caixa.",
-      icon: "💰",
-      badge: "Módulos 1-3"
+      id: 1,
+      badge: "Fundação",
+      title: "Introdução ao Trading",
+      description: "Aprenda os conceitos fundamentais do mercado financeiro, terminologias essenciais e como funciona a negociação de ativos.",
+      icon: "📚",
+      progress: 85
     },
     {
-      title: "Estratégia dos 3 Baldes",
-      description: "Aloque o capital de forma inteligente: divida seus recursos em Reserva de Segurança, Projetos de Médio Prazo e o Balde da Liberdade.",
-      icon: "🎯",
-      badge: "Módulo 4"
-    },
-    {
-      title: "Blindagem Familiar",
-      description: "A empresa é o motor, você é o operador. Proteja seu negócio e sua família contra contingências com estruturas jurídicas e de seguros adequadas.",
-      icon: "🛡️",
-      badge: "Módulos 5-6"
-    },
-    {
-      title: "Ferramentas e Ação",
-      description: "Acesse planilhas otimizadas de separação de contas, matrizes de margem de lucro e um plano de ação direto focado para os próximos 30 dias.",
+      id: 2,
+      badge: "Análise",
+      title: "Análise Técnica",
+      description: "Domine gráficos, indicadores e padrões para identificar oportunidades de compra e venda no mercado.",
       icon: "📊",
-      badge: "Práticos"
+      progress: 60
+    },
+    {
+      id: 3,
+      badge: "Estratégia",
+      title: "Gestão de Risco",
+      description: "Desenvolva estratégias sólidas para proteger seu capital e maximizar seus lucros de forma consistente.",
+      icon: "🛡️",
+      progress: 75
+    },
+    {
+      id: 4,
+      badge: "Prática",
+      title: "Psicologia do Trader",
+      description: "Controle suas emoções, desenvolva disciplina e mantenha a consistência em suas operações.",
+      icon: "🧠",
+      progress: 40
+    },
+    {
+      id: 5,
+      badge: "Avançado",
+      title: "Estratégias Avançadas",
+      description: "Técnicas sofisticadas de trading, automação e estratégias utilizadas por traders profissionais.",
+      icon: "🚀",
+      progress: 25
+    },
+    {
+      id: 6,
+      badge: "Mercado",
+      title: "Análise Fundamentalista",
+      description: "Entenda como eventos econômicos e notícias impactam os preços dos ativos no mercado global.",
+      icon: "🌍",
+      progress: 90
     }
   ];
 
@@ -42,71 +59,68 @@ const ContentBusinessSection: React.FC = () => {
       <div className="content-bg-dots"></div>
       <div className="content-bg-glow content-bg-glow--left"></div>
       <div className="content-bg-glow content-bg-glow--right"></div>
-      
+
       <div className="content-container">
+        {/* Header */}
         <div className="content-header">
-          <div className="header-badge" data-aos="fade-down">
-            <span className="header-badge__dot"></span>
-            <span className="header-badge__text">Conteúdo Premium</span>
+          <div className="header-badge">
+            <div className="header-badge__dot"></div>
+            <span className="header-badge__text">Módulos de Aprendizado</span>
           </div>
           
-          <h2 className="content-title" data-aos="fade-down" data-aos-delay="100">
-            O que você vai <span className="content-emphasis">dominar</span> 
-            <br />no Guia Prático
+          <h2 className="content-title">
+            Sua Jornada para se Tornar um <span className="content-emphasis">Trader de Sucesso</span>
           </h2>
           
-          <p className="content-subtitle" data-aos="fade-down" data-aos-delay="200">
-            4 módulos estratégicos desenvolvidos para transformar 
-            <strong> seu conhecimento em resultados práticos</strong>
+          <p className="content-subtitle">
+            Nosso curso é <strong>estruturado em módulos progressivos</strong> que te levam desde o básico até estratégias avançadas. 
+            Cada módulo foi cuidadosamente desenvolvido para construir seu conhecimento de forma sólida e prática.
           </p>
         </div>
 
-        <div className="modules-wrapper" data-aos="fade-up" data-aos-delay="300">
+        {/* Modules Grid */}
+        <div className="modules-wrapper">
           <div className="modules-grid">
-            {modules.map((module, index) => (
-              <div 
-                key={index} 
-                className="module-card"
-                data-aos="fade-up"
-                data-aos-delay={400 + (index * 100)}
-              >
-                {/* Card Header */}
+            {modules.map((module) => (
+              <div key={module.id} className="module-card">
+                <div className="module-overlay"></div>
+                
                 <div className="module-header">
-                  <div className="module-badge">{module.badge}</div>
+                  <span className="module-badge">{module.badge}</span>
                   <div className="module-icon">{module.icon}</div>
                 </div>
-                
-                {/* Card Content */}
+
                 <div className="module-content">
                   <h3 className="module-title">{module.title}</h3>
                   <p className="module-description">{module.description}</p>
                 </div>
-                
-                {/* Card Footer */}
+
                 <div className="module-footer">
                   <div className="module-progress">
                     <div className="progress-bar">
-                      <div className="progress-fill" style={{width: `${(index + 1) * 25}%`}}></div>
+                      <div 
+                        className="progress-fill"
+                        style={{ width: `${module.progress}%` }}
+                      ></div>
                     </div>
-                    <span className="progress-text">Módulo {index + 1}</span>
+                    <span className="progress-text">{module.progress}%</span>
                   </div>
                 </div>
-                
-                {/* Hover Effect */}
-                <div className="module-overlay"></div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="content-cta-wrapper" data-aos="fade-up" data-aos-delay="800">
+        {/* CTA Section */}
+        <div className="content-cta-wrapper">
           <div className="cta-card">
-            <div className="cta-icon">🚀</div>
-            <h3 className="cta-title">Pronto para começar sua jornada?</h3>
-            <p className="cta-subtitle">Acesse todo o conteúdo agora e transforme sua gestão financeira</p>
+            <div className="cta-icon">🎯</div>
+            <h3 className="cta-title">Comece Sua Jornada Hoje</h3>
+            <p className="cta-subtitle">
+              Junte-se a milhares de alunos que já transformaram suas vidas com nosso método comprovado
+            </p>
             <button className="cta-button">
-              <span className="cta-text">COMEÇAR AGORA</span>
+              Iniciar Curso Agora
               <span className="cta-arrow">→</span>
             </button>
           </div>
@@ -116,4 +130,4 @@ const ContentBusinessSection: React.FC = () => {
   );
 };
 
-export default ContentBusinessSection;
+export default ContentModules;
