@@ -20,7 +20,7 @@ interface ResearchSource {
 const ContentStats: React.FC = () => (
   <div className="content-stats" data-aos="zoom-in" data-aos-delay="200">
     <div className="stat-item">
-      <div className="stat-number">103</div>
+      <div className="stat-number">15</div>
       <div className="stat-label">Páginas</div>
     </div>
     <div className="stat-divider"></div>

@@ -15,6 +15,7 @@ import Cta from "../components/CtaContent/Cta";
 import TransitionGradiente4 from "../components/TransitionGradient4Content/TransitionGradient4";
 import TransitionGradient5 from "../components/TransitionGradient5Content/TransitionGradient5";
 import Header from "../components/HeaderComponent/Header";
+import Footer from "../components/Footer/Footer";
 
 export default function HomePage() {
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function HomePage() {
       <div id="cta">
         <Cta />
       </div>
+      <Footer />
     </>
   );
 }

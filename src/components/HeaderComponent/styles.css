@@ -5,7 +5,7 @@
     width: 97..2%; /* Corrige overflow horizontal */
     position: relative;
     display: flex;
-    background-color: #DCDCDC;
+    background-color: #DCDCDC !important;
 
     /* Borda inferior minimalista */
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);

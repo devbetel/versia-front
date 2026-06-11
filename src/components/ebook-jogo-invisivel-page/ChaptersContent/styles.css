@@ -109,7 +109,7 @@
 }
 
 .caps-title {
-  font-family: 'Cormorant Garamond', serif;
+  
   font-size: 3.5rem;
   font-weight: 600;
   line-height: 1.15;
@@ -203,7 +203,7 @@
   font-size: 0.9rem;
   font-weight: 800;
   color: var(--navy);
-  font-family: 'SF Mono', Consolas, monospace;
+  
   letter-spacing: 0.05em;
 }
 
@@ -242,7 +242,7 @@
   font-weight: 800;
   color: rgba(196, 194, 194, 0.955) !important;
   margin-bottom: 0.5rem;
-  font-family: 'SF Mono', Consolas, monospace;
+  
 }
 
 .stat-label {
@@ -270,7 +270,7 @@
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 0.75rem;
-  font-family: 'Cormorant Garamond', serif;
+  
 }
 
 .chapters-subtitle {
@@ -353,7 +353,7 @@
   font-size: 1.2rem;
   font-weight: 800;
   color: var(--white);
-  font-family: 'SF Mono', Consolas, monospace;
+  
 }
 
 .number-indicator {
@@ -394,7 +394,7 @@
   color: var(--navy);
   line-height: 1.4;
   margin-bottom: 1rem;
-  font-family: 'Cormorant Garamond', serif;
+  
   position: relative;
   bottom: 1rem;
 }

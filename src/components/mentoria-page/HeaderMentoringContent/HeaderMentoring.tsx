@@ -22,7 +22,11 @@ function Header() {
 
   return (
     <header className={`header ${isHidden ? 'header--hidden' : ''}`}>
-      <div className="header__logo">O EFEITO VÉRSIA</div>
+      <div className="header__logo"><img
+          src="/Ativo 4@4x.png"
+          alt="Logo"
+          className="logo-header"
+        /></div>
       <button className="header__cta" onClick={scrollToPricing}>
         Quero Começar
       </button>

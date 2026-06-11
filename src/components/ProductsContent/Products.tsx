@@ -17,15 +17,17 @@ const fadeUp: Variants = {
 };
 
 const produtos = [
+
   {
-    href: "#",
-    nivel: "Entrada · Autonomia",
-    nome: "App + Aulas de Autoatendimento",
-    desc: "Organize, visualize e entenda o seu dinheiro — no seu ritmo, sem precisar de ninguém. Kit completo de autonomia financeira.",
-    precoValor: "197,00",
+    href: "/mentoria-versia",
+    nivel: "Comunidade · Mulheres",
+    nome: "Mentoria Coletiva para Mulheres",
+    desc: "6 encontros semanais ao vivo seguindo o método Vérsia - da validação emocional até a autonomia financeira real.",
+    precoValor: "548",
     precoSufixo: "/ mês",
     cta: "Ver mais",
-    emBreve: false,
+    emBreve: false
+
   },
   {
     href: "/ebook-jogo-invisivel",
@@ -46,7 +48,23 @@ const produtos = [
     precoSufixo: "· com masterclass R$98,90",
     cta: "Ver mais",
     emBreve: false,
-  }
+  },  {
+    href: "#",
+    nivel: "Especialidade",
+    nome: "Finanças Comportamentais",
+    desc: "Por que você faz com o dinheiro o que você faz? Um trabalho profundo sobre os padrões que governam suas decisões financeiras.",
+    cta: "Em breve",
+    emBreve: true,
+  }, 
+  {
+    
+    href: "#",
+    nivel: "Entrada · Autonomia",
+    nome: "App + Aulas de Autoatendimento",
+    desc: "Organize, visualize e entenda o seu dinheiro — no seu ritmo, sem precisar de ninguém. Kit completo de autonomia financeira.",
+    cta: "Em breve",
+    emBreve: true,
+  },
 ];
 
 interface Produto {
@@ -104,17 +122,19 @@ function ProdutoCard({ produto, index, isInView }: { produto: Produto; index: nu
       <p className="produto-desc">{produto.desc}</p>
       <div className="produto-divider" />
 
-      <div className="produto-preco-wrap">
-        {produto.precoValor ? (
-          <div className="produto-preco">
-            <sup>R$</sup>
-            {produto.precoValor}
-            <span className="produto-preco-sufixo">{produto.precoSufixo}</span>
-          </div>
-        ) : (
-          <span className="produto-preco-texto">{produto.precoTexto}</span>
-        )}
-      </div>
+      {!produto.emBreve && (
+        <div className="produto-preco-wrap">
+          {produto.precoValor ? (
+            <div className="produto-preco">
+              <sup>R$</sup>
+              {produto.precoValor}
+              <span className="produto-preco-sufixo">{produto.precoSufixo}</span>
+            </div>
+          ) : (
+            <span className="produto-preco-texto">{produto.precoTexto}</span>
+          )}
+        </div>
+      )}
 
       <div className={ctaClass}>
         <span>{produto.cta}</span>

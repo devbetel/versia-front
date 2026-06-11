@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import HomePage from './app/page';
 import EbookPage from './app/ebook-jogo-invisivel/page';
 import MentoriaVersiaPage from './app/mentoria-versia/page';
+import EbookEmpresarioPage from './app/ebook-empresario-e-o-patrimonio/page';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,9 @@ const router = createBrowserRouter([
   }, {
     path: "mentoria-versia",
     element: <MentoriaVersiaPage />
+  }, {
+    path: "ebook-empresario-e-patrimonio",
+    element: <EbookEmpresarioPage />
   }
 ]);
 

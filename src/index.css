@@ -1,3 +1,5 @@
+@import url("../assets/fonts/font.css");
+
 :root {
     /* Variáveis globais */
     --text: #6b6375;
@@ -32,6 +34,8 @@
 }
 
 body {
+      font-family: 'BrownRosemary', sans-serif;
+
     margin: 0;
     padding: 0;
     background: var(--bg);

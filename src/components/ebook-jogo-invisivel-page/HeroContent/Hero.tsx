@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
           />
         </div>
         
-        <a href="#oferta" className="btn-hero" data-aos="fade-up" onClick={handleCTAClick}>
+        <a href="#oferta" className="btn-hero" data-aos="fade-up"  onClick={handleCTAClick}>
           Quero entender o jogo
         </a>
       </div>

@@ -1,7 +1,6 @@
 .about-section {
   background-color: #cbd2d9;
   padding: 6rem 2rem;
-  font-family: Georgia, serif;
 }
 
 .about-container {
@@ -71,7 +70,6 @@
   text-transform: uppercase;
   color: #031931;
   margin-bottom: 1.25rem;
-  font-family: system-ui, sans-serif;
 }
 
 .about-nome {
@@ -87,7 +85,6 @@
   color: rgba(198, 172, 138, 0.85);
   letter-spacing: 0.06rem;
   margin-bottom: 2rem;
-  font-family: system-ui, sans-serif;
   font-weight: 400;
 }
 
@@ -103,7 +100,6 @@
   line-height: 1.9;
   color: #031931;
   margin-bottom: 1.1rem;
-  font-family: system-ui, sans-serif;
   font-weight: 300;
 }
 
@@ -117,7 +113,6 @@
 
 .cert {
   font-size: 0.65rem;
-  font-family: system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: 0.1rem;
   text-transform: uppercase;

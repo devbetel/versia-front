@@ -36,7 +36,7 @@ function MethodMentoring() {
       encounter: 'Encontro 5',
       topic: 'Construção da Reserva de Emergência',
       title: 'nvestimento de Paz',
-      description: 'Dormir com a certeza de que, aconteça o que acontecer, você e seus filhos estão protegidos. O foco absoluto aqui é a estruturação da sua Reserva de Paz: o primeiro e mais inegociável investimento da sua nova vida autônoma.'
+      description: 'Dormir com a certeza de que, aconteça o que acontecer, você e quem é importante para você. O foco absoluto aqui é a estruturação da sua Reserva de Paz: o primeiro e mais inegociável investimento da sua nova vida autônoma.'
     },
     {
       letter: 'A',

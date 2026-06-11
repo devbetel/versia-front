@@ -1,11 +1,11 @@
-@import "@fontsource/dm-sans/index.css";
+@import url("../assets/fonts/font.css");
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'BrownRosemary', sans-serif;
   background: var(--white);
   color: var(--black);
   overflow-x: hidden;

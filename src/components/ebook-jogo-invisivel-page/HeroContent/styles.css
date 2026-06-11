@@ -171,6 +171,9 @@
   align-items: center;
   justify-content: center;
   padding-left: 4rem;
+  position: relative;
+  left: 1rem;
+  bottom: 5rem;
 }
 
 .book-wrap {
@@ -185,8 +188,8 @@
   border-radius: 8px;
   padding: 2rem 1.5rem;
   position: relative;
-  left: 4rem;
-  bottom: 6rem;
+  left: 0rem;
+  bottom: 0rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);

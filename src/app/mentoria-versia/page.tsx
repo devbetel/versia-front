@@ -8,6 +8,7 @@ import Aos from "aos";
 import HeroMentoring from "../../components/mentoria-page/HeroContent/HeroMentoring";
 import OfferSectionMentoring from "../../components/mentoria-page/OfferMentoringContent/OfferMentoring.tsx";
 import TransitionGradient6 from "../../components/TransitionGradient6/TransitionGradient6.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
 
 
 const MentoriaVersiaPage: React.FC = () => {
@@ -26,7 +27,7 @@ const MentoriaVersiaPage: React.FC = () => {
       <MethodMentoring />
       <HowItsWorks />
         <OfferSectionMentoring />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

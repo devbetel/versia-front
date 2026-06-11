@@ -14,6 +14,7 @@ import OfferSection from '../../components/ebook-jogo-invisivel-page/OfferConten
 import HeaderEbook from '../../components/ebook-jogo-invisivel-page/HeaderEbookContent/HeaderEbook';
 import FinalSection from '../../components/ebook-jogo-invisivel-page/FinalContent/Final';
 import TransitionGradient6 from '../../components/TransitionGradient6/TransitionGradient6';
+import Footer from '../../components/Footer/Footer';
 
 export default function EbookJogoInvisivelPage(){
    useEffect(() => {
@@ -34,6 +35,7 @@ export default function EbookJogoInvisivelPage(){
       <BankersSection />
       <OfferSection />
       <FinalSection />
+      <Footer />
     </main>
   );
 }
