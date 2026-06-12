@@ -1,0 +1,94 @@
+.header {
+    color: black;
+    padding: 1rem;
+    height: 5rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    background-color: #DCDCDC;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-header {
+    width: 13rem;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-cta {
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    color: #041932;
+    transition: transform 0.2s ease, color 0.2s ease;
+    font-size: 1rem;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    color: #c6ac8a;
+}
+
+/* ── RESPONSIVIDADE MOBILE ── */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 1rem;
+        height: 4rem;
+    }
+    
+    .logo-header {
+        width: 9rem;
+    }
+    
+    .nav-cta {
+        font-size: 0.9rem;
+        font-weight: bold;
+        font-style: italic;
+        color: #041932;
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+    
+    .nav-cta:hover {
+        background: transparent;
+        color: #c6ac8a;
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+        height: 3.5rem;
+    }
+    
+    .logo-header {
+        width: 10rem;
+    }
+    
+    .nav-cta {
+        font-size: 0.8rem;
+        font-weight: bold;
+        font-style: italic;
+        color: #041932;
+        background: transparent;
+        padding: 0;
+    }
+    
+    .nav-cta:hover {
+        background: transparent;
+        color: #c6ac8a;
+    }
+}

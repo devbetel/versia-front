@@ -7,6 +7,7 @@ import TargetBusinessSection from '../../components/ebook-empresario-e-patrimoni
 import Aos from 'aos';
 import OfferBusinessSection from '../../components/ebook-empresario-e-patrimonio-page/OfferBusinessContent/OfferBusiness';
 import Footer from '../../components/Footer/Footer';
+import HeaderBusiness from '../../components/ebook-empresario-e-patrimonio-page/HeaderBusinessContent/HeaderBusiness';
 
 
 const EbookEmpresarioPage: React.FC = () => {
@@ -19,6 +20,7 @@ const EbookEmpresarioPage: React.FC = () => {
     
   return (
     <div className="app">
+      <HeaderBusiness />
       <HeroBusinessSection />
       <ProblemBusinessSection />
       <ContentBusinessSection />

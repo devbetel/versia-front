@@ -57,7 +57,7 @@
 }
 
 .stat-card__number {
-  color: var(--gold);
+  color: var(--gold) !important;
   font-weight: 900;
   font-size: 3.5rem;
   line-height: 1;
@@ -65,14 +65,14 @@
 }
 
 .stat-card__label {
-  color: var(--light);
+  color: #042442 !important;
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
 }
 
 .stat-card__desc {
-  color: rgba(248, 249, 250, 0.55);
+  color: #042442 !important;
   font-size: 0.875rem;
   line-height: 1.7;
   margin: 0;
