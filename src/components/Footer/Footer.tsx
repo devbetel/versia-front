@@ -5,7 +5,7 @@ interface FooterProps {
   whatsappNumber?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ whatsappNumber = "SEUNUMERO" }) => {
+const Footer: React.FC<FooterProps> = ({ whatsappNumber = "5587991097916" }) => {
   return (
     <footer className="footer">
       <a href="#" className="footer-logo">

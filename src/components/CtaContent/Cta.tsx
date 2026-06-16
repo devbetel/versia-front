@@ -89,7 +89,7 @@ export default function Cta() {
 
           <motion.div className="contato-acoes" variants={fadeInUp}>
             <motion.a 
-              href="https://wa.me/5511999999999" 
+              href="https://wa.me/5587991097916" 
               className="btn-whatsapp"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}

@@ -22,7 +22,7 @@ interface OfferSectionProps {
 
 const OfferSection: React.FC<OfferSectionProps> = ({ 
   plans,
-  whatsappNumber = "5511999999999" 
+  whatsappNumber = "5587991097916" 
 }) => {
   const [animationTriggered, setAnimationTriggered] = useState(false);
 
