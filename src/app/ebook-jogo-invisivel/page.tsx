@@ -1,9 +1,9 @@
-// app/ebook-jogo-invisivel/page.tsx
 "use client";
 
 import React, { useEffect } from 'react';
-import 'aos/dist/aos.css'; // Adicione esta linha
+import 'aos/dist/aos.css';
 import './styles.css';
+import SEO from '../../components/SEO';
 import HookSection from '../../components/ebook-jogo-invisivel-page/HookContent/HookEbook';
 import Data from '../../components/ebook-jogo-invisivel-page/DataContent/Data';
 import BankersSection from '../../components/ebook-jogo-invisivel-page/BankersContent/Bankers';
@@ -25,17 +25,27 @@ export default function EbookJogoInvisivelPage(){
   }, []);
 
   return (
-    <main className="ebook-page">
-      <HeaderEbook />
-      <Hero />
-      <TransitionGradient6 />
-      <HookSection />
-      <Data />
-      <Chapters />
-      <BankersSection />
-      <OfferSection />
-      <FinalSection />
-      <Footer />
-    </main>
+    <>
+      <SEO 
+        title="E-book Jogo Invisível - Versia Finance | Desvende os Segredos dos Banqueiros"
+        description="Descubra as estratégias que os banqueiros usam e você desconhece. E-book exclusivo com táticas práticas para proteger e multiplicar seu patrimônio. Download gratuito!"
+        keywords="ebook jogo invisível, estratégias financeiras, bancos, investimentos inteligentes, versia finance, proteção patrimonial"
+        url="https://versiafinance.com/ebook-jogo-invisivel"
+        image="https://versiafinance.com/og-jogo-invisivel.jpg"
+      />
+      
+      <main className="ebook-page">
+        <HeaderEbook />
+        <Hero />
+        <TransitionGradient6 />
+        <HookSection />
+        <Data />
+        <Chapters />
+        <BankersSection />
+        <OfferSection />
+        <FinalSection />
+        <Footer />
+      </main>
+    </>
   );
 }

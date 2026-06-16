@@ -1,8 +1,8 @@
-// app/page.tsx  
 "use client";
 
 import { useEffect } from "react";
 import Aos from "aos";
+import SEO from "../components/SEO";
 import Main from "../components/MainContent/Main";
 import TransitionSection from "../components/TransitionGradient/TransitionSection";
 import Different from "../components/DifferentContent/Different";
@@ -27,6 +27,14 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO 
+        title="Versia Finance - Soluções Financeiras Inteligentes"
+        description="Transforme sua relação com o dinheiro. Mentoria especializada, e-books exclusivos e estratégias práticas para empresários e investidores construírem patrimônio de forma inteligente."
+        keywords="versia finance, planejamento financeiro, mentoria financeira, gestão patrimonial, investimentos, consultoria financeira"
+        url="https://versiafinance.com"
+        image="https://versiafinance.com/og-home.jpg"
+      />
+      
       <Header />
       <Main />
       <TransitionSection />

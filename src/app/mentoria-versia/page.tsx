@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles.css";
+import SEO from "../../components/SEO.tsx";
 import MethodMentoring from "../../components/mentoria-page/MethodMentoringContent/Method";
 import HowItsWorks from "../../components/mentoria-page/HowItsWorksContent/HowItsWorks";
 import HeaderMentoring from "../../components/mentoria-page/HeaderMentoringContent/HeaderMentoring";
@@ -10,7 +11,6 @@ import OfferSectionMentoring from "../../components/mentoria-page/OfferMentoring
 import TransitionGradient6 from "../../components/TransitionGradient6/TransitionGradient6.tsx";
 import Footer from "../../components/Footer/Footer.tsx";
 
-
 const MentoriaVersiaPage: React.FC = () => {
   useEffect(() => {
     Aos.init({
@@ -20,15 +20,25 @@ const MentoriaVersiaPage: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", overflowX: "hidden" }}>
-      <HeaderMentoring />
-      <HeroMentoring />
-      <TransitionGradient6 />
-      <MethodMentoring />
-      <HowItsWorks />
+    <>
+      <SEO 
+        title="Mentoria Versia - Versia Finance | Mentoria Financeira Exclusiva"
+        description="Mentoria personalizada para empresários e investidores. Construa e proteja seu patrimônio com estratégias comprovadas. Sessões individuais com especialistas em planejamento financeiro."
+        keywords="mentoria financeira, consultoria patrimonial, planejamento financeiro personalizado, mentoria empresarial, versia finance, coaching financeiro"
+        url="https://versiafinance.com/mentoria-versia"
+        image="https://versiafinance.com/og-mentoria.jpg"
+      />
+      
+      <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", overflowX: "hidden" }}>
+        <HeaderMentoring />
+        <HeroMentoring />
+        <TransitionGradient6 />
+        <MethodMentoring />
+        <HowItsWorks />
         <OfferSectionMentoring />
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

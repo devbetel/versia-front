@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Home -->
+  <url>
+    <loc>https://versiafinance.com/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Mentoria Versia -->
+  <url>
+    <loc>https://versiafinance.com/mentoria-versia</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- E-book Jogo Invisível -->
+  <url>
+    <loc>https://versiafinance.com/ebook-jogo-invisivel</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- E-book Empresário e Patrimônio -->
+  <url>
+    <loc>https://versiafinance.com/ebook-empresario-e-patrimonio</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+</urlset>
