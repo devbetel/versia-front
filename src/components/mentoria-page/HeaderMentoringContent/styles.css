@@ -6,7 +6,7 @@
 
 /* ── HEADER ── */
 .header {
-  background: var(--navy);
+  background: var(--navy) !important;
   border-bottom: 1px solid rgba(198, 172, 138, 0.2);
   padding: 0.9rem 2.5rem;
   display: flex;
@@ -40,24 +40,62 @@
 }
 
 /* ── BOTÃO CTA ── */
+/* BOTÃO CTA ESTILO MODERNO */
 .header__cta {
-  background: var(--gold);
-  color: var(--navy);
-  padding: 0.55rem 1.4rem;
-  border-radius: 4px;
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold) 0%, #d4a853 100%);
+  color: #ffffff !important; /* Texto branco */
+  padding: 1rem 2.5rem;
+  border-radius: 50px; /* Mais arredondado */
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  box-shadow: 0 8px 32px rgba(198, 172, 138, 0.4);
   border: none;
   cursor: pointer;
-  transition: filter 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
   white-space: nowrap;
-  flex-shrink: 0;
+}
+
+.header__cta .cta-title {
+  color: #ffffff !important;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.header__cta a  {
+    color: #ffffff !important;
+
+}
+
+/* Efeito de shimmer ao passar o mouse */
+.header__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.header__cta:hover::before {
+  left: 100%;
 }
 
 .header__cta:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(198, 172, 138, 0.5);
+}
+
+.header__cta:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* ── RESPONSIVIDADE ── */

@@ -1,8 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Lazy loading das páginas
 const HomePage = lazy(() => import('./app/page'));
@@ -10,10 +12,7 @@ const MentoriaVersiaPage = lazy(() => import('./app/mentoria-versia/page'));
 const EbookJogoInvisivelPage = lazy(() => import('./app/ebook-jogo-invisivel/page'));
 const EbookEmpresarioPage = lazy(() => import('./app/ebook-empresario-patrimonio/page'));
 
-// Função inline para o Loading (evita o erro)
-
-
-// OU exportar como arrow function
+// Loading component
 export const Loading = () => (
   <div style={{ 
     display: 'flex', 
@@ -28,8 +27,18 @@ export const Loading = () => (
   </div>
 );
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+// Componente App com inicialização do AOS
+const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out',
+      offset: 100,
+    });
+  }, []);
+
+  return (
     <HelmetProvider>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
@@ -37,10 +46,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/" element={<HomePage />} />
             <Route path="/mentoria-versia" element={<MentoriaVersiaPage />} />
             <Route path="/ebook-jogo-invisivel" element={<EbookJogoInvisivelPage />} />
-            <Route path="/ebook-empresario-e-patrimonio" element={<EbookEmpresarioPage />} />
+            <Route path="/ebook-empresario-patrimonio" element={<EbookEmpresarioPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
     </HelmetProvider>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
   </React.StrictMode>
 );

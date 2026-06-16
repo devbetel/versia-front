@@ -24,7 +24,7 @@ function HeaderMentoring() {
     <header className={`header ${isHidden ? 'header--hidden' : ''}`}>
       <div className="header__logo">
         <img
-          src="/Ativo 4@4x.png"
+          src="/Ativo 2@4x.png"
           alt="Logo"
           className="logo-header"
         />

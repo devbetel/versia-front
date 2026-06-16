@@ -50,11 +50,11 @@ function MethodMentoring() {
     <section className="metodo">
       <div className="metodo__inner">
         <div className="metodo__header">
-          <p className="section-eyebrow">O Método</p>
-          <h2 className="section-title section-title--dark">
+          <p className="section-eyebrow" data-aos="fade-down">O Método</p>
+          <h2 className="section-title section-title--dark" data-aos="fade-up" data-aos-delay="100">
             O Método <span className="accent">VÉRSIA</span>
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle" data-aos="fade-up" data-aos-delay="200">
             Um método prático, focado em comportamento e estratégia real, desenhado em 6 degraus 
             consecutivos para transformar sua relação com o dinheiro
           </p>
@@ -62,20 +62,43 @@ function MethodMentoring() {
 
         <div className="steps-list">
           {steps.map((step, idx) => (
-            <div key={idx} className="step-card">
-              <div className="step-card__badge">
+            <div 
+              key={idx} 
+              className="step-card"
+              data-aos="fade-right"
+              data-aos-delay={300 + (idx * 100)}
+            >
+              <div 
+                className="step-card__badge"
+                data-aos="zoom-in"
+                data-aos-delay={350 + (idx * 100)}
+              >
                 <span>{idx + 1}</span>
               </div>
               <div className="step-card__content">
-                <div className="step-card__meta">
+                <div 
+                  className="step-card__meta"
+                  data-aos="fade-left"
+                  data-aos-delay={400 + (idx * 100)}
+                >
                   <span className="step-card__encounter">{step.encounter}</span>
                   <span className="step-card__sep">•</span>
                   <span className="step-card__topic">{step.topic}</span>
                 </div>
-                <h3 className="step-card__title">
+                <h3 
+                  className="step-card__title"
+                  data-aos="fade-up"
+                  data-aos-delay={450 + (idx * 100)}
+                >
                   [<span className="letter">{step.letter}</span>]{step.title}
                 </h3>
-                <p className="step-card__desc">{step.description}</p>
+                <p 
+                  className="step-card__desc"
+                  data-aos="fade-up"
+                  data-aos-delay={500 + (idx * 100)}
+                >
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}

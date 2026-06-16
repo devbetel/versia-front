@@ -14,7 +14,8 @@
   padding: 8rem 0;
   background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-gradient) 100%);
   position: relative;
-  overflow: hidden;
+   max-width: 100%;
+  overflow: visible; 
 }
 
 .section-caps::before {

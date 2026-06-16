@@ -1,6 +1,5 @@
 import "./styles.css";
 
-
 const ContentModules = () => {
   const modules = [
     {
@@ -39,8 +38,6 @@ const ContentModules = () => {
 
   return (
     <>
-   
-
       <section className="content-section">
         <div className="content-bg-dots"></div>
         <div className="content-bg-glow content-bg-glow--left"></div>
@@ -53,19 +50,24 @@ const ContentModules = () => {
               <span className="header-badge__text">O Conteúdo</span>
             </div>
             
-            <h2 className="content-title" data-aos="fade-up">
+            <h2 className="content-title" data-aos="fade-up" data-aos-delay="100">
               O que você vai dominar ao longo deste <span className="content-emphasis">Guia Prático</span>
             </h2>
             
-            <p className="content-subtitle" data-os="fade-up">
+            <p className="content-subtitle" data-aos="fade-up" data-aos-delay="200">
               Este não é um livro teórico de contabilidade. É um <strong>manual prático e estratégico</strong> desenhado especificamente para donos de negócios que decidiram parar de ser reféns do próprio faturamento.
             </p>
           </div>
 
           <div className="modules-wrapper">
             <div className="modules-grid">
-              {modules.map((module) => (
-                <div key={module.id} className="module-card" data-aos="fade-up">
+              {modules.map((module, index) => (
+                <div 
+                  key={module.id} 
+                  className="module-card" 
+                  data-aos="fade-up"
+                  data-aos-delay={100 * (index + 1)}
+                >
                   <div className="module-overlay"></div>
                   
                   <div className="module-header">
@@ -95,13 +97,13 @@ const ContentModules = () => {
           </div>
 
           <div className="content-cta-wrapper">
-            <div className="cta-card" data-aos="fade-up">
-              <div className="cta-icon">🎯</div>
-              <h3 className="cta-title">Organização não engessa; organização liberta</h3>
-              <p className="cta-subtitle">
+            <div className="cta-card" data-aos="fade-up" data-aos-delay="100">
+              <div className="cta-icon" data-aos="zoom-in" data-aos-delay="200">🎯</div>
+              <h3 className="cta-title" data-aos="fade-up" data-aos-delay="300">Organização não engessa; organização liberta</h3>
+              <p className="cta-subtitle" data-aos="fade-up" data-aos-delay="400">
                 Deixar para investir "o que sobrar" é a receita para nunca acumular riqueza. Mude a regra do jogo hoje.
               </p>
-              <button className="cta-button">
+              <button className="cta-button" data-aos="fade-up" data-aos-delay="500">
                 <a href="https://pay.kiwify.com.br/uy7eMQF">
                 Quero Construir Meu Patrimônio
                 </a>

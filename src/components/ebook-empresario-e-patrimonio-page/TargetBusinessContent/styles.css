@@ -138,7 +138,7 @@ padding: 1.25rem 3rem;
 
 background: linear-gradient(135deg, var(--navy) 0%, #052445 100%);
 
-color: var(--gold);
+color: var(--gold) !important;
 
 font-size: 1.05rem;
 
@@ -160,6 +160,10 @@ letter-spacing: 0.05em;
 
 }
 
+.target-cta a {
+    color: var(--gold) !important;
+    font-style: normal;
+}
 .target-cta:hover {
 
 transform: translateY(-3px);

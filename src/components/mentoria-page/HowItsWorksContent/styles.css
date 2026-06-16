@@ -4,7 +4,7 @@
   padding: 5.5rem 2rem 4rem; /* Increased bottom padding */
   position: relative;
   overflow: hidden;
-  height: 53rem;
+  height: 58rem;
   border: none;
   margin-bottom: 0;
 }
@@ -65,14 +65,14 @@
 }
 
 .stat-card__label {
-  color: #042442 !important;
+  color: white !important;
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
 }
 
 .stat-card__desc {
-  color: #042442 !important;
+  color: white !important;
   font-size: 0.875rem;
   line-height: 1.7;
   margin: 0;
@@ -81,7 +81,7 @@
 @media (max-width: 768px) {
   .como-funciona {
     padding: 4rem 1.5rem 3rem;
-    height: 60rem;
+    height: 65rem;
   }
   
   .como-funciona::after {
@@ -94,7 +94,7 @@
 }
 
 @media (max-width: 480px) {
-    
+
   .stats-grid {
     grid-template-columns: 1fr;
     margin-bottom: 1.5rem;
@@ -110,6 +110,6 @@
 }
 @media (max-width: 393px) {
     .como-funciona {
-        height: 65rem;
+        height: 70rem;
     }
 }

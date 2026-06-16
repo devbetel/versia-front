@@ -1,4 +1,7 @@
 .banking-section {
+    max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
   padding: 8rem 0;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   color: white;
@@ -26,7 +29,10 @@
     );
   pointer-events: none;
 }
-
+.banking-section .container {
+  max-width: 1200px;
+  overflow-x: hidden;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;

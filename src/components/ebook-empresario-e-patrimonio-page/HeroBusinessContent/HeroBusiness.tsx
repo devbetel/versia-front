@@ -22,7 +22,7 @@ const HeroBusinessSection: React.FC = () => {
           <h1 className="hero-title" data-aos="fade-right" data-aos-delay="100">
             Suba o nível do seu jogo:{' '}
             Pare de construir apenas{' '}
-            <span className="hero-highlight">
+            <span className="hero-highlight" data-aos="fade-in" data-aos-delay="200">
               uma empresa rica
               <svg className="hero-underline" viewBox="0 0 200 8" preserveAspectRatio="none">
                 <path d="M2 6 Q50 2 100 4.5 Q150 7 198 2.5"
@@ -31,7 +31,7 @@ const HeroBusinessSection: React.FC = () => {
               </svg>
             </span>{' '}
             e comece a ser{' '}
-            <span className="hero-highlight">
+            <span className="hero-highlight" data-aos="fade-in" data-aos-delay="300">
               um empresário rico.
               <svg className="hero-underline" viewBox="0 0 230 8" preserveAspectRatio="none">
                 <path d="M2 6 Q57 2 115 4.5 Q172 7 228 2.5"
@@ -46,17 +46,19 @@ const HeroBusinessSection: React.FC = () => {
         {/* ── DIREITA: Card Premium ── */}
         <div className="hero-right" data-aos="fade-left" data-aos-delay="200">
 
-          <p className="hero-subtitle">
+          <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
             O guia definitivo para transformar faturamento em lucro real,
             blindar a família, organizar o pró-labore e construir um{' '}
             <strong>patrimônio inabalável fora do seu CNPJ.</strong>
           </p>
 
-          <div className="hero-divider" />
+          <div className="hero-divider" data-aos="fade" data-aos-delay="400" />
 
-          <HeroCTA />
+          <div data-aos="zoom-in" data-aos-delay="500">
+            <HeroCTA />
+          </div>
 
-          <p className="hero-cta-note">🔒 Acesso imediato &nbsp;·&nbsp; Sem compromisso</p>
+          <p className="hero-cta-note" data-aos="fade-up" data-aos-delay="600">🔒 Acesso imediato &nbsp;·&nbsp; Sem compromisso</p>
 
         </div>
       </div>
@@ -64,15 +66,21 @@ const HeroBusinessSection: React.FC = () => {
       {/* ── STATS BAR ── */}
       <div className="hero-stats-bar" data-aos="fade-up" data-aos-delay="300">
         <div className="hero-stats-inner">
-          <StatItem number="6+" label="Módulos Práticos" />
+          <div data-aos="flip-up" data-aos-delay="400">
+            <StatItem number="6+" label="Módulos Práticos" />
+          </div>
           <span className="hero-stats__divider" />
-          <StatItem number="30" label="Dias de Plano de Ação" />
+          <div data-aos="flip-up" data-aos-delay="500">
+            <StatItem number="30" label="Dias de Plano de Ação" />
+          </div>
           <span className="hero-stats__divider" />
-          <StatItem number="15min" label="Por Semana" />
+          <div data-aos="flip-up" data-aos-delay="600">
+            <StatItem number="15min" label="Por Semana" />
+          </div>
         </div>
       </div>
 
-      <div className="hero-wave">
+      <div className="hero-wave" data-aos="fade" data-aos-delay="700">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
           <path d="M0 80 L0 50 Q360 12 720 32 Q1080 52 1440 20 L1440 80 Z"
             fill="var(--light-cream)" />

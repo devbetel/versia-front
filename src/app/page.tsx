@@ -20,8 +20,10 @@ import Footer from "../components/Footer/Footer";
 export default function HomePage() {
   useEffect(() => {
     Aos.init({
-      duration: 1300,
-      once: false,
+      duration: 1000,
+      once: true,
+      easing: 'ease-out',
+      offset: 100,
     });
   }, []);
 

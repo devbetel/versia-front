@@ -103,8 +103,8 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
   return (
     <section className="business-offer-section" id="business-offer-section">
       <div className="business-container">
-        <header className={`business-header ${animationTriggered ? 'animate-in' : ''}`}>
-          <div className="business-tag-wrapper">
+        <header className={`business-header ${animationTriggered ? 'animate-in' : ''}`} data-aos="fade-up">
+          <div className="business-tag-wrapper" data-aos="fade-down">
             <span className="business-tag">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M2 6L8 2L14 6V14H10V10H6V14H2V6Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
@@ -113,11 +113,11 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
             </span>
           </div>
           
-          <h2 className="business-title">
+          <h2 className="business-title" data-aos="fade-up" data-aos-delay="100">
             Transforme seu <span className='title-span'>patrimônio empresarial</span> em uma máquina de crescimento
           </h2>
           
-          <p className="business-subtitle">
+          <p className="business-subtitle" data-aos="fade-up" data-aos-delay="200">
             Metodologias comprovadas por empresários que multiplicaram seus resultados
           </p>
         </header>
@@ -131,9 +131,11 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
               onClick={() => handlePlanSelect(plan)}
+              data-aos="fade-up"
+              data-aos-delay={100 * (index + 1)}
             >
               {plan.badge && (
-                <div className="business-badge">
+                <div className="business-badge" data-aos="zoom-in" data-aos-delay={150 * (index + 1)}>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M6 1L7.5 4.5L11 4.5L8.5 7L9.5 10.5L6 8.5L2.5 10.5L3.5 7L1 4.5L4.5 4.5L6 1Z" fill="currentColor"/>
                   </svg>
@@ -174,7 +176,7 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
                   <h4 className="features-title">O que está incluído:</h4>
                   <ul className="business-features-list">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="business-feature-item">
+                      <li key={featureIndex} className="business-feature-item" data-aos="fade-right" data-aos-delay={50 * featureIndex + 200}>
                         <svg width="18" height="18" viewBox="0 0 20 20" className="business-check-icon">
                           <path 
                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
@@ -196,6 +198,8 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
                   }}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-aos="zoom-in"
+                  data-aos-delay={300}
                 >
                   <span className="business-button-text">
                     {plan.buttonText}
@@ -220,8 +224,8 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
           ))}
         </div>
 
-        <footer className={`business-footer ${animationTriggered ? 'animate-in' : ''}`}>
-          <div className="business-guarantee">
+        <footer className={`business-footer ${animationTriggered ? 'animate-in' : ''}`} data-aos="fade-up" data-aos-delay="400">
+          <div className="business-guarantee" data-aos="fade-right" data-aos-delay="500">
             <svg width="24" height="24" viewBox="0 0 24 24" className="guarantee-icon">
               <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#10b981"/>
             </svg>
@@ -231,7 +235,7 @@ const OfferBusinessSection: React.FC<OfferBusinessSectionProps> = ({
             </div>
           </div>
           
-          <p className="business-support-text">
+          <p className="business-support-text" data-aos="fade-left" data-aos-delay="600">
             Dúvidas sobre qual plano escolher?{' '}
             <a 
               href={`https://wa.me/${whatsappNumber}`}

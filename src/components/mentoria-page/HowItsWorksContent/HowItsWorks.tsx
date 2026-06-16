@@ -23,18 +23,41 @@ function HowItsWorks() {
     <section className="como-funciona">
       <div className="como-funciona__inner">
         <div className="como-funciona__header">
-          <p className="section-eyebrow">Como Funciona</p>
-          <h2 className="section-title section-title--light">
+          <p className="section-eyebrow" data-aos="fade-down">Como Funciona</p>
+          <h2 className="section-title section-title--light" data-aos="fade-up" data-aos-delay="100">
             Como Funciona a <span className="accent">Mentoria</span>
           </h2>
         </div>
 
         <div className="stats-grid">
           {stats.map((stat, idx) => (
-            <div key={idx} className="stat-card">
-              <div className="stat-card__number">{stat.number}</div>
-              <h3 className="stat-card__label">{stat.label}</h3>
-              <p className="stat-card__desc">{stat.description}</p>
+            <div 
+              key={idx} 
+              className="stat-card"
+              data-aos="fade-up"
+              data-aos-delay={200 + (idx * 150)}
+            >
+              <div 
+                className="stat-card__number"
+                data-aos="zoom-in"
+                data-aos-delay={250 + (idx * 150)}
+              >
+                {stat.number}
+              </div>
+              <h3 
+                className="stat-card__label"
+                data-aos="fade-right"
+                data-aos-delay={300 + (idx * 150)}
+              >
+                {stat.label}
+              </h3>
+              <p 
+                className="stat-card__desc"
+                data-aos="fade-up"
+                data-aos-delay={350 + (idx * 150)}
+              >
+                {stat.description}
+              </p>
             </div>
           ))}
         </div>

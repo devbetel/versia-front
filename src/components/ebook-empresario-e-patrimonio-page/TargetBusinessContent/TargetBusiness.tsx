@@ -15,16 +15,33 @@ const TargetBusinessSection: React.FC = () => {
           Este manual foi feito <span className="target-emphasis">para você?</span>
         </h2>
 
-        <div className="criteria-list" data-aos="fade-right">
+        <div className="criteria-list" data-aos="fade-up" data-aos-delay="100">
           {criteria.map((criterion, index) => (
-            <div key={index} className="criterion-item">
-              <div className="checkbox-icon" data-aos="fade-up">✓</div>
-              <p className="criterion-text" data-aos="fade-up">{criterion}</p>
+            <div 
+              key={index} 
+              className="criterion-item"
+              data-aos="fade-right"
+              data-aos-delay={150 * (index + 1)}
+            >
+              <div 
+                className="checkbox-icon" 
+                data-aos="zoom-in" 
+                data-aos-delay={150 * (index + 1) + 100}
+              >
+                ✓
+              </div>
+              <p 
+                className="criterion-text" 
+                data-aos="fade-left" 
+                data-aos-delay={150 * (index + 1) + 150}
+              >
+                {criterion}
+              </p>
             </div>
           ))}
         </div>
 
-        <button className="target-cta" data-aos="fade-up">
+        <button className="target-cta" data-aos="zoom-in" data-aos-delay="600">
           <a href='https://pay.kiwify.com.br/uy7eMQF'>
           SIM! QUERO CONSTRUIR MEU PATRIMÔNIO
           </a>

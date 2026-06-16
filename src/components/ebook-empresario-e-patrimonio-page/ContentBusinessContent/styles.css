@@ -343,6 +343,10 @@
   position: relative;
   z-index: 1;
 }
+.cta-button a {
+    color: var(--navy);
+
+}
 
 .cta-button:hover {
   background: var(--gold-light);

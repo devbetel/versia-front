@@ -5,12 +5,16 @@
   padding: 9rem 0;
   background: linear-gradient(180deg, #d6bc9f 0%, #c9a87a 50%, #d6bc9f 100%);
   position: relative;
-  overflow: hidden;
+   max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* top separator */
 .section-dados::before {
   content: '';
+    max-width: 100%;
+  overflow: hidden;
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
@@ -131,7 +135,6 @@
   flex-direction: column;
   height: 100%;
 }
-
 /* gradient top-bar */
 .stat-card::before {
   content: '';
@@ -209,7 +212,7 @@
 .stat-card__label {
   font-size: 0.97rem;
   font-weight: 600;
-  color: #1e3a5f;
+  color: #1e3a5f !important;
   line-height: 1.55;
   margin-bottom: 1.5rem;
   flex: 1;
