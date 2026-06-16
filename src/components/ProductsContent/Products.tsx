@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import "./styles.css";
 import { Variants } from "framer-motion";

@@ -1,5 +1,4 @@
 // components/TransitionGradient/TransitionSection.jsx
-import React from "react";
 import "./styles.css";
 
 const TransitionSection = () => {
