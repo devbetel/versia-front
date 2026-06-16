@@ -13,14 +13,11 @@ const ProblemBusinessSection: React.FC = () => {
     <section className="problem-section">
       <div className="problem-container">
         <h2 className="problem-title" data-aos="fade-down">
-          O jogo invisível que está <span className="problem-emphasis">drenando o seu esforço</span>
+         Conheça o E-book: <span className="problem-emphasis">Patrimônio, Lucro & Organização Inteligente</span>
         </h2>
-        
         <div className="problem-content">
           <p className="problem-text" data-aos="fade-down">
-            Empreender exige coragem. Mas existe uma verdade silenciosa nos bastidores do mercado 
-            corporativo: <strong>muitas empresas faturam alto, mas não geram riqueza real para o dono.</strong>
-          </p>
+            O Material Aprofundado de Apoio para Empresários de Sucesso.  Este não é um livro teórico de contabilidade. É um manual prático e estratégico desenhado especificamente para donos de negócios de produtos e serviços que decidiram parar de ser reféns do próprio faturamento.  Você vai aprender as regras do jogo para que a sua empresa seja o motor que gera riqueza, e a sua mente seja o volante que direciona esse dinheiro para o lugar certo  </p>
           
           <p className="problem-text" data-aos="fade-down">
             Você enfrenta o estresse diário da operação, gerencia equipes e lida com impostos complexos. 

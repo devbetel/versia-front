@@ -20,7 +20,7 @@
 }
 
 .problem-emphasis {
-  color: var(--dark-text);
+  color: var(--dark-text) !important;
   font-style: italic;
   position: relative;
   display: inline-block;

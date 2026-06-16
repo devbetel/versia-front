@@ -9,24 +9,21 @@ const Header = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 992);
     };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
     const handleScroll = () => {
-      if (!isMobile) return; // Só aplica scroll no mobile
-
+      if (!isMobile) return;
       const currentScrollY = window.scrollY;
-
       if (currentScrollY < lastScrollY || currentScrollY < 10) {
         setVisible(true);
       } else {
         setVisible(false);
         setMenuOpen(false);
       }
-
       setLastScrollY(currentScrollY);
     };
 
@@ -40,11 +37,7 @@ const Header = () => {
   return (
     <header className={`header ${isMobile && visible ? "header--visible" : ""} ${isMobile && !visible ? "header--hidden" : ""}`}>
       <div className="container header-container">
-        <img
-          src="/Ativo 4@4x.png"
-          alt="Logo"
-          className="logo-header"
-        />
+        <img src="/Ativo 4@4x.png" alt="Logo" className="logo-header" />
 
         <nav className="nav">
           <a href="#about" className="item-nav">Sobre</a>

@@ -109,7 +109,7 @@ const BankersSection: React.FC = () => {
           
           <h2 className="section-title" data-aos="fade-down">
             A piada interna que só 
-            <span className="title-highlight"> os bancários entendem</span>
+            <span className="title-sub"> os bancários entendem</span>
           </h2>
           
           <div className="section-meta" data-aos="fade-down">

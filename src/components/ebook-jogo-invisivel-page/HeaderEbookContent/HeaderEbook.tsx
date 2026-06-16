@@ -3,16 +3,16 @@ import "./styles.css";
 
 const HeaderEbook = () => {
   return (
-    <header className="header">
-      <div className="container header-container">
+    <header className="header-ebook">
+      <div className="header-ebook__inner">
         <img
           src="/Ativo 4@4x.png"
-          alt="Logo"
-          className="logo-header"
+          alt="Vérsia Finance Logo"
+          className="header-ebook__logo"
         />
-        <nav className="nav">
-          <a href="#oferta" className="nav-cta">QUERO O E-BOOK</a>
-        </nav>
+        <a href="https://pay.kiwify.com.br/hzfZdZq" className="header-ebook__cta">
+          QUERO O E-BOOK
+        </a>
       </div>
     </header>
   );

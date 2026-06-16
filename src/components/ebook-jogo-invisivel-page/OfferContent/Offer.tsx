@@ -12,6 +12,7 @@ interface PricingPlan {
   buttonText: string;
   isHighlighted?: boolean;
   badge?: string;
+  href?: string;
 }
 
 interface OfferSectionProps {
@@ -38,7 +39,8 @@ const OfferSection: React.FC<OfferSectionProps> = ({
         'Leitura no seu ritmo',
         'Acesso permanente'
       ],
-      buttonText: 'Quero o e-book'
+      buttonText: 'Quero o e-book',
+      href: "https://pay.kiwify.com.br/hzfZdZq"
     },
     {
       id: 'complete',
@@ -56,7 +58,8 @@ const OfferSection: React.FC<OfferSectionProps> = ({
       ],
       buttonText: 'Quero o completo',
       isHighlighted: true,
-      badge: 'MAIS COMPLETO'
+      badge: 'MAIS COMPLETO',
+      href: "https://pay.kiwify.com.br/hzfZdZq"
     }
   ];
 
@@ -82,8 +85,12 @@ const OfferSection: React.FC<OfferSectionProps> = ({
     return () => observer.disconnect();
   }, [animationTriggered]);
 
-  const handlePlanSelect = (planId: string) => {
-    console.log(`Plano selecionado: ${planId}`);
+  const handlePlanSelect = (plan: PricingPlan) => {
+    console.log(`Plano selecionado: ${plan.id}`);
+    if (plan.href) {
+      // Usar window.location.assign ou window.open para navegação
+      window.location.assign(plan.href);
+    }
   };
 
   const formatPrice = (price: number) => {
@@ -123,7 +130,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({
                 animationTriggered ? 'animate-in' : ''
               }`}
               style={{ animationDelay: `${index * 0.15}s` }}
-              onClick={() => handlePlanSelect(plan.id)}
+              onClick={() => handlePlanSelect(plan)}
             >
               {plan.badge && (
                 <div className="card-badge">
@@ -169,12 +176,15 @@ const OfferSection: React.FC<OfferSectionProps> = ({
                   ))}
                 </ul>
 
-                <button 
+                <a 
+                  href={plan.href}
                   className={`cta-button ${plan.isHighlighted ? 'primary' : 'secondary'}`}
                   onClick={(e) => {
                     e.stopPropagation();
-                    handlePlanSelect(plan.id);
+                    handlePlanSelect(plan);
                   }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="button-text">
                     {plan.buttonText} · R$ {formatPrice(plan.price)}
@@ -189,7 +199,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({
                       strokeLinejoin="round"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
 
               {plan.isHighlighted && (

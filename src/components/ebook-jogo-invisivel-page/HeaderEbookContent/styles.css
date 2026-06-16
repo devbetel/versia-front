@@ -1,94 +1,109 @@
-.header {
-    color: black;
-    padding: 1rem;
-    height: 5rem;
-    width: 100%;
-    position: relative;
-    display: flex;
-    background-color: #DCDCDC;
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+/* ============================================
+   HEADER — prefixo próprio evita conflitos globais
+============================================ */
+.header-ebook {
+  width: 100%;
+  height: 5rem;
+  background-color: #dcdcdc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex !important;
+  align-items: center;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
-.header-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-ebook__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
-.logo-header {
-    width: 13rem;
-    height: auto;
+/* ── logo ── */
+.header-ebook__logo {
+  width: 13rem;
+  height: auto;
+  flex-shrink: 0;
+  display: block;
 }
 
-.nav {
-    display: flex;
-    align-items: center;
+/* ── CTA direto no <a> sem nav wrapper ── */
+.header-ebook__cta {
+  display: inline-flex !important;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #041932;
+  letter-spacing: 0.03em;
+  transition: transform 0.2s ease, color 0.2s ease;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-.nav-cta {
-    font-weight: bold;
-    font-style: italic;
-    text-decoration: none;
-    color: #041932;
-    transition: transform 0.2s ease, color 0.2s ease;
-    font-size: 1rem;
+.header-ebook__cta:hover {
+  transform: translateY(-2px);
+  color: #c6ac8a;
 }
 
-.nav-cta:hover {
-    transform: translateY(-2px);
-    color: #c6ac8a;
-}
-
-/* ── RESPONSIVIDADE MOBILE ── */
+/* ============================================
+   RESPONSIVE
+============================================ */
 @media (max-width: 768px) {
-    .header {
-        padding: 0.5rem 1rem;
-        height: 4rem;
-    }
-    
-    .logo-header {
-        width: 9rem;
-    }
-    
-    .nav-cta {
-        font-size: 0.9rem;
-        font-weight: bold;
-        font-style: italic;
-        color: #041932;
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-    }
-    
-    .nav-cta:hover {
-        background: transparent;
-        color: #c6ac8a;
-        transform: translateY(-2px);
-    }
+  .header-ebook {
+    height: 4rem;
+  }
+
+  .header-ebook__inner {
+    padding: 0 1.25rem;
+  }
+
+  .header-ebook__logo {
+    width: 9rem;
+  }
+
+  .header-ebook__cta {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .header {
-        padding: 0.5rem;
-        height: 3.5rem;
-    }
-    
-    .logo-header {
-        width: 10rem;
-    }
-    
-    .nav-cta {
-        font-size: 0.8rem;
-        font-weight: bold;
-        font-style: italic;
-        color: #041932;
-        background: transparent;
-        padding: 0;
-    }
-    
-    .nav-cta:hover {
-        background: transparent;
-        color: #c6ac8a;
-    }
+  .header-ebook {
+    height: 3.75rem;
+  }
+
+  .header-ebook__inner {
+    padding: 0 1rem;
+  }
+
+  .header-ebook__logo {
+    width: 8rem;
+  }
+
+  .header-ebook__cta {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-ebook__logo {
+    width: 7rem;
+  }
+
+  .header-ebook__cta {
+    font-size: 0.7rem;
+  }
 }

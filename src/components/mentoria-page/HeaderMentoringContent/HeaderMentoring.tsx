@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-function Header() {
+function HeaderMentoring() {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
 
@@ -12,7 +12,7 @@ function Header() {
       setLastScroll(currentScroll);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScroll]);
 
@@ -22,16 +22,20 @@ function Header() {
 
   return (
     <header className={`header ${isHidden ? 'header--hidden' : ''}`}>
-      <div className="header__logo"><img
+      <div className="header__logo">
+        <img
           src="/Ativo 4@4x.png"
           alt="Logo"
           className="logo-header"
-        /></div>
+        />
+      </div>
       <button className="header__cta" onClick={scrollToPricing}>
+        <a href='https://www.asaas.com/c/kfy6u6loweoer53r'>
         Quero Começar
+        </a>
       </button>
     </header>
   );
 }
 
-export default Header;
+export default HeaderMentoring;

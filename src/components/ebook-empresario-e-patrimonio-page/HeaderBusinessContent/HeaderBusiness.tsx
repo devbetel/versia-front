@@ -11,7 +11,7 @@ const HeaderBusiness = () => {
           className="logo-header"
         />
         <nav className="nav">
-          <a href="#oferta" className="nav-cta">QUERO O E-BOOK</a>
+          <a href="https://pay.kiwify.com.br/uy7eMQF" className="nav-cta">QUERO O E-BOOK</a>
         </nav>
       </div>
     </header>

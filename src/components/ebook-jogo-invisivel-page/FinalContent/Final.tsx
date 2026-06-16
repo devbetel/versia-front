@@ -11,6 +11,7 @@ interface FinalSectionProps {
   price?: number;
   buttonText?: string;
   targetSection?: string;
+  checkoutUrl?: string;
   onButtonClick?: () => void;
   className?: string;
 }
@@ -25,6 +26,7 @@ const FinalSection: React.FC<FinalSectionProps> = ({
   price = 26.90,
   buttonText = "Quero entender o jogo",
   targetSection = "#oferta",
+  checkoutUrl = "https://pay.kiwify.com.br/hzfZdZq",
   onButtonClick,
   className = ""
 }) => {
@@ -77,6 +79,9 @@ const FinalSection: React.FC<FinalSectionProps> = ({
     if (onButtonClick) {
       e.preventDefault();
       onButtonClick();
+    } else if (checkoutUrl) {
+      e.preventDefault();
+      window.location.href = checkoutUrl;
     } else if (targetSection.startsWith('#')) {
       e.preventDefault();
       const element = document.querySelector(targetSection);
@@ -151,10 +156,10 @@ const FinalSection: React.FC<FinalSectionProps> = ({
 
           <div className={`final-cta ${isVisible ? 'animate-in' : ''}`}>
             <a 
-              href={targetSection}
+              href={checkoutUrl || targetSection}
               className="cta-button"
               onClick={handleButtonClick}
-              aria-label={`${buttonText} - Ir para seção de ofertas`}
+              aria-label={`${buttonText} - Ir para checkout`}
             >
               <span className="button-content">
                 <span className="button-icon">

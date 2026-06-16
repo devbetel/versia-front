@@ -359,7 +359,9 @@
           .pricing-card-mentoring {
             padding: 1.5rem;
           }
-
+          .badge-mentoring {
+            height: 1.3rem;
+          }
           .card-name-mentoring {
             font-size: 1.3rem;
           }

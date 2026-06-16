@@ -97,7 +97,12 @@ const OfferMentoring: React.FC<PricingMentoringProps> = ({
                 </li>
               </ul>
 
-              <a href="#" className="btn-card-mentoring">
+              <a 
+                href="https://www.asaas.com/c/kfy6u6loweoer53r" 
+                className="btn-card-mentoring"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Quero o Essencial
               </a>
             </div>
@@ -169,7 +174,12 @@ const OfferMentoring: React.FC<PricingMentoringProps> = ({
                 </li>
               </ul>
 
-              <a href="#" className="btn-card-mentoring">
+              <a 
+                href="https://www.asaas.com/c/x6ue8jsdg8xhom31" 
+                className="btn-card-mentoring"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Quero Ser VIP
               </a>
             </div>

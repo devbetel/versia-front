@@ -44,8 +44,8 @@ const produtos = [
     nivel: "Conhecimento · Empresários",
     nome: "E-book: O Empresário e o Patrimônio",
     desc: "Para MEIs, profissionais liberais e empresários que faturam bem mas ainda não construíram patrimônio de verdade.",
-    precoValor: "26,90",
-    precoSufixo: "· com masterclass R$98,90",
+    precoValor: "98,90  ",
+    precoSufixo: "· com masterclass R$251,00",
     cta: "Ver mais",
     emBreve: false,
   },  {

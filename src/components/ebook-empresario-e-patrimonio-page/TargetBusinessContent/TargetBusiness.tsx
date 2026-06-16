@@ -25,7 +25,9 @@ const TargetBusinessSection: React.FC = () => {
         </div>
 
         <button className="target-cta" data-aos="fade-up">
+          <a href='https://pay.kiwify.com.br/uy7eMQF'>
           SIM! QUERO CONSTRUIR MEU PATRIMÔNIO
+          </a>
           <span className="cta-arrow">→</span>
         </button>
       </div>

@@ -1,132 +1,118 @@
 import React from 'react';
-import './styles.css';
+import "./styles.css";
+
 
 const ContentModules = () => {
   const modules = [
     {
       id: 1,
       badge: "Fundação",
-      title: "Introdução ao Trading",
-      description: "Aprenda os conceitos fundamentais do mercado financeiro, terminologias essenciais e como funciona a negociação de ativos.",
-      icon: "📚",
-      progress: 85
+      title: "Módulo 1 a 3: A Virada de Chave & Organização do Pró-labore",
+      description: "Entenda a psicologia por trás da 'Contabilidade Mental'. Aprenda o passo a passo exato para definir seu salário ideal e separar de vez a Pessoa Física da Pessoa Jurídica.",
+      icon: "💡",
+      progress: 100
     },
     {
       id: 2,
-      badge: "Análise",
-      title: "Análise Técnica",
-      description: "Domine gráficos, indicadores e padrões para identificar oportunidades de compra e venda no mercado.",
-      icon: "📊",
-      progress: 60
+      badge: "Estratégia",
+      title: "Módulo 4: A Estratégia dos 3 Baldes",
+      description: "Descubra como dividir seu dinheiro entre a Reserva de Segurança, os Projetos de Médio Prazo e o Balde da Liberdade (aposentadoria), usando o poder dos juros compostos a seu favor.",
+      icon: "🪣",
+      progress: 100
     },
     {
       id: 3,
-      badge: "Estratégia",
-      title: "Gestão de Risco",
-      description: "Desenvolva estratégias sólidas para proteger seu capital e maximizar seus lucros de forma consistente.",
+      badge: "Proteção",
+      title: "Módulo 5 e 6: Blindagem Familiar e Visão de Longo Prazo",
+      description: "Como proteger sua família contra riscos jurídicos e de saúde (DIT, seguros estratégicos) e desenhar as 3 saídas possíveis para o futuro da sua empresa.",
       icon: "🛡️",
-      progress: 75
+      progress: 100
     },
     {
       id: 4,
       badge: "Prática",
-      title: "Psicologia do Trader",
-      description: "Controle suas emoções, desenvolva disciplina e mantenha a consistência em suas operações.",
-      icon: "🧠",
-      progress: 40
-    },
-    {
-      id: 5,
-      badge: "Avançado",
-      title: "Estratégias Avançadas",
-      description: "Técnicas sofisticadas de trading, automação e estratégias utilizadas por traders profissionais.",
-      icon: "🚀",
-      progress: 25
-    },
-    {
-      id: 6,
-      badge: "Mercado",
-      title: "Análise Fundamentalista",
-      description: "Entenda como eventos econômicos e notícias impactam os preços dos ativos no mercado global.",
-      icon: "🌍",
-      progress: 90
+      title: "Módulos Práticos: Ferramentas & Plano de Ação de 30 Dias",
+      description: "Planilha de separação de contas, a Matriz de Margem vs. Volume e um cronograma passo a passo para você aplicar tudo sem se sobrecarregar.",
+      icon: "📊",
+      progress: 100
     }
   ];
 
   return (
-    <section className="content-section">
-      {/* Background Elements */}
-      <div className="content-bg-dots"></div>
-      <div className="content-bg-glow content-bg-glow--left"></div>
-      <div className="content-bg-glow content-bg-glow--right"></div>
+    <>
+   
 
-      <div className="content-container">
-        {/* Header */}
-        <div className="content-header">
-          <div className="header-badge">
-            <div className="header-badge__dot"></div>
-            <span className="header-badge__text">Módulos de Aprendizado</span>
+      <section className="content-section">
+        <div className="content-bg-dots"></div>
+        <div className="content-bg-glow content-bg-glow--left"></div>
+        <div className="content-bg-glow content-bg-glow--right"></div>
+
+        <div className="content-container">
+          <div className="content-header">
+            <div className="header-badge" data-aos="fade-down">
+              <div className="header-badge__dot"></div>
+              <span className="header-badge__text">O Conteúdo</span>
+            </div>
+            
+            <h2 className="content-title" data-aos="fade-up">
+              O que você vai dominar ao longo deste <span className="content-emphasis">Guia Prático</span>
+            </h2>
+            
+            <p className="content-subtitle" data-os="fade-up">
+              Este não é um livro teórico de contabilidade. É um <strong>manual prático e estratégico</strong> desenhado especificamente para donos de negócios que decidiram parar de ser reféns do próprio faturamento.
+            </p>
           </div>
-          
-          <h2 className="content-title">
-            Sua Jornada para se Tornar um <span className="content-emphasis">Trader de Sucesso</span>
-          </h2>
-          
-          <p className="content-subtitle">
-            Nosso curso é <strong>estruturado em módulos progressivos</strong> que te levam desde o básico até estratégias avançadas. 
-            Cada módulo foi cuidadosamente desenvolvido para construir seu conhecimento de forma sólida e prática.
-          </p>
-        </div>
 
-        {/* Modules Grid */}
-        <div className="modules-wrapper">
-          <div className="modules-grid">
-            {modules.map((module) => (
-              <div key={module.id} className="module-card">
-                <div className="module-overlay"></div>
-                
-                <div className="module-header">
-                  <span className="module-badge">{module.badge}</span>
-                  <div className="module-icon">{module.icon}</div>
-                </div>
+          <div className="modules-wrapper">
+            <div className="modules-grid">
+              {modules.map((module) => (
+                <div key={module.id} className="module-card" data-aos="fade-up">
+                  <div className="module-overlay"></div>
+                  
+                  <div className="module-header">
+                    <span className="module-badge">{module.badge}</span>
+                    <div className="module-icon">{module.icon}</div>
+                  </div>
 
-                <div className="module-content">
-                  <h3 className="module-title">{module.title}</h3>
-                  <p className="module-description">{module.description}</p>
-                </div>
+                  <div className="module-content">
+                    <h3 className="module-title">{module.title}</h3>
+                    <p className="module-description">{module.description}</p>
+                  </div>
 
-                <div className="module-footer">
-                  <div className="module-progress">
-                    <div className="progress-bar">
-                      <div 
-                        className="progress-fill"
-                        style={{ width: `${module.progress}%` }}
-                      ></div>
+                  <div className="module-footer">
+                    <div className="module-progress">
+                      <div className="progress-bar">
+                        <div 
+                          className="progress-fill"
+                          style={{ width: `${module.progress}%` }}
+                        ></div>
+                      </div>
+                      <span className="progress-text">{module.progress}%</span>
                     </div>
-                    <span className="progress-text">{module.progress}%</span>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* CTA Section */}
-        <div className="content-cta-wrapper">
-          <div className="cta-card">
-            <div className="cta-icon">🎯</div>
-            <h3 className="cta-title">Comece Sua Jornada Hoje</h3>
-            <p className="cta-subtitle">
-              Junte-se a milhares de alunos que já transformaram suas vidas com nosso método comprovado
-            </p>
-            <button className="cta-button">
-              Iniciar Curso Agora
-              <span className="cta-arrow">→</span>
-            </button>
+          <div className="content-cta-wrapper">
+            <div className="cta-card" data-aos="fade-up">
+              <div className="cta-icon">🎯</div>
+              <h3 className="cta-title">Organização não engessa; organização liberta</h3>
+              <p className="cta-subtitle">
+                Deixar para investir "o que sobrar" é a receita para nunca acumular riqueza. Mude a regra do jogo hoje.
+              </p>
+              <button className="cta-button">
+                <a href="https://pay.kiwify.com.br/uy7eMQF">
+                Quero Construir Meu Patrimônio
+                </a>
+                <span className="cta-arrow">→</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

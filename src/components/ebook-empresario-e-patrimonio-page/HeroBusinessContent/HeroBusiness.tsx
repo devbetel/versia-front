@@ -85,11 +85,17 @@ const HeroBusinessSection: React.FC = () => {
 /* ── CTA BUTTON ── */
 const HeroCTA: React.FC = () => {
   const [hovered, setHovered] = useState(false);
+  
+  const handleClick = () => {
+    window.location.href = 'https://pay.kiwify.com.br/uy7eMQF';
+  };
+  
   return (
     <button
       className={`hero-cta ${hovered ? 'hero-cta--hovered' : ''}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={handleClick}
     >
       <span className="hero-cta__text">QUERO ACESSAR O MATERIAL AGORA</span>
       <span className="hero-cta__arrow">→</span>

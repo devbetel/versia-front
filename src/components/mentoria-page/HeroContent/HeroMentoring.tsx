@@ -34,7 +34,9 @@ function HeroMentoring() {
         </p>
 
         <button className="hero__cta" onClick={scrollToPricing}>
+          <a href='https://www.asaas.com/c/kfy6u6loweoer53r'>
           Quero Ter Autonomia Financeira
+          </a>
         </button>
 
         <p className="hero__badge">6 encontros • Máximo 30 mulheres • Online ao vivo</p>

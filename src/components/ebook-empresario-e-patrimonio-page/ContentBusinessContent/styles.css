@@ -1,7 +1,6 @@
 /* ============================================
-VARIABLES
+   VARIABLES
 ============================================ */
-
 :root {
   --navy: #031931;
   --gold: #c9a870;
@@ -17,9 +16,8 @@ VARIABLES
 }
 
 /* ============================================
-SECTION
+   SECTION
 ============================================ */
-
 .content-section {
   position: relative;
   padding: 8rem 2rem;
@@ -27,7 +25,6 @@ SECTION
   overflow: hidden;
 }
 
-/* Background Elements */
 .content-bg-dots {
   position: absolute;
   inset: 0;
@@ -62,9 +59,8 @@ SECTION
 }
 
 /* ============================================
-CONTAINER
+   CONTAINER
 ============================================ */
-
 .content-container {
   position: relative;
   z-index: 1;
@@ -73,9 +69,8 @@ CONTAINER
 }
 
 /* ============================================
-HEADER
+   HEADER
 ============================================ */
-
 .content-header {
   text-align: center;
   margin-bottom: 5rem;
@@ -102,7 +97,7 @@ HEADER
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.1); }
+  50%       { opacity: 0.7; transform: scale(1.1); }
 }
 
 .header-badge__text {
@@ -125,7 +120,6 @@ HEADER
 .content-emphasis {
   color: var(--gold);
   font-style: italic;
-  position: relative;
 }
 
 .content-subtitle {
@@ -142,28 +136,27 @@ HEADER
 }
 
 /* ============================================
-MODULES GRID
+   MODULES GRID — DESKTOP FIRST
 ============================================ */
-
 .modules-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* ← 3 colunas flexíveis */
   gap: 2rem;
   margin-bottom: 4rem;
-  max-width: 1200px;
-  justify-items: center;
+}
+
+/* 4º card centralizado na 2ª coluna no desktop */
+.module-card:nth-child(4) {
+  grid-column: 2 / 3;
 }
 
 /* ============================================
-MODULE CARDS
+   MODULE CARDS
 ============================================ */
-
 .module-card {
   position: relative;
   background: var(--navy);
@@ -174,7 +167,8 @@ MODULE CARDS
   overflow: hidden;
   cursor: pointer;
   width: 100%;
-  max-width: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .module-card::before {
@@ -193,10 +187,6 @@ MODULE CARDS
   box-shadow: 0 20px 60px rgba(3, 25, 49, 0.3);
 }
 
-.module-card:hover .module-overlay {
-  opacity: 1;
-}
-
 .module-overlay {
   position: absolute;
   inset: 0;
@@ -206,7 +196,10 @@ MODULE CARDS
   pointer-events: none;
 }
 
-/* Module Header */
+.module-card:hover .module-overlay {
+  opacity: 1;
+}
+
 .module-header {
   display: flex;
   align-items: center;
@@ -231,8 +224,8 @@ MODULE CARDS
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
-/* Module Content */
 .module-content {
+  flex: 1;
   margin-bottom: 2rem;
 }
 
@@ -251,7 +244,6 @@ MODULE CARDS
   margin: 0;
 }
 
-/* Module Footer */
 .module-footer {
   margin-top: auto;
 }
@@ -286,9 +278,8 @@ MODULE CARDS
 }
 
 /* ============================================
-CTA SECTION
+   CTA SECTION
 ============================================ */
-
 .content-cta-wrapper {
   text-align: center;
 }
@@ -369,52 +360,44 @@ CTA SECTION
 }
 
 /* ============================================
-RESPONSIVE
+   RESPONSIVE
 ============================================ */
 
-/* Large Desktop */
-@media (max-width: 1200px) {
-  .content-container {
-    max-width: 1000px;
-  }
-
-  .modules-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
-/* Desktop/Laptop */
+/* Tablet landscape */
 @media (max-width: 1024px) {
   .content-section {
     padding: 6rem 2rem;
   }
 
-  .content-header {
-    margin-bottom: 4rem;
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr); /* ← 2 colunas */
   }
 
-  .content-title {
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+  /* 4º card ocupa as 2 colunas centralizado */
+  .module-card:nth-child(4) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .module-card {
     padding: 2rem;
   }
-
-  .cta-card {
-    padding: 2.5rem 1.5rem;
-  }
 }
 
-/* Tablet Portrait */
+/* Tablet portrait */
 @media (max-width: 768px) {
   .content-section {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
+  }
+
+  .content-header {
+    margin-bottom: 3rem;
   }
 
   .content-title {
-    font-size: clamp(1.8rem, 4vw, 2.2rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
   }
 
   .content-subtitle {
@@ -422,17 +405,21 @@ RESPONSIVE
   }
 
   .modules-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1fr; /* ← 1 coluna */
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Remove posicionamento especial no mobile */
+  .module-card:nth-child(4) {
+    grid-column: unset;
+    max-width: 100%;
+    margin: 0;
   }
 
   .module-card {
-    padding: 1.75rem;
-  }
-
-  .module-icon {
-    font-size: 2rem;
+    padding: 1.5rem;
+    border-radius: 16px;
   }
 
   .module-title {
@@ -443,71 +430,39 @@ RESPONSIVE
     font-size: 0.9rem;
   }
 
+  .module-icon {
+    font-size: 2rem;
+  }
+
+  .cta-card {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+
   .cta-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .cta-subtitle {
     font-size: 0.9rem;
   }
-}
-
-/* Mobile Landscape */
-@media (max-width: 640px) {
-  .content-section {
-    padding: 4rem 1.25rem;
-  }
-
-  .content-header {
-    margin-bottom: 3rem;
-  }
-
-  .header-badge {
-    padding: 0.4rem 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .header-badge__text {
-    font-size: 0.7rem;
-  }
-
-  .content-title {
-    margin-bottom: 1rem;
-  }
-
-  .module-card {
-    padding: 1.5rem;
-  }
-
-  .module-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .module-badge {
-    font-size: 0.65rem;
-    padding: 0.25rem 0.6rem;
-  }
-
-  .cta-card {
-    padding: 2rem 1.25rem;
-  }
 
   .cta-button {
+    width: 100%;
+    justify-content: center;
     padding: 0.9rem 1.5rem;
     font-size: 0.85rem;
   }
 }
 
-/* Mobile Portrait */
+/* Mobile pequeno */
 @media (max-width: 480px) {
   .content-section {
     padding: 3rem 1rem;
   }
 
   .content-title {
-    font-size: clamp(1.5rem, 5vw, 1.8rem);
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
     line-height: 1.3;
   }
 
@@ -515,13 +470,8 @@ RESPONSIVE
     font-size: 0.9rem;
   }
 
-  .modules-grid {
-    gap: 1.25rem;
-  }
-
   .module-card {
     padding: 1.25rem;
-    border-radius: 16px;
   }
 
   .module-title {
@@ -533,93 +483,7 @@ RESPONSIVE
     line-height: 1.6;
   }
 
-  .cta-card {
-    padding: 1.75rem 1rem;
-    border-radius: 16px;
-  }
-
-  .cta-icon {
-    font-size: 2.5rem;
-  }
-
-  .cta-title {
-    font-size: 1.3rem;
-  }
-
-  .cta-button {
-    width: 100%;
-    max-width: 280px;
-    padding: 0.8rem 1.25rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 360px) {
-  .content-section {
-    padding: 2.5rem 0.75rem;
-  }
-
-  .content-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .module-card {
-    padding: 1rem;
-  }
-
-  .module-content {
-    margin-bottom: 1.5rem;
-  }
-
-  .module-title {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .module-description {
-    font-size: 0.8rem;
-  }
-
-  .cta-card {
-    padding: 1.5rem 0.75rem;
-  }
-
   .cta-title {
     font-size: 1.2rem;
-  }
-
-  .cta-subtitle {
-    font-size: 0.85rem;
-  }
-}
-
-/* Landscape Mobile (Short Height) */
-@media (max-height: 500px) and (orientation: landscape) {
-  .content-section {
-    padding: 2rem 1rem;
-  }
-
-  .content-header {
-    margin-bottom: 2rem;
-  }
-
-  .content-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .modules-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .module-card {
-    padding: 1rem;
-  }
-
-  .cta-card {
-    padding: 1.5rem 1rem;
   }
 }

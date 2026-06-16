@@ -193,3 +193,9 @@
   .produto-cta.desabilitado {
     opacity: 0.3;
   }
+
+  @media (max-width: 480px) {
+    .produtos-section {
+        height: 120rem;
+    }
+  }

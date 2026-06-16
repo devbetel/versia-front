@@ -12,7 +12,7 @@ const etapas = [
   {
     numero: '01',
     nome: 'Validação Emocional',
-    descricao: 'Mapeamos as dores da infância e os padrões financeiros herdados. Sem isso, qualquer mudança é superficial.'
+    descricao: 'Mapeamos suas experiências que ouviu e viveu no passado. Sem isso, qualquer mudança é superficial.'
   },
   {
     numero: '02',

@@ -1,31 +1,32 @@
 .header {
     color: black;
     padding: 1rem;
-    height: 4rem; /* Aumenta a altura para design mais moderno e espaçoso */
-    width: 97..2%; /* Corrige overflow horizontal */
+    height: 4rem;
+    width: 100%;
     position: relative;
     display: flex;
+    flex-direction: column;
     background-color: #DCDCDC !important;
-
-    /* Borda inferior minimalista */
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Deixa logo e nav distantes */
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
 .logo-header {
     width: 13rem;
-    height: auto; /* Corrige para manter proporção da imagem */
-    margin-right: 1rem;
+    height: auto;
+    flex-shrink: 0;
 }
 
 .nav {
-
     padding: 0 1rem;
     display: flex;
     gap: 1rem;
@@ -37,12 +38,13 @@
 .nav a {
     color: #041932;
     text-decoration: none;
-    transition: all 0.2s ease-in-out; /* Transição suave ao passar o mouse */
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
 }
 
 .nav a:hover {
     color: #c6ac8a;
-    font-size: 1.1rem; /* Pequeno aumento no hover */
+    font-size: 1.1rem;
 }
 
 .underline {
@@ -61,6 +63,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -81,7 +84,7 @@
 }
 
 .hamburger--open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-8deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ── MOBILE NAV ── */
@@ -89,14 +92,21 @@
   display: none;
   flex-direction: column;
   background-color: #DCDCDC;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 .nav-mobile--open {
   max-height: 400px;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 
 .nav-mobile a {
@@ -111,19 +121,34 @@
 
 .nav-mobile a:hover {
   color: #c6ac8a;
-  font-size: 1.1rem;
+  background-color: rgba(198, 172, 138, 0.1);
 }
 
-/* ── MOBILE RESPONSIVIDADE ── */
+/* ── RESPONSIVIDADE ── */
+@media (max-width: 992px) {
+  .nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-mobile {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
-    position: fixed !important;
-    top: 0;
+    position: relative;
+    bottom: 4rem;
     left: 0;
     right: 0;
     z-index: 1000;
     transition: transform 0.35s ease;
-    width: 100% !important;
+    width: 100%;
+    height: auto;
   }
 
   .header--visible {
@@ -134,30 +159,22 @@
     transform: translateY(-100%);
   }
 
-  .nav {
-    display: none;
-    
-}
-
-  .hamburger {
-    display: flex;
-    position: relative;
-    right: 2rem;
-    top: 0.5rem;
-}
-
-  .nav-mobile {
-    display: flex;
-    position: relative;
-    right: 1rem;
-
-  }
-
-  .header {
-    height: auto !important;
+  .header-container {
+    padding: 0 1rem;
   }
 
   .logo-header {
     width: 9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-header {
+    width: 7rem;
+  }
+
+  .hamburger {
+    width: 1.3rem;
+    height: 1rem;
   }
 }

@@ -26,11 +26,7 @@ const Version: React.FC<VersionProps> = ({
 
 
 const Hero: React.FC = () => {
-  const handleCTAClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const target = document.getElementById('oferta');
-    target?.scrollIntoView({ behavior: 'smooth' });
-  };
+
 
   return (
     <section className="hero">
@@ -70,7 +66,7 @@ const Hero: React.FC = () => {
           />
         </div>
         
-        <a href="#oferta" className="btn-hero" data-aos="fade-up"  onClick={handleCTAClick}>
+        <a href="https://pay.kiwify.com.br/hzfZdZq" className="btn-hero" data-aos="fade-up">
           Quero entender o jogo
         </a>
       </div>
