@@ -381,7 +381,7 @@
   height: 390px !important;
   position: relative;
   left: 0;
-  bottom: 7.8rem;
+  bottom: 5.5rem;
   z-index: 1;
   opacity: 0;
   animation: fadeInGradually 3s ease-in forwards;

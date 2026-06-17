@@ -1,4 +1,3 @@
-
 const TransitionGradient6 = () => {
   return (
     <div className="hero-transition-wrapper">
@@ -19,12 +18,12 @@ const TransitionGradient6 = () => {
           position: relative;
           height: 200px;
           width: 100%;
-          background: linear-gradient(160deg, 
+          background: linear-gradient(180deg, 
             var(--navy) 0%, 
-            var(--navy-dark) 20%,
-            rgba(4, 36, 66, 0.95) 40%,
-            rgba(4, 36, 66, 0.8) 60%,
-            rgba(248, 249, 250, 0.1) 80%,
+            var(--navy-dark) 15%,
+            rgba(4, 36, 66, 0.9) 35%,
+            rgba(4, 36, 66, 0.7) 55%,
+            rgba(248, 249, 250, 0.3) 75%,
             var(--light) 100%
           );
           overflow: hidden;
@@ -39,8 +38,8 @@ const TransitionGradient6 = () => {
           bottom: 0;
           background: linear-gradient(180deg, 
             transparent 0%,
-            rgba(4, 36, 66, 0.1) 30%,
-            rgba(248, 249, 250, 0.3) 70%,
+            rgba(4, 36, 66, 0.05) 30%,
+            rgba(248, 249, 250, 0.15) 70%,
             var(--light) 100%
           );
           z-index: 1;
@@ -50,13 +49,14 @@ const TransitionGradient6 = () => {
           content: '';
           position: absolute;
           top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(ellipse 150% 100% at 50% 0%, 
-            rgba(4, 36, 66, 0.2) 0%,
-            rgba(4, 36, 66, 0.1) 30%,
-            transparent 60%
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120%;
+          height: 100%;
+          background: radial-gradient(ellipse 80% 100% at 50% 0%, 
+            rgba(4, 36, 66, 0.15) 0%,
+            rgba(4, 36, 66, 0.05) 40%,
+            transparent 70%
           );
           z-index: 2;
         }
@@ -67,49 +67,49 @@ const TransitionGradient6 = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(160deg,
-            var(--navy) 0%,
-            rgba(4, 36, 66, 0.9) 25%,
-            rgba(4, 36, 66, 0.7) 45%,
-            rgba(4, 36, 66, 0.4) 65%,
-            rgba(248, 249, 250, 0.2) 85%,
-            var(--light) 100%
+          background: linear-gradient(180deg,
+            rgba(4, 36, 66, 0.1) 0%,
+            rgba(4, 36, 66, 0.05) 30%,
+            rgba(248, 249, 250, 0.05) 70%,
+            transparent 100%
           );
           z-index: 1;
           animation: gradientShift 8s ease-in-out infinite;
         }
 
-        .transition-mesh {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 0.4;
-          z-index: 2;
-          background-image: 
-            radial-gradient(circle at 20% 30%, rgba(4, 36, 66, 0.1) 0%, transparent 40%),
-            radial-gradient(circle at 80% 70%, rgba(248, 249, 250, 0.15) 0%, transparent 40%),
-            radial-gradient(circle at 50% 50%, rgba(4, 36, 66, 0.05) 0%, transparent 50%);
-          background-size: 150px 150px, 200px 200px, 100px 100px;
-          animation: meshFloat 15s ease-in-out infinite;
-        }
+     .transition-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;  /* mudou de left: 50% */
+  right: 0;  /* adicione esta linha */
+  transform: none;  /* remova o translateX(-50%) */
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 2;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(4, 36, 66, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(248, 249, 250, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 60%, rgba(4, 36, 66, 0.05) 0%, transparent 60%);
+  background-size: 200px 200px, 250px 250px, 150px 150px;
+  animation: meshFloat 15s ease-in-out infinite;
+}
 
         .transition-flow {
           position: absolute;
           top: 0;
-          left: -100%;
+          left: -50%;
           width: 200%;
           height: 100%;
           background: linear-gradient(90deg, 
             transparent 0%,
-            rgba(4, 36, 66, 0.1) 25%,
-            rgba(248, 249, 250, 0.2) 50%,
-            rgba(4, 36, 66, 0.1) 75%,
+            rgba(4, 36, 66, 0.05) 30%,
+            rgba(248, 249, 250, 0.1) 50%,
+            rgba(4, 36, 66, 0.05) 70%,
             transparent 100%
           );
           z-index: 3;
-          animation: flowTransition 12s linear infinite;
+          animation: flowTransition 15s linear infinite;
         }
 
         .transition-particles {
@@ -123,38 +123,38 @@ const TransitionGradient6 = () => {
 
         .transition-particle {
           position: absolute;
-          width: 3px;
-          height: 3px;
+          width: 2px;
+          height: 2px;
           border-radius: 50%;
-          animation: particleTransition 10s linear infinite;
+          animation: particleTransition 12s linear infinite;
         }
 
         .transition-particle:nth-child(1) {
-          background: rgba(4, 36, 66, 0.4);
-          left: 15%;
+          background: rgba(4, 36, 66, 0.3);
+          left: 25%;
           animation-delay: -1s;
-          animation-duration: 12s;
-        }
-
-        .transition-particle:nth-child(2) {
-          background: rgba(248, 249, 250, 0.6);
-          left: 35%;
-          animation-delay: -3s;
           animation-duration: 14s;
         }
 
+        .transition-particle:nth-child(2) {
+          background: rgba(248, 249, 250, 0.5);
+          left: 40%;
+          animation-delay: -3s;
+          animation-duration: 16s;
+        }
+
         .transition-particle:nth-child(3) {
-          background: rgba(4, 36, 66, 0.3);
-          left: 55%;
+          background: rgba(4, 36, 66, 0.25);
+          left: 60%;
           animation-delay: -2s;
-          animation-duration: 11s;
+          animation-duration: 13s;
         }
 
         .transition-particle:nth-child(4) {
-          background: rgba(248, 249, 250, 0.5);
+          background: rgba(248, 249, 250, 0.4);
           left: 75%;
           animation-delay: -4s;
-          animation-duration: 13s;
+          animation-duration: 15s;
         }
 
         .transition-waves {
@@ -174,8 +174,8 @@ const TransitionGradient6 = () => {
           height: 100%;
           background: linear-gradient(180deg,
             transparent 0%,
-            rgba(248, 249, 250, 0.3) 40%,
-            rgba(248, 249, 250, 0.7) 70%,
+            rgba(248, 249, 250, 0.2) 40%,
+            rgba(248, 249, 250, 0.6) 70%,
             var(--light) 100%
           );
         }
@@ -186,74 +186,71 @@ const TransitionGradient6 = () => {
           top: 0;
           left: 0;
           right: 0;
-          height: 3px;
+          height: 2px;
           background: linear-gradient(90deg,
             transparent 0%,
-            rgba(4, 36, 66, 0.2) 20%,
-            rgba(248, 249, 250, 0.4) 50%,
-            rgba(4, 36, 66, 0.2) 80%,
+            rgba(4, 36, 66, 0.15) 20%,
+            rgba(248, 249, 250, 0.3) 50%,
+            rgba(4, 36, 66, 0.15) 80%,
             transparent 100%
           );
-          animation: waveRipple 6s ease-in-out infinite;
+          animation: waveRipple 8s ease-in-out infinite;
         }
 
         @keyframes gradientShift {
           0%, 100% {
             opacity: 1;
-            transform: translateX(0px);
+            transform: translateY(0px);
           }
           50% {
-            opacity: 0.8;
-            transform: translateX(10px);
+            opacity: 0.7;
+            transform: translateY(5px);
           }
         }
 
-        @keyframes meshFloat {
-          0%, 100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          33% {
-            transform: translateY(-8px) rotate(0.5deg);
-          }
-          66% {
-            transform: translateY(5px) rotate(-0.3deg);
-          }
-        }
+      @keyframes meshFloat {
+  0%, 100% {
+    transform: translateY(0px);  /* removeu o translateX(-50%) */
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
         @keyframes flowTransition {
           0% {
-            left: -100%;
+            left: -50%;
           }
           100% {
-            left: 100%;
+            left: 50%;
           }
         }
 
         @keyframes particleTransition {
           0% {
-            transform: translateY(200px) translateX(-20px);
+            transform: translateY(220px) translateX(-15px);
             opacity: 0;
           }
-          15% {
-            opacity: 1;
+          20% {
+            opacity: 0.8;
           }
-          85% {
-            opacity: 1;
+          80% {
+            opacity: 0.8;
           }
           100% {
-            transform: translateY(-20px) translateX(20px);
+            transform: translateY(-20px) translateX(15px);
             opacity: 0;
           }
         }
 
         @keyframes waveRipple {
           0%, 100% {
-            transform: translateX(-30px) scaleX(1);
-            opacity: 0.4;
+            transform: translateX(-20px) scaleX(1);
+            opacity: 0.3;
           }
           50% {
-            transform: translateX(30px) scaleX(1.1);
-            opacity: 0.8;
+            transform: translateX(20px) scaleX(1.05);
+            opacity: 0.6;
           }
         }
 
@@ -291,16 +288,10 @@ const TransitionGradient6 = () => {
       `}</style>
 
       <section className="hero-transition-section">
-        {/* Main gradient overlay */}
         <div className="transition-gradient-overlay"></div>
-
-        {/* Mesh texture */}
         <div className="transition-mesh"></div>
-
-        {/* Flow effect */}
         <div className="transition-flow"></div>
 
-        {/* Floating particles */}
         <div className="transition-particles">
           <div className="transition-particle"></div>
           <div className="transition-particle"></div>
@@ -308,7 +299,6 @@ const TransitionGradient6 = () => {
           <div className="transition-particle"></div>
         </div>
 
-        {/* Bottom waves */}
         <div className="transition-waves">
           <div className="transition-wave"></div>
         </div>
