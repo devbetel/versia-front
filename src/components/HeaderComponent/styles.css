@@ -140,8 +140,8 @@
 
 @media (max-width: 768px) {
   .header {
-    position: relative;
-    bottom: 4rem;
+    position: fixed; /* mudou de relative para fixed */
+    top: 0; /* mudou de bottom para top */
     left: 0;
     right: 0;
     z-index: 1000;
@@ -166,7 +166,6 @@
     width: 9rem;
   }
 }
-
 @media (max-width: 480px) {
   .logo-header {
     width: 7rem;

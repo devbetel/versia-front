@@ -431,6 +431,7 @@
 @media (max-width: 480px) {
   .final-container {
     padding: 1.5rem 1rem;
+    height: 45rem;
   }
 
   .button-content {

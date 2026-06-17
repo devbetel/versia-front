@@ -196,6 +196,11 @@
 
   @media (max-width: 480px) {
     .produtos-section {
-        height: 120rem;
+        height: 132rem;
+    }
+  }
+  @media (max-width: 400px) {
+    .produtos-section {
+        height: 150rem;
     }
   }
