@@ -292,7 +292,7 @@
   border: 2px solid var(--border-light);
   border-radius: 20px;
   padding: 2.5rem;
-  height: 12rem;
+  height: 15rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;

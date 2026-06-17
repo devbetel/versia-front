@@ -1,12 +1,28 @@
-.banking-section {
-    max-width: 100vw;
-  overflow-x: hidden;
+/* ===== FIX GLOBAL - ESSENCIAL ===== */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+* {
   box-sizing: border-box;
+}
+
+/* Fix para data-aos não causar overflow horizontal */
+[data-aos="fade-right"],
+[data-aos="fade-left"] {
+  overflow-x: clip;
+}
+
+/* ===== BANKING SECTION ===== */
+.banking-section {
+  width: 100%;
   padding: 8rem 0;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .banking-section::before {
@@ -17,28 +33,19 @@
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(34, 197, 94, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(239, 68, 68, 0.1) 0%,
-      transparent 50%
-    );
+    radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
-.banking-section .container {
-  max-width: 1200px;
-  overflow-x: hidden;
-}
+
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .section-intro {
@@ -75,8 +82,8 @@
 
 .title-sub {
   color: #a58967 !important;
-
 }
+
 .section-meta {
   display: flex;
   align-items: center;
@@ -92,7 +99,9 @@
 
 .story-content {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  overflow-x: clip;
 }
 
 .story-paragraph {
@@ -115,6 +124,8 @@
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   margin-bottom: 3rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .terminal-header {
@@ -137,15 +148,9 @@
   border-radius: 50%;
 }
 
-.control-dot.red {
-  background: #ef4444;
-}
-.control-dot.yellow {
-  background: #f59e0b;
-}
-.control-dot.green {
-  background: #22c55e;
-}
+.control-dot.red    { background: #ef4444; }
+.control-dot.yellow { background: #f59e0b; }
+.control-dot.green  { background: #22c55e; }
 
 .terminal-title {
   display: flex;
@@ -182,6 +187,7 @@
   height: 8px;
   background: #22c55e;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .status-indicator.pulsing {
@@ -189,21 +195,23 @@
 }
 
 @keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.2);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(1.2); }
 }
 
-.status-text {
+/* STATUS TEXT - separado para não conflitar */
+.market-status .status-text {
   color: #22c55e;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+.ticker-status .status-text {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .market-trend {
@@ -249,9 +257,10 @@
 
 .stocks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1px;
   background: #334155;
+  width: 100%;
 }
 
 .stock-ticker {
@@ -260,6 +269,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
+  min-width: 0; /* impede overflow no grid */
 }
 
 .stock-ticker.animate-in {
@@ -301,17 +311,13 @@
   font-weight: 600;
 }
 
-.price-change.negative {
-  color: #ef4444;
-}
-
-.price-change.positive {
-  color: #22c55e;
-}
+.price-change.negative { color: #ef4444; }
+.price-change.positive { color: #22c55e; }
 
 .trend-arrow {
   width: 12px;
   height: 12px;
+  flex-shrink: 0;
 }
 
 .ticker-price {
@@ -338,20 +344,12 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  flex-shrink: 0;
   animation: pulse 2s infinite;
 }
 
-.status-dot.red {
-  background: #ef4444;
-}
-
-.status-text {
-  font-size: 0.75rem;
-  color: #64748b;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+.status-dot.red   { background: #ef4444; }
+.status-dot.green { background: #22c55e; }
 
 .terminal-footer {
   padding: 1.5rem;
@@ -383,14 +381,8 @@
   font-weight: 700;
 }
 
-.stat-value.negative {
-  color: #ef4444;
-}
-
-.stat-value.high-risk {
-  color: #dc2626;
-  font-weight: 800;
-}
+.stat-value.negative  { color: #ef4444; }
+.stat-value.high-risk { color: #dc2626; font-weight: 800; }
 
 .reflection-box {
   background: linear-gradient(135deg, #1e293b, #0f172a);
@@ -442,6 +434,7 @@
   font-style: normal;
 }
 
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .banking-section {
     padding: 4rem 0;
