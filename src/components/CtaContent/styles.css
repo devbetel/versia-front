@@ -256,7 +256,7 @@ background-color: #0f172a;
   .btn-whatsapp,
   .btn-explorar {
     position: relative;
-    left: 2rem;
+    left: 1rem;
     padding: 1rem 2rem;
     font-size: 0.95rem;
   }
