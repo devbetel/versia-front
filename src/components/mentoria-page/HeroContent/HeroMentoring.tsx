@@ -1,7 +1,8 @@
 import './styles.css';
 
 function HeroMentoring() {
-  const scrollToPricing = () => {
+  const scrollToPricing = (e: React.MouseEvent) => {
+    e.preventDefault();
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -12,7 +13,10 @@ function HeroMentoring() {
       
       <div className="hero__content">
         <h1 className="hero__title" data-aos="fade-down" data-aos-delay="300">
-          Mentoria Coletiva para<br />Autonomia Financeira Feminina
+          Mentoria Coletiva<br />
+          para<br />
+          Autonomia Financeira<br />
+          Feminina
         </h1>
         
         <p className="hero__subtitle" data-aos="fade-up" data-aos-delay="400">
@@ -33,9 +37,7 @@ function HeroMentoring() {
         </p>
 
         <button className="hero__cta" onClick={scrollToPricing} data-aos="zoom-in" data-aos-delay="700">
-          <a href='https://www.asaas.com/c/kfy6u6loweoer53r'>
           Quero Ter Autonomia Financeira
-          </a>
         </button>
 
         <p className="hero__badge" data-aos="fade-up" data-aos-delay="800">6 encontros • Máximo 30 mulheres • Online ao vivo</p>

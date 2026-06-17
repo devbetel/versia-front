@@ -29,7 +29,7 @@ const MentoriaVersiaPage: React.FC = () => {
         image="https://versiafinance.com/og-mentoria.jpg"
       />
       
-      <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", overflowX: "hidden" }}>
+      <div style={{ overflowX: "hidden" }}>
         <HeaderMentoring />
         <HeroMentoring />
         <TransitionGradient6 />

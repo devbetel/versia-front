@@ -16,7 +16,8 @@ function HeaderMentoring() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScroll]);
 
-  const scrollToPricing = () => {
+  const scrollToPricing = (e: React.MouseEvent) => {
+    e.preventDefault();
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -30,9 +31,7 @@ function HeaderMentoring() {
         />
       </div>
       <button className="header__cta" onClick={scrollToPricing}>
-        <a href='https://www.asaas.com/c/kfy6u6loweoer53r'>
         Quero Começar
-        </a>
       </button>
     </header>
   );

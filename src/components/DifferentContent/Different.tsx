@@ -8,7 +8,7 @@ const Different = () => {
                     <div className="manifesto-grid">
 
                         <div className="fade-in visible">
-                            <span className="section-tag" data-aos="fade-up">O que é diferente aqui</span>
+                            <span className="section-tag" data-aos="fade-up">Um novo jeito de olhar para o seu dinheiro</span>
                             <h2 className="manifesto-title" data-aos="fade-up">
                                 Estou cansada do<br />discurso financeiro<br />
                                 <em>que pune as pessoas.</em>

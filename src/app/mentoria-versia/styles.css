@@ -19,7 +19,6 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
   background-color: var(--navy);
   overflow-x: hidden;
 }

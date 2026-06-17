@@ -25,7 +25,7 @@ const Main = () => {
           <p data-aos="fade-up" data-aos-delay="300" className="description">
             Quase 20 anos no mercado financeiro me ensinaram uma coisa:{" "}
             <strong className="description-strong">
-              a maioria das pessoas não tem problema de renda. Tem problema de relação.
+              a maioria das pessoas não tem problema de renda. Tem problema de relação com o dinheiro.
             </strong>{" "}
             Aqui não tem lição de moral. Tem o caminho de volta para a sua paz financeira.
           </p>
@@ -36,7 +36,7 @@ const Main = () => {
                 data-aos="zoom-in"
                 data-aos-delay="500"
             >
-                CONHEÇA OS PRODUTOS
+                Veja como posso te ajudar
             </button>
             <button
                 className="btn-outline"

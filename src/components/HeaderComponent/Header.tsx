@@ -40,10 +40,11 @@ const Header = () => {
         <img src="/Ativo 4@4x.png" alt="Logo" className="logo-header" />
 
         <nav className="nav">
-          <a href="#about" className="item-nav">Sobre</a>
-          <a href="#products" className="item-nav">Produtos</a>
-          <a href="#method" className="item-nav">Método</a>
+          <a href="#method" className="item-nav">Como Funciona</a>
+          <a href="#products" className="item-nav">Soluções</a>
           <a href="#different" className="item-nav">Diferencial</a>
+          <a href="#about" className="item-nav">Sobre Mim</a>
+
           <a className="cta" href="#cta">FALE COMIGO</a>
         </nav>
 
