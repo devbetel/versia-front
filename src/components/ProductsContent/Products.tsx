@@ -1,7 +1,6 @@
-import  { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 import "./styles.css";
-import { Variants } from "framer-motion";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 36 },
@@ -16,70 +15,75 @@ const fadeUp: Variants = {
   }),
 };
 
-const produtos = [
-
-  {
-    href: "/mentoria-versia",
-    nivel: "Comunidade · Mulheres",
-    nome: "Mentoria Coletiva para Mulheres",
-    desc: "6 encontros semanais ao vivo seguindo o método Vérsia - da validação emocional até a autonomia financeira real.",
-    precoValor: "548",
-    precoSufixo: "/ mês",
-    cta: "Ver mais",
-    emBreve: false
-
-  },
-  {
-    href: "/ebook-jogo-invisivel",
-    nivel: "Conhecimento · Comportamento",
-    nome: "E-book: O Jogo Invisível do Dinheiro",
-    desc: "Pesquisa + comportamento + sistema. Entenda por que você faz com o dinheiro o que você faz — e como mudar isso.",
-    precoValor: "26,90",
-    precoSufixo: "· com masterclass R$98,90",
-    cta: "Ver mais",
-    emBreve: false,
-  },
-  {
-    href: "/ebook-empresario-patrimonio",
-    nivel: "Conhecimento · Empresários",
-    nome: "E-book: O Empresário e o Patrimônio",
-    desc: "Para MEIs, profissionais liberais e empresários que faturam bem mas ainda não construíram patrimônio de verdade.",
-    precoValor: "98,90  ",
-    precoSufixo: "· com masterclass R$251,00",
-    cta: "Ver mais",
-    emBreve: false,
-  },  {
-    href: "#",
-    nivel: "Especialidade",
-    nome: "Finanças Comportamentais",
-    desc: "Por que você faz com o dinheiro o que você faz? Um trabalho profundo sobre os padrões que governam suas decisões financeiras.",
-    cta: "Em breve",
-    emBreve: true,
-  }, 
-  {
-    
-    href: "#",
-    nivel: "Entrada · Autonomia",
-    nome: "App + Aulas de Autoatendimento",
-    desc: "Organize, visualize e entenda o seu dinheiro — no seu ritmo, sem precisar de ninguém. Kit completo de autonomia financeira.",
-    cta: "Em breve",
-    emBreve: true,
-  },
-];
+type Categoria = "todos" | "para-voce" | "para-empresas" | "livros-ferramentas";
 
 interface Produto {
   href: string;
   nivel: string;
   nome: string;
   desc: string;
-  precoValor?: string;
-  precoSufixo?: string;
   cta: string;
   emBreve: boolean;
-  precoTexto?: string;
+  categorias: Categoria[];
 }
 
-function ProdutoCard({ produto, index, isInView }: { produto: Produto; index: number; isInView: boolean; }) {
+const produtos: Produto[] = [
+  {
+    href: "/mentoria-versia",
+    nivel: "Comunidade · Mulheres",
+    nome: "Mentoria Coletiva para Mulheres",
+    desc: "6 encontros semanais ao vivo seguindo o método Vérsia - da validação emocional até a autonomia financeira real.",
+    cta: "Ver mais",
+    emBreve: false,
+    categorias: ["para-voce"],
+  },
+  {
+    href: "/ebook-jogo-invisivel",
+    nivel: "Conhecimento · Comportamento",
+    nome: "E-book: O Jogo Invisível do Dinheiro",
+    desc: "Pesquisa + comportamento + sistema. Entenda por que você faz com o dinheiro o que você faz — e como mudar isso.",
+    cta: "Ver mais",
+    emBreve: false,
+    categorias: ["livros-ferramentas"],
+  },
+  {
+    href: "/ebook-empresario-patrimonio",
+    nivel: "Conhecimento · Empresários",
+    nome: "E-book: O Empresário e o Patrimônio",
+    desc: "Para MEIs, profissionais liberais e empresários que faturam bem mas ainda não construíram patrimônio de verdade.",
+    cta: "Ver mais",
+    emBreve: false,
+    categorias: ["livros-ferramentas", "para-empresas"],
+  },
+  {
+    href: "#",
+    nivel: "Especialidade",
+    nome: "Finanças Comportamentais",
+    desc: "Por que você faz com o dinheiro o que você faz? Um trabalho profundo sobre os padrões que governam suas decisões financeiras.",
+    cta: "",
+    emBreve: true,
+    categorias: ["para-voce"],
+  },
+  {
+    href: "#",
+    nivel: "Entrada · Autonomia",
+    nome: "App + Aulas de Autoatendimento",
+    desc: "Organize, visualize e entenda o seu dinheiro — no seu ritmo, sem precisar de ninguém. Kit completo de autonomia financeira.",
+    cta: "",
+    emBreve: true,
+    categorias: ["para-voce"],
+  },
+];
+
+function ProdutoCard({
+  produto,
+  index,
+  isInView,
+}: {
+  produto: Produto;
+  index: number;
+  isInView: boolean;
+}) {
   const [hovered, setHovered] = useState(false);
   const isActive = hovered && !produto.emBreve;
 
@@ -109,6 +113,7 @@ function ProdutoCard({ produto, index, isInView }: { produto: Produto; index: nu
       variants={fadeUp}
       onHoverStart={() => !produto.emBreve && setHovered(true)}
       onHoverEnd={() => setHovered(false)}
+      layout
     >
       <motion.div
         className="card-accent-line"
@@ -122,18 +127,8 @@ function ProdutoCard({ produto, index, isInView }: { produto: Produto; index: nu
       <p className="produto-desc">{produto.desc}</p>
       <div className="produto-divider" />
 
-      {!produto.emBreve && (
-        <div className="produto-preco-wrap">
-          {produto.precoValor ? (
-            <div className="produto-preco">
-              <sup>R$</sup>
-              {produto.precoValor}
-              <span className="produto-preco-sufixo">{produto.precoSufixo}</span>
-            </div>
-          ) : (
-            <span className="produto-preco-texto">{produto.precoTexto}</span>
-          )}
-        </div>
+      {produto.emBreve && (
+        <div className="produto-em-breve-badge">Em breve</div>
       )}
 
       <div className={ctaClass}>
@@ -153,6 +148,22 @@ function ProdutoCard({ produto, index, isInView }: { produto: Produto; index: nu
 export default function Products() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-80px" });
+  const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
+
+  // Filtro corrigido para mostrar TODOS os produtos quando "todos" estiver ativo
+  const produtosFiltrados = 
+    categoriaAtiva === "todos" 
+      ? produtos 
+      : categoriaAtiva 
+        ? produtos.filter((p) => p.categorias.includes(categoriaAtiva))
+        : [];
+
+  const abas = [
+    { id: "todos" as Categoria, label: "Todos" },
+    { id: "para-voce" as Categoria, label: "Para Você" },
+    { id: "para-empresas" as Categoria, label: "Para Empresas" },
+    { id: "livros-ferramentas" as Categoria, label: "Livros e Ferramentas" },
+  ];
 
   return (
     <section id="produtos" className="produtos-section">
@@ -174,16 +185,41 @@ export default function Products() {
           </p>
         </motion.div>
 
-        <div className="produtos-grid">
-          {produtos.map((produto, i) => (
+        <motion.div
+          className="produtos-tabs"
+          custom={0.5}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={fadeUp}
+        >
+          {abas.map((aba) => (
+            <button
+              key={aba.id}
+              className={`tab-button ${categoriaAtiva === aba.id ? "active" : ""}`}
+              onClick={() => setCategoriaAtiva(aba.id)}
+            >
+              {aba.label}
+              {categoriaAtiva === aba.id && (
+                <motion.div
+                  className="tab-underline"
+                  layoutId="activeTab"
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              )}
+            </button>
+          ))}
+        </motion.div>
+
+        <motion.div className="produtos-grid" layout>
+          {produtosFiltrados.map((produto, i) => (
             <ProdutoCard
-              key={i}
+              key={produto.nome}
               produto={produto}
               index={i}
               isInView={isInView}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

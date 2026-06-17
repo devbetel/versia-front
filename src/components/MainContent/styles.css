@@ -381,7 +381,7 @@
   height: 390px !important;
   position: relative;
   left: 0;
-  bottom: 5.5rem;
+  bottom: 5.6rem;
   z-index: 1;
   opacity: 0;
   animation: fadeInGradually 3s ease-in forwards;
@@ -541,7 +541,7 @@
     width: 190px !important;
     height: 270px !important;
     position: relative;
-    bottom: 4.9rem;
+    bottom: 3.4rem;
   }
 
   .right-text {
@@ -555,4 +555,15 @@
   .right-subtitle {
     font-size: 0.55rem;
   }
+}
+
+
+@media (max-width: 390px) {
+   .img-principal {
+    width: 190px !important;
+    height: 270px !important;
+    position: relative;
+    bottom: 4.9rem;
+  }
+
 }
