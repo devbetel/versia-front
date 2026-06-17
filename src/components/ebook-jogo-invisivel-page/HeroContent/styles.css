@@ -488,7 +488,11 @@
     height: 330px;
     padding: 1.25rem 1rem;
   }
-  
+  .book-access {
+    position: relative;
+    left: -0.8rem;
+    top: 0.5rem;
+  }
   .book-badge {
     left: 0.75rem;
     font-size: 0.625rem;

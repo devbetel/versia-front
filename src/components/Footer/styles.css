@@ -1,6 +1,6 @@
 /* styles.css */
 .footer {
-  background-color: #0f172a;
+  background-color: #0f172a !important;
   color: #ffffff;
   padding: 20px 15px;
   text-align: center;
