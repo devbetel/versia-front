@@ -499,12 +499,13 @@
     width: 115%;
     min-height: 30rem;
     position: relative;
-    right: 0  rem
+    right: 0rem;
+    top: 2rem;
   }
   
 
   .title-principal {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     top: 2rem;
     left:1rem
   }
@@ -531,7 +532,8 @@
 
   .right-side {
     width: 95%;
-    min-height: 400px;
+    min-height: 420px;
+    height: 440px;
     padding: 1rem;
   }
 
@@ -539,7 +541,7 @@
     width: 190px !important;
     height: 270px !important;
     position: relative;
-    bottom: 4.6rem;
+    bottom: 4.9rem;
   }
 
   .right-text {
