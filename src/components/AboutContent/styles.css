@@ -21,6 +21,8 @@
 /* Foto: Ajustando alinhamento */
 .about-foto-wrap {
   position: relative;
+  top: 11.5rem;
+  right: 5rem;
   padding: 0; /* Remove padding extra */
   margin: 0 auto; /* Centra a imagem horizontalmente */
   height: auto; /* Ajusta dinamicamente */
@@ -31,6 +33,7 @@
 }
 
 .about-foto-image {
+  
   width: 100%;
   height: auto;
   border-radius: 3px; /* Mantém cantos arredondados */
@@ -55,16 +58,17 @@
   transform: translateX(-50%); /* Ajusta a centralização */
   width: 60px; /* Tamanho da linha */
   height: 2px;
-  background-color: #c6ac8a;
-}
-/* Conteúdo */
-.about-content {
-  padding-top: 0.5rem;
+  background-color: #031931;
 }
 
+
 .section-tag {
+   
+  position: relative;
+  left: -32rem !important;
+  text-align: lef !important;
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.22rem;
   text-transform: uppercase;
@@ -81,7 +85,7 @@
 }
 
 .about-titulo {
-  font-size: 0.78rem;
+  font-size: 1.3rem;
   color: rgba(198, 172, 138, 0.85);
   letter-spacing: 0.06rem;
   margin-bottom: 2rem;
@@ -96,7 +100,7 @@
 }
 
 .about-texto {
-  font-size: 0.93rem;
+  font-size: 1.3rem;
   line-height: 1.9;
   color: #031931;
   margin-bottom: 1.1rem;

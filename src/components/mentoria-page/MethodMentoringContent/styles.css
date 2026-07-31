@@ -1,12 +1,12 @@
 /* ── MÉTODO ── */
 .metodo {
-  background: var(--light);
+  background: #cbd2d9;
   padding: 6rem 2rem;
   position: relative;
 }
 
 /* Gradiente na parte inferior */
-.metodo::after {
+/* .metodo::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -22,7 +22,7 @@
   );
   pointer-events: none;
   z-index: 1;
-}
+} */
 
 .metodo__inner {
   max-width: 840px;

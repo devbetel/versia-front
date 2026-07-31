@@ -1,15 +1,15 @@
-import  { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "./styles.css";
 import { Variants } from "framer-motion";
 
-const certifications = ["CFP®", "CEA", "CPA-20", "CPA-10", "Administração de Empresas", "Finanças Comportamentais"];
+const certifications = ["CFP®", "C-Pro I", "C-Pro R", "CPA", "Administração", "Finanças Comportamentais"];
 
 const paragraphs = [
-  "Aos olhos do mercado tradicional, eu tenho o crachá perfeito. São quase duas décadas de experiência prática e a certificação CFP®, o padrão mais alto de excelência financeira que existe. Minha paixão por esse mundo começou cedo, vendo meu tio construir uma carreira sólida no Banco do Brasil.",
-  "Eu sei exatamente como o sistema funciona. E é por isso que decidi romper com ele.",
+  "Quase duas décadas no mercado financeiro e a certificação CFP® me deram técnica. O que me fez mudar foi ver que técnica sem compreensão do comportamento não gera paz.",
+  "Eu rompi com o modelo que empurra produtos e lições de moral. Rompi com a ideia de que dinheiro é só matemática. ",
+  "Este espaço nasceu para provar que você pode, sim, dominar suas finanças sem abrir mão de viver bem hoje. Sem sermão. Sem culpa.",
 
-  "Percebi que empurrar produtos, metas frias e lições de moral não traz paz financeira para ninguém. Dinheiro não é matemática pura; é comportamento. Este espaço nasceu para provar que você pode, sim, dominar as suas finanças sem abrir mão de viver bem hoje. Sem sermão. Só clareza e o respeito que a sua história merece.",
 ];
 
 const fadeUp: Variants = {
@@ -60,7 +60,7 @@ const About = () => {
               animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp}
             > 
-              Quem está do outro lado
+              A profissional que entende o sistema — e escolheu fazer diferente.
             </motion.span>
 
             <motion.h2 
@@ -106,7 +106,7 @@ const About = () => {
 
             <motion.div 
               className="about-certs" 
-              custom={7} 
+              custom={4 + paragraphs.length} 
               initial="hidden" 
               animate={isInView ? "visible" : "hidden"} 
               variants={fadeUp}

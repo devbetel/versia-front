@@ -1,6 +1,6 @@
 .different {
     background-color: #c6ac8a !important;
-    height: 100vh; /* Use vh em vez de porcentagem */
+    height:   150vh; /* Use vh em vez de porcentagem */
     margin: 0;
     padding: 2rem;
 }
@@ -24,7 +24,11 @@
 }
 
 .section-tag {
-    display: inline-block;
+  position: relative;
+  left: 0rem;
+  bottom: 1rem;
+  display: inline-block;
+  text-align: left !important;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.15rem;
@@ -35,6 +39,7 @@
 }
 
 .manifesto-title {
+    font-family: "BrownRosemary" !important;
     font-size: 2.2rem;
     font-weight: 700;
     color: #031931;
@@ -49,6 +54,14 @@
     opacity: 0.75;
 }
 
+.lista-title {
+      font-family: "BrownRosemary" !important;
+
+  color: #031931;
+  font-weight: 700;
+  position: relative;
+  bottom: 1rem;
+}
 .manifesto-body {
     font-size: 1rem;
     line-height: 1.8;

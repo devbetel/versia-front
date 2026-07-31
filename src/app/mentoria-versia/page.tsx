@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import "./styles.css";
 import SEO from "../../components/SEO.tsx";
-import MethodMentoring from "../../components/mentoria-page/MethodMentoringContent/Method";
+// import MethodMentoring from "../../components/mentoria-page/MethodMentoringContent/Method";
 import HowItsWorks from "../../components/mentoria-page/HowItsWorksContent/HowItsWorks";
 import HeaderMentoring from "../../components/mentoria-page/HeaderMentoringContent/HeaderMentoring";
 import 'aos/dist/aos.css';
 import Aos from "aos";
 import HeroMentoring from "../../components/mentoria-page/HeroContent/HeroMentoring";
 import OfferSectionMentoring from "../../components/mentoria-page/OfferMentoringContent/OfferMentoring.tsx";
-import TransitionGradient6 from "../../components/TransitionGradient6/TransitionGradient6.tsx";
+// import TransitionGradient6 from "../../components/TransitionGradient6/TransitionGradient6.tsx";
 import Footer from "../../components/Footer/Footer.tsx";
+import Different from "../../components/DifferentContent/Different.tsx";
+import TransitionGradient2 from "../../components/TransitionGradient2Content/TransitionGradient2.tsx";
+import About from "../../components/AboutContent/About.tsx";
+import TransitionGradient8 from "../../components/mentoria-page/TransitionGradient8.tsx/TransitionGradient8.tsx";
+import Method from "../../components/MethodContent/Method.tsx";
+import Cta from "../../components/CtaContent/Cta.tsx";
+import TransitionGradient3 from "../../components/TransitionGradient3Content/TransitionGradient3.tsx";
 
 const MentoriaVersiaPage: React.FC = () => {
   useEffect(() => {
@@ -32,10 +39,15 @@ const MentoriaVersiaPage: React.FC = () => {
       <div style={{ overflowX: "hidden" }}>
         <HeaderMentoring />
         <HeroMentoring />
-        <TransitionGradient6 />
-        <MethodMentoring />
+        <Method />
+        <TransitionGradient8 />
+        <Different />
+        <TransitionGradient2 />
+        <About />
+        <TransitionGradient3 />
         <HowItsWorks />
         <OfferSectionMentoring />
+        <Cta />
         <Footer />
       </div>
     </>

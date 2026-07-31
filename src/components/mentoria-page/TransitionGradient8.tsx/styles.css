@@ -1,0 +1,47 @@
+.gradient-transition-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gradient-transition-8 {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(180deg,
+    #0a1628 0%,        /* Início: tom escuro */
+    #243341 25%,       /* Tom intermediário mais claro */
+    #4d5b5c 50%,       /* Transição incremental */
+    #918569 75%,       /* Ouro desbotado */
+    #c6ac8a 100%       /* Término: tom dourado */
+  );
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gradient-overlay-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center, 
+    rgba(255, 255, 255, 0.05) 0%, /* Brilho sutil */
+    transparent 70%             /* Dissipação gradual */
+  );
+  pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gradient-transition-2 {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-transition-2 {
+    height: 100px;
+  }
+}

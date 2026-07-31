@@ -10,40 +10,40 @@ interface Etapa {
 
 const etapas = [
   {
-    numero: "01",
-    nome: "Validação Emocional",
+    numero: "V",
+    nome: "Validação",
     descricao:
-      "Mapeamos as histórias e experiências que você ouviu e viveu sobre dinheiro no passado. Sem desatar esses nós, qualquer mudança será superficial.",
+      "Onde mora a sua história.",
   },
   {
-    numero: "02",
+    numero: "É",
     nome: "Estancamento",
     descricao:
-      "Renegociação de dívidas e corte de juros abusivos. Paramos a sangria financeira antes de dar qualquer outro passo.",
+      "Parar a sangria.",
   },
   {
-    numero: "03",
+    numero: "R",
     nome: "Redirecionamento",
     descricao:
-      "Desenhamos o seu orçamento real — aquele que respeita a sua rotina atual e cabe na sua vida de verdade, sem privações absurdas. ",
+      "Orçamento que cabe na sua vida.",
   },
   {
-    numero: "04",
+    numero: "S",
     nome: "Sustentabilidade",
     descricao:
-      "Criamos um piloto automático financeiro saudável. Um sistema prático que funciona sozinho, inclusive nos meses mais difíceis.",
+      "Piloto automático saudável.",
   },
   {
-    numero: "05",
+    numero: "I",
     nome: "Investimento de Paz",
     descricao:
-      "A construção da sua reserva de emergência. Ela não serve para te deixar rico, mas para ser o seu primeiro ato real de autocuidado e tranquilidade.",
+      "Sua reserva como autocuidado.",
   },
   {
-    numero: "06",
+    numero: "A",
     nome: "Autonomia",
     descricao:
-      'Liberdade de tempo e de escolhas. O dinheiro deixa de ser uma barreira invisível e passa a ser a ferramenta que te permite dizer "sim".',
+      'Liberdade de tempo e de escolhas.',
   },
 ];
 
@@ -127,7 +127,7 @@ export default function Method() {
             variants={fadeInUp}
           >
             <span className="metodo-tag" data-aos="fade-up">
-              O método Vérsia
+              O Método VÉRSIA
             </span>
             <h2 className="metodo-titulo" data-aos="fade-left">
               Seis etapas.
@@ -135,15 +135,15 @@ export default function Method() {
             </h2>
             <div className="metodo-texto" data-aos="fade-left">
               <p>
-                O Método Vérsia não é uma fórmula mágica de internet, é um
-                processo sequencial — porque mudar a sua relação com o dinheiro
-                não acontece por causa de uma planilha. Acontece quando cada
-                fase prepara o terreno para a próxima.
+                O Método VÉRSIA não é fórmula mágica. É processo. É sequência. É
+                lógica aplicada ao comportamento.
               </p>
               <p>
-                Não é sobre ter uma disciplina militar. É sobre entender de onde
-                vieram os seus padrões e decidir, conscientemente, o que você
-                quer carregar daqui para frente.
+                Porque mudar sua relação com o dinheiro não acontece por causa
+                de uma planilha. Acontece quando cada fase prepara o terreno
+                para a próxima. Acontece quando você entende de onde vieram seus
+                padrões — e decide conscientemente o que quer carregar daqui
+                para frente.
               </p>
             </div>
             <motion.a

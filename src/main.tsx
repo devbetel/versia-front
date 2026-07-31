@@ -1,16 +1,16 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 // Lazy loading das páginas
-const HomePage = lazy(() => import('./app/page'));
+// const HomePage = lazy(() => import('./app/page'));
 const MentoriaVersiaPage = lazy(() => import('./app/mentoria-versia/page'));
-const EbookJogoInvisivelPage = lazy(() => import('./app/ebook-jogo-invisivel/page'));
-const EbookEmpresarioPage = lazy(() => import('./app/ebook-empresario-patrimonio/page'));
+// const EbookJogoInvisivelPage = lazy(() => import('./app/ebook-jogo-invisivel/page'));
+// const EbookEmpresarioPage = lazy(() => import('./app/ebook-empresario-patrimonio/page'));
 
 // Loading component
 export const Loading = () => (
@@ -43,10 +43,17 @@ const App = () => {
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            {/* Redireciona a rota principal para /mentoria-versia */}
+            <Route path="/" element={<Navigate to="/mentoria-versia" replace />} />
+
+            {/* Único endpoint ativo */}
             <Route path="/mentoria-versia" element={<MentoriaVersiaPage />} />
+
+            {/* Outros endpoints comentados */}
+            {/*
             <Route path="/ebook-jogo-invisivel" element={<EbookJogoInvisivelPage />} />
             <Route path="/ebook-empresario-patrimonio" element={<EbookEmpresarioPage />} />
+            */}
           </Routes>
         </Suspense>
       </BrowserRouter>

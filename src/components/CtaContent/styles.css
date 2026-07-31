@@ -1,7 +1,7 @@
 .contato-section {
   position: relative;
   padding: 8rem 2rem;
-background-color: #0f172a;
+  background-color: #0f172a;
   overflow: hidden;
 }
 
@@ -79,9 +79,10 @@ background-color: #0f172a;
   margin: 0;
   max-width: 700px;
 }
+
 .contato-titulo p {
   font-size: 3.5rem;
-    color: #f8fafc;
+  color: #f8fafc;
 }
 
 .titulo-destaque {
@@ -104,6 +105,26 @@ background-color: #0f172a;
   margin-top: 1rem;
 }
 
+.contato-texto-destaque {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contato-texto-destaque p {
+  font-size: 1.8rem;
+  color: rgba(248, 250, 252, 0.85);
+  line-height: 1.8;
+  margin: 0.3rem 0;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.contato-texto-destaque p:last-child {
+  color: #c6ac8a;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
 .contato-subtitulo {
   font-size: 1.1rem;
   color: rgba(248, 250, 252, 0.8);
@@ -114,9 +135,9 @@ background-color: #0f172a;
 }
 
 .contato-subtitulo p {
-      color: rgba(248, 250, 252, 0.8);
-
+  color: rgba(248, 250, 252, 0.8);
 }
+
 .contato-subtitulo strong {
   color: #c6ac8a;
   font-weight: 500;
@@ -128,6 +149,32 @@ background-color: #0f172a;
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
+}
+
+.btn-versoes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #c6ac8a 0%, #d4bc94 50%, #e6d4b8 100%);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(198, 172, 138, 0.3);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-versoes:hover {
+  box-shadow: 0 8px 30px rgba(198, 172, 138, 0.5);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d4bc94 0%, #e6d4b8 50%, #f0e6d0 100%);
 }
 
 .btn-whatsapp {
@@ -193,7 +240,7 @@ background-color: #0f172a;
   border: 1px solid rgba(198, 172, 138, 0.1);
   border-radius: 12px;
   backdrop-filter: blur(10px);
-  flex-shrink: 0; /* Impede que os itens encolham */
+  flex-shrink: 0;
 }
 
 .garantia-icon {
@@ -214,7 +261,7 @@ background-color: #0f172a;
   font-size: 0.9rem;
   color: rgba(248, 250, 252, 0.7);
   font-weight: 400;
-  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  white-space: nowrap;
 }
 
 /* Responsive */
@@ -231,19 +278,25 @@ background-color: #0f172a;
   .contato-acoes {
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
   
   .btn-whatsapp,
-  .btn-explorar {
+  .btn-explorar,
+  .btn-versoes {
     position: relative;
     right: 0;
-        width: 85%;
+    width: 85%;
     justify-content: center;
   }
   
   .contato-garantia {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  
+  .contato-texto-destaque p {
+    font-size: 1rem;
   }
 }
 
@@ -254,10 +307,15 @@ background-color: #0f172a;
   }
   
   .btn-whatsapp,
-  .btn-explorar {
+  .btn-explorar,
+  .btn-versoes {
     position: relative;
     left: 1.2rem;
     padding: 1rem 2rem;
     font-size: 0.95rem;
+  }
+  
+  .contato-texto-destaque p {
+    font-size: 0.9rem;
   }
 }

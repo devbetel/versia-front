@@ -10,20 +10,23 @@ const Different = () => {
                         <div className="fade-in visible">
                             <span className="section-tag" data-aos="fade-up">Um novo jeito de olhar para o seu dinheiro</span>
                             <h2 className="manifesto-title" data-aos="fade-up">
-                                Estou cansada do<br />discurso financeiro<br />
-                                <em>que pune as pessoas.</em>
+                                Estou cansada do<br />discurso que pune.<br />
                             </h2>
                             <p className="manifesto-body" data-aos="fade-right">
-                                Passar décadas dentro do mercado financeiro me fez entender uma coisa que a maioria dos especialistas ignora: estar endividado no Brasil de hoje não é falta de caráter. É o resultado previsível de um sistema que foi desenhado para fazer você gastar antes de aprender a poupar.
+                                Cansada da narrativa que coloca culpa onde deveria existir compreensão. Cansada de ver pessoas inteligentes acreditando que “não nasceram para lidar com dinheiro”.
+Décadas dentro do mercado me mostraram algo que a maioria dos especialistas ignora: estar endividado no Brasil não é falta de caráter. 
+É consequência de um sistema que ensina você a gastar antes de ensinar você a se enxergar.
+
                             </p>
                         </div>
 
                         <div className="fade-in visible">
+                            <h2 className="lista-title" data-aos="fade-right">Aqui, Tudo Muda:</h2>
                             <ul className="manifesto-lista">
                                 <li className="manifesto-item" data-aos="fade-up">
                                     <span className="nao">Corta o cafezinho</span>
                                     <span className="sep">→</span>
-                                    <span className="sim">Entende para onde vai cada real</span>
+                                    <span className="sim">Entenda para onde vai cada real</span>
                                 </li>
                                 <li className="manifesto-item" data-aos="fade-up">
                                     <span className="nao">Você gasta demais</span>
@@ -33,7 +36,7 @@ const Different = () => {
                                 <li className="manifesto-item" data-aos="fade-up">
                                     <span className="nao">Siga essa planilha</span>
                                     <span className="sep">→</span>
-                                    <span className="sim">Crie um sistema para a sua vida</span>
+                                    <span className="sim">Crie um sistema que funcione para a sua vida</span>
                                 </li>
                                 <li className="manifesto-item" data-aos="fade-up">
                                     <span className="nao">Fórmula de guru</span>

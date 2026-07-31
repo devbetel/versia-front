@@ -1,6 +1,6 @@
-import  { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView, Easing } from 'framer-motion';
-import { MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { MessageCircle, Sparkles } from 'lucide-react';
 import './styles.css';
 
 // Criando easing customizado
@@ -34,7 +34,7 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: customEase // Usando easing customizado
+      ease: customEase
     }
   }
 };
@@ -68,8 +68,8 @@ export default function Cta() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div className="contato-header" variants={fadeInUp} data-aos="fade-up">
-            <div className="contato-icon" data-aos= "fade-up">
-              <Sparkles size={24} data-aos= "fade-up"/>
+            <div className="contato-icon" data-aos="fade-up">
+              <Sparkles size={24} data-aos="fade-up"/>
             </div>
             <span className="contato-tag" data-aos="fade-up">Próximo passo</span>
           </motion.div>
@@ -80,6 +80,13 @@ export default function Cta() {
             <em data-aos="fade-right">Agora é a vez do seu dinheiro trabalhar com você.</em>
           </motion.h2>
 
+          <motion.div className="contato-texto-destaque" variants={fadeInUp}>
+            <p data-aos="fade-up">Você não precisa de perfeição.</p>
+            <p data-aos="fade-up">Precisa de lógica.</p>
+            <p data-aos="fade-up">Precisa de clareza.</p>
+            <p data-aos="fade-up">Precisa de um método que respeite sua história.</p>
+          </motion.div>
+
           <motion.p className="contato-subtitulo" variants={fadeInUp}>
             <p data-aos="fade-up">
             Não sabe por onde começar? Me manda uma mensagem. Sem pressão, sem pitch. 
@@ -89,29 +96,28 @@ export default function Cta() {
 
           <motion.div className="contato-acoes" variants={fadeInUp}>
             <motion.a 
+              href="https://pay.kiwify.com.br/S42F8KF" 
+              className="btn-versoes"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              data-aos="fade-left"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Quero minha versão financeiramente mais forte</span>
+            </motion.a>
+
+            <motion.a 
               href="https://wa.me/5587991097916" 
               className="btn-whatsapp"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              data-aos="fade-left"
+              data-aos="fade-right"
             >
               <MessageCircle size={20} />
               <span>Conversar no WhatsApp</span>
             </motion.a>
-
-            <motion.a 
-              href="#produtos" 
-              className="btn-explorar"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              data-aos="fade-right"
-            >
-              <span>Explorar soluções</span>
-              <ArrowRight size={18} />
-            </motion.a>
           </motion.div>
-
-          
         </motion.div>
       </div>
     </section>
