@@ -29,14 +29,14 @@ export const Loading = () => (
 
 // Componente App com inicialização do AOS
 const App = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-out',
-      offset: 100,
-    });
-  }, []);
+useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: 'ease-out',
+    offset: 100,
+  });
+}, []);
 
   return (
     <HelmetProvider>

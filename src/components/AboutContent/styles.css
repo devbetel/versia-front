@@ -6,46 +6,33 @@
 .about-container {
   max-width: 1080px;
   margin: 0 auto;
-  position: relative;
-  bottom:2rem
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
   align-items: start;
 }
 
-/* Foto */
-/* Foto: Ajustando alinhamento */
+/* FOTO */
+
 .about-foto-wrap {
   position: relative;
-  top: 11.5rem;
-  right: 5rem;
-  padding: 0; /* Remove padding extra */
-  margin: 0 auto; /* Centra a imagem horizontalmente */
-  height: auto; /* Ajusta dinamicamente */
-  max-width: 100%; /* Garante responsividade */
-  display: flex;
-  justify-content: center; /* Centraliza o conteúdo */
-  align-items: center;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .about-foto-image {
-  
   width: 100%;
   height: auto;
-  border-radius: 3px; /* Mantém cantos arredondados */
-  object-fit: cover; /* Garante que a imagem fique proporcional */
+  border-radius: 3px;
+  object-fit: cover;
 }
 
 .about-foto-frame {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   border: 1px solid rgba(198, 172, 138, 0.4); 
   border-radius: 3px;
   pointer-events: none;
@@ -54,41 +41,40 @@
 .about-foto-line {
   position: absolute;
   bottom: -12px;
-  left: 50%; /* Centraliza a linha */
-  transform: translateX(-50%); /* Ajusta a centralização */
-  width: 60px; /* Tamanho da linha */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
   height: 2px;
   background-color: #031931;
 }
 
+/* TIPOGRAFIA AJUSTADA */
 
 .section-tag {
-   
   position: relative;
-  left: -32rem !important;
-  text-align: lef !important;
+  right: 10rem !important;
   display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.22rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18rem;
   text-transform: uppercase;
   color: #031931;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .about-nome {
-  font-size: 2.6rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: #131111;
-  line-height: 1.1;
-  margin: 0 0 0.4rem 0;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
 }
 
 .about-titulo {
-  font-size: 1.3rem;
-  color: rgba(198, 172, 138, 0.85);
-  letter-spacing: 0.06rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: rgba(198, 172, 138, 0.9);
+  letter-spacing: 0.05rem;
+  margin-bottom: 1.75rem;
   font-weight: 400;
 }
 
@@ -100,19 +86,20 @@
 }
 
 .about-texto {
-  font-size: 1.3rem;
-  line-height: 1.9;
+  font-size: 1rem;
+  line-height: 1.8;
   color: #031931;
-  margin-bottom: 1.1rem;
-  font-weight: 300;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
-/* Certificações */
+/* CERTIFICAÇÕES */
+
 .about-certs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin: 1.75rem 0 2rem;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
 }
 
 .cert {
@@ -133,23 +120,38 @@
   border-color: #042242;
 }
 
+/* RESPONSIVO */
 
-/* Responsivo */
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .about-container {
-    position: relative;
-    bottom: 6rem
-  }
+
   .about-nome {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .about-texto {
+    font-size: 0.95rem;
   }
 
   .about-foto-wrap {
     max-width: 320px;
-    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-nome {
+    font-size: 1.6rem;
+  }
+
+  .about-texto {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
   }
 }

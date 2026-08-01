@@ -1,41 +1,38 @@
 .different {
     background-color: #c6ac8a !important;
-    height:   150vh; /* Use vh em vez de porcentagem */
     margin: 0;
-    padding: 2rem;
+    padding: 4rem 2rem;
 }
 
 .different-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
-    color: #031931; /* Texto escuro para contrastar com fundo claro */
+    padding: 0;
+    color: #031931;
 }
 
 .section-manifesto {
-    padding: 4rem 0;
+    padding: 0;
 }
 
 .manifesto-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
 }
 
 .section-tag {
-  position: relative;
-  left: 0rem;
-  bottom: 1rem;
   display: inline-block;
-  text-align: left !important;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    color: white;
-    opacity: 0.6;
-    margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.6;
+  margin-left: 10.5rem;
+  margin-bottom: 1.5rem;
+  transform: translateX(-50%); /* Isso vai centralizar/ajustar */
 }
 
 .manifesto-title {
@@ -47,27 +44,19 @@
     margin-bottom: 1.5rem;
 }
 
-.manifesto-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: #031931;
-    opacity: 0.75;
-}
-
 .lista-title {
-      font-family: "BrownRosemary" !important;
-
-  color: #031931;
-  font-weight: 700;
-  position: relative;
-  bottom: 1rem;
+    font-family: "BrownRosemary" !important;
+    color: #031931;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
+
 .manifesto-body {
     font-size: 1rem;
     line-height: 1.8;
     color: white;
-    opacity: 1;
     max-width: 480px;
+    white-space: pre-line;
 }
 
 .manifesto-lista {
@@ -86,16 +75,15 @@
     padding: 0.85rem 1rem;
     border-radius: 8px;
     background-color: rgba(252, 252, 255, 0.468);
-    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transform: translateY(0);
+    transition: all 0.4s ease;
 }
 
 .manifesto-item:hover {
     transform: translateY(-2px);
     background-color: rgba(252, 252, 255, 0.7);
     box-shadow: 0 4px 12px rgba(3, 25, 49, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
+
 .nao {
     font-size: 0.85rem;
     color: #031931;
@@ -116,103 +104,61 @@
     color: #031931;
 }
 
-/* ── RESPONSIVIDADE ── */
+/* RESPONSIVO */
 
 @media (max-width: 1024px) {
-  .different {
-    height: auto;
-    padding: 1.5rem;
-  }
+    .manifesto-grid {
+        gap: 2.5rem;
+    }
 
-  .different-container {
-    padding: 1.5rem;
-  }
+    .manifesto-title {
+        font-size: 1.9rem;
+    }
 
-  .section-manifesto {
-    padding: 2.5rem 0;
-  }
-
-  .manifesto-grid {
-    gap: 2.5rem;
-  }
-
-  .manifesto-title {
-    font-size: 1.9rem;
-  }
-
-  .manifesto-body {
-    font-size: 0.95rem;
-    max-width: 100%;
-  }
+    .manifesto-body {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-  
-  .different {
-    height: auto;
-    padding: 1rem;
-  }
-
-  .different-container {
-    padding: 1rem;
-  }
-
-  .section-manifesto {
-    padding: 2rem 0;
-  }
-
-  .manifesto-body {
-    max-width: 100%;
-  }
-  .manifesto-lista {
-    position: relative;
-    right: 1rem
-  }
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .different {
-    padding: 0.75rem;
-  }
+    .manifesto-title {
+        font-size: 1.3rem;
+    }
 
-  .different-container {
-    padding: 0.75rem;
-  }
+    .manifesto-body {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
 
-  .section-manifesto {
-    padding: 1.5rem 0;
-  }
+    .section-tag {
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
 
-  .manifesto-title {
-    font-size: 1.3rem;
-  }
+    .manifesto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        padding: 0.75rem 0.85rem;
+    }
 
-  .manifesto-body {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
+    .nao {
+        font-size: 0.78rem;
+    }
 
-  .section-tag {
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-  }
+    .sep {
+        display: none;
+    }
 
-  .manifesto-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-    padding: 0.75rem 0.85rem;
-  }
-
-  .nao {
-    font-size: 0.78rem;
-  }
-
-  .sep {
-    display: none;
-  }
-
-  .sim {
-    font-size: 0.82rem;
-  }
+    .sim {
+        font-size: 0.82rem;
+    }
 }

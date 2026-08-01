@@ -1,8 +1,111 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView, Variants } from 'framer-motion';
 import './styles.css';
-import TransitionSection from '../../TransitionGradient/TransitionSection';
+import TransitionGradient9 from '../../TransitionGradient9/TransitionGradient9';
+import TransitionGradient10 from '../../TransitionGradient10/TransitionGradient10';
+import TransitionGradient11 from '../../TransitionGradient11/TranstionGradient11';
+
+// Variants para animações
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.8, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const fadeInDown: Variants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.8, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const fadeInLeft: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { 
+      duration: 0.7, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const fadeInRight: Variants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { 
+      duration: 0.7, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    }
+  }
+};
+
+const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { 
+      duration: 0.6, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
+
+const zoomIn: Variants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { 
+      duration: 0.7, 
+      ease: [0.22, 1, 0.36, 1] 
+    }
+  }
+};
 
 function HowItsWorks() {
+  // Refs separados para cada seção
+  const heroRef = useRef(null);
+  const statsRef = useRef(null);
+  const statsNumbersRef = useRef(null);
+  const paraQuemRef = useRef(null);
+  const paraQuemNaoRef = useRef(null);
+  const benefitsRef = useRef(null);
+
+  // useInView separados para cada seção
+  const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
+  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
+  const statsNumbersInView = useInView(statsNumbersRef, { once: true, margin: "-100px" });
+  const paraQuemInView = useInView(paraQuemRef, { once: true, margin: "-100px" });
+  const paraQuemNaoInView = useInView(paraQuemNaoRef, { once: true, margin: "-100px" });
+  const benefitsInView = useInView(benefitsRef, { once: true, margin: "-100px" });
+
   const howItWorks = {
     formato: [
       '100% online',
@@ -77,203 +180,334 @@ function HowItsWorks() {
 
   return (
     <div className="metodo-versia">
-      {/* Hero Section */}
-      <section className="hero-section">
+      {/* HERO SECTION */}
+      <motion.section 
+        ref={heroRef}
+        className="hero-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={heroInView ? "visible" : "hidden"}
+      >
         <div className="hero-content">
-          <p className="hero-eyebrow" data-aos="fade-down">
+          <motion.p 
+            className="hero-eyebrow"
+            variants={fadeInDown}
+          >
             A Mentoria Coletiva Método VÉRSIA
-          </p>
-          <h1 className="hero-title" data-aos="fade-up" data-aos-delay="100">
+          </motion.p>
+
+          <motion.h1 
+            className="hero-title"
+            variants={fadeInUp}
+          >
             O processo que transforma <span className="accent">independência</span> em <span className="accent">autonomia real</span>
-          </h1>
-          <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          </motion.h1>
+
+          <motion.p 
+            className="hero-subtitle"
+            variants={fadeInUp}
+          >
             Você não precisa de mais informação sobre dinheiro. Precisa de lógica aplicada ao seu comportamento.
-          </p>
-          <p className="hero-description" data-aos="fade-up" data-aos-delay="300">
+          </motion.p>
+
+          <motion.p 
+            className="hero-description"
+            variants={fadeInUp}
+          >
             A Mentoria Coletiva Método VÉRSIA é o espaço onde você aprende a enxergar seus padrões, estancar a sangria financeira e construir um sistema que funciona na sua vida real — sem culpa, sem moralismo, sem fórmulas mágicas.
-          </p>
-          <p className="hero-process" data-aos="fade-up" data-aos-delay="400">
+          </motion.p>
+
+          <motion.p 
+            className="hero-process"
+            variants={fadeInUp}
+          >
             É um processo de <strong>2 meses</strong>, totalmente prático, coletivo, guiado, criado para quem ganha bem, vive no automático e quer clareza, controle e autonomia financeira.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Gradient Transition */}
-      <TransitionSection />
-
-      {/* Como Funciona na Prática */}
-      <section className="pratica-section">
-        <div className="pratica-content">
-          <h2 className="section-title" data-aos="fade-up">
-            Como funciona <span className="accent">na prática</span>
-          </h2>
-          
-          <div className="pratica-grid">
-            <div className="pratica-card" data-aos="fade-up" data-aos-delay="100">
-              <h3 className="pratica-card-title">Formato</h3>
-              <ul className="pratica-list">
+      {/* STATS SECTION - FORMATO, DURAÇÃO, MATERIAIS */}
+      <motion.section 
+        ref={statsRef}
+        className="stats-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={statsInView ? "visible" : "hidden"}
+      >
+        <div className="stats-content">
+          <div className="stats-grid">
+            {/* Card 1 - Formato */}
+            <motion.div 
+              className="stat-card practica-card"
+              variants={fadeInUp}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
+              <motion.div 
+                className="stat-card__number pratica-icon"
+                variants={scaleIn}
+              >
+                🎯
+              </motion.div>
+              <motion.h3 
+                className="stat-card__label pratica-card-title"
+                variants={fadeInUp}
+              >
+                Formato
+              </motion.h3>
+              <ul className="stat-card__desc pratica-list">
                 {howItWorks.formato.map((item, idx) => (
-                  <li key={idx} data-aos="fade-right" data-aos-delay={150 + (idx * 50)}>
+                  <motion.li 
+                    key={idx}
+                    variants={fadeInLeft}
+                    custom={{ delay: idx * 0.05 }}
+                  >
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="pratica-card" data-aos="fade-up" data-aos-delay="200">
-              <h3 className="pratica-card-title">Duração</h3>
-              <ul className="pratica-list">
+            {/* Card 2 - Duração */}
+            <motion.div 
+              className="stat-card practica-card"
+              variants={fadeInUp}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
+              <motion.div 
+                className="stat-card__number pratica-icon"
+                variants={scaleIn}
+              >
+                ⌛️
+              </motion.div>
+              <motion.h3 
+                className="stat-card__label pratica-card-title"
+                variants={fadeInUp}
+              >
+                Duração
+              </motion.h3>
+              <ul className="stat-card__desc pratica-list">
                 {howItWorks.duracao.map((item, idx) => (
-                  <li key={idx} data-aos="fade-right" data-aos-delay={250 + (idx * 50)}>
+                  <motion.li 
+                    key={idx}
+                    variants={fadeInLeft}
+                    custom={{ delay: idx * 0.05 }}
+                  >
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="pratica-card" data-aos="fade-up" data-aos-delay="300">
-              <h3 className="pratica-card-title">Materiais</h3>
-              <ul className="pratica-list">
+            {/* Card 3 - Materiais */}
+            <motion.div 
+              className="stat-card practica-card"
+              variants={fadeInUp}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
+              <motion.div 
+                className="stat-card__number pratica-icon"
+                variants={scaleIn}
+              >
+                📚
+              </motion.div>
+              <motion.h3 
+                className="stat-card__label pratica-card-title"
+                variants={fadeInUp}
+              >
+                Materiais
+              </motion.h3>
+              <ul className="stat-card__desc practica-list">
                 {howItWorks.materiais.map((item, idx) => (
-                  <li key={idx} data-aos="fade-right" data-aos-delay={350 + (idx * 50)}>
+                  <motion.li 
+                    key={idx}
+                    variants={fadeInLeft}
+                    custom={{ delay: idx * 0.05 }}
+                  >
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Stats Section */}
-      <section className="stats-section">
+      {/* STATS SECTION - NÚMEROS */}
+      <motion.section 
+        ref={statsNumbersRef}
+        className="stats-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={statsNumbersInView ? "visible" : "hidden"}
+      >
         <div className="stats-content">
           <div className="stats-grid">
             {stats.map((stat, idx) => (
-              <div 
+              <motion.div 
                 key={idx} 
                 className="stat-card"
-                data-aos="fade-up"
-                data-aos-delay={100 + (idx * 150)}
+                variants={fadeInUp}
+                whileHover={{ y: -8, borderColor: 'var(--gold)', transition: { duration: 0.3 } }}
               >
-                <div 
+                <motion.div 
                   className="stat-card__number"
-                  data-aos="zoom-in"
-                  data-aos-delay={150 + (idx * 150)}
+                  variants={zoomIn}
                 >
                   {stat.number}
-                </div>
-                <h3 
+                </motion.div>
+                <motion.h3 
                   className="stat-card__label"
-                  data-aos="fade-right"
-                  data-aos-delay={200 + (idx * 150)}
+                  variants={fadeInUp}
                 >
                   {stat.label}
-                </h3>
-                <p 
+                </motion.h3>
+                <motion.p 
                   className="stat-card__desc"
-                  data-aos="fade-up"
-                  data-aos-delay={250 + (idx * 150)}
+                  variants={fadeInUp}
                 >
                   {stat.description}
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Para Quem É */}
-      <section className="para-quem-section">
+      <TransitionGradient10 />
+
+      {/* PARA QUEM É SECTION */}
+      <motion.section 
+        ref={paraQuemRef}
+        className="para-quem-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={paraQuemInView ? "visible" : "hidden"}
+      >
         <div className="para-quem-content">
-          <div className="para-quem-header" data-aos="fade-up">
-            <p className="section-eyebrow">Para Quem É</p>
-            <h2 className="section-title">
+          <div className="para-quem-header">
+            <motion.p 
+              className="section-eyebrow"
+              variants={fadeInUp}
+            >
+              Para Quem É
+            </motion.p>
+            <motion.h2 
+              className="section-title"
+              variants={fadeInUp}
+            >
               O Método VÉRSIA é para quem já conquistou <span className="accent-2">independência</span> — e agora quer <span className="accent">autonomia real</span>
-            </h2>
+            </motion.h2>
           </div>
 
           <div className="para-quem-list">
             {paraQuemE.map((item, idx) => (
-              <div 
+              <motion.div 
                 key={idx} 
                 className="para-quem-item"
-                data-aos="fade-up"
-                data-aos-delay={100 + (idx * 50)}
+                variants={fadeInLeft}
+                custom={{ delay: idx * 0.05 }}
+                whileHover={{ x: 8, transition: { duration: 0.2 } }}
               >
                 <span className="para-quem-bullet">•</span>
                 <p>{item}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-
-          <div className="para-quem-summary" data-aos="fade-up" data-aos-delay="800">
-            <h3>Em resumo:</h3>
-            <p>É para quem sabe que não é falta de inteligência, não é falta de renda, não é falta de força de vontade. É falta de lógica aplicada ao comportamento — e isso se aprende.</p>
-          </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Para Quem Não É */}
-      <section className="para-quem-nao-section">
+      <TransitionGradient9 />
+
+      {/* PARA QUEM NÃO É SECTION */}
+      <motion.section 
+        ref={paraQuemNaoRef}
+        className="para-quem-nao-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={paraQuemNaoInView ? "visible" : "hidden"}
+      >
         <div className="para-quem-nao-content">
-          <div className="para-quem-nao-header" data-aos="fade-up">
-            <p className="section-eyebrow">Para Quem Não É</p>
-            <h2 className="section-title-2">
+          <div className="para-quem-nao-header">
+            <motion.p 
+              className="section-eyebrow"
+              variants={fadeInUp}
+            >
+              Para Quem Não É
+            </motion.p>
+            <motion.h2 
+              className="section-title-2"
+              variants={fadeInUp}
+            >
               O Método VÉRSIA <span className="accent-negative">não é</span> para quem busca atalhos — porque atalhos não mudam comportamento
-            </h2>
+            </motion.h2>
           </div>
-
-          <p className="para-quem-nao-intro" data-aos="fade-up" data-aos-delay="100">
-            Não é para quem:
-          </p>
 
           <div className="para-quem-nao-list">
             {paraQuemNaoE.map((item, idx) => (
-              <div 
+              <motion.div 
                 key={idx} 
                 className="para-quem-nao-item"
-                data-aos="fade-up"
-                data-aos-delay={150 + (idx * 50)}
+                variants={fadeInRight}
+                custom={{ delay: idx * 0.05 }}
+                whileHover={{ x: -8, transition: { duration: 0.2 } }}
               >
                 <span className="para-quem-nao-bullet">✕</span>
                 <p>{item}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-
-          <div className="para-quem-nao-why" data-aos="fade-up" data-aos-delay="600">
-            <h3>Por que não é para essas pessoas?</h3>
-            <p>Porque tudo está interligado — e ignorar isso só repete o ciclo.</p>
-            <p>Não existe quitação de dívidas sustentável sem mudança de comportamento. Se você quita dívidas sem entender por que elas surgiram, elas voltam. Se você corta gastos sem entender o que dispara seus impulsos, eles retornam. Se você tenta investir sem ter um sistema financeiro organizado, o caos continua. Se você tenta controlar o dinheiro sem validar sua história, você se sabota.</p>
-            <p><strong>O Método VÉRSIA foi criado para interromper esse ciclo.</strong> Ele não trabalha só o sintoma — trabalha a causa. Ele não organiza só números — organiza padrões. Ele não cria só metas — cria lógica. Ele não promete só controle — entrega autonomia.</p>
-            <p>Por isso, ele não funciona para quem quer apenas "resolver rápido". Funciona para quem quer resolver de verdade.</p>
-          </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Benefits Section */}
-      <section className="benefits-section">
+      <TransitionGradient11 />
+
+      {/* BENEFITS SECTION */}
+      <motion.section 
+        ref={benefitsRef}
+        className="benefits-section"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={benefitsInView ? "visible" : "hidden"}
+      >
         <div className="benefits-content">
-          <h2 className="section-title-2" data-aos="fade-up">
+          <motion.h2 
+            className="section-title-3"
+            variants={fadeInUp}
+          >
             O que você <span className="accent">ganha</span>
-          </h2>
+          </motion.h2>
           
           <div className="benefits-grid">
             {benefits.map((benefit, idx) => (
-              <div 
+              <motion.div 
                 key={idx} 
                 className="benefit-card"
-                data-aos="zoom-in"
-                data-aos-delay={100 + (idx * 100)}
+                variants={scaleIn}
+                custom={{ delay: idx * 0.06 }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  borderColor: 'var(--gold)',
+                  transition: { duration: 0.3 } 
+                }}
+                whileTap={{ scale: 0.95 }}
               >
-                <div className="benefit-icon">{benefit.icon}</div>
-                <h3 className="benefit-title">{benefit.title}</h3>
-              </div>
+                <motion.div 
+                  className="benefit-icon"
+                  variants={scaleIn}
+                >
+                  {benefit.icon}
+                </motion.div>
+                <motion.h3 
+                  className="benefit-title"
+                  variants={fadeInUp}
+                >
+                  {benefit.title}
+                </motion.h3>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

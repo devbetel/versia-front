@@ -9,7 +9,6 @@ const paragraphs = [
   "Quase duas décadas no mercado financeiro e a certificação CFP® me deram técnica. O que me fez mudar foi ver que técnica sem compreensão do comportamento não gera paz.",
   "Eu rompi com o modelo que empurra produtos e lições de moral. Rompi com a ideia de que dinheiro é só matemática. ",
   "Este espaço nasceu para provar que você pode, sim, dominar suas finanças sem abrir mão de viver bem hoje. Sem sermão. Sem culpa.",
-
 ];
 
 const fadeUp: Variants = {
@@ -20,21 +19,20 @@ const fadeUp: Variants = {
     transition: { 
       delay: custom * 0.13, 
       duration: 0.75, 
-      ease: "easeOut", 
+      ease: "easeOut",
     },
   }),
 };
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section className="about-section" id="sobre">
       <div className="about-container" ref={ref}>
         <div className="about-grid">
 
-          {/* FOTO */}
           <motion.div 
             className="about-foto-wrap" 
             custom={0} 
@@ -51,10 +49,9 @@ const About = () => {
             <div className="about-foto-line"></div>
           </motion.div>
 
-          {/* CONTEÚDO */}
           <div className="about-content">
             <motion.span 
-              className="section-tag visible" 
+              className="section-tag" 
               custom={1} 
               initial="hidden" 
               animate={isInView ? "visible" : "hidden"} 

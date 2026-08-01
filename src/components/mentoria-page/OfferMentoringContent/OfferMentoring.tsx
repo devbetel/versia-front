@@ -1,122 +1,161 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { motion, Variants } from "framer-motion";
 import "./styles.css";
 
-interface PricingMentoringProps {
-  whatsappNumber?: string;
-}
+// Animation Variants
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
 
-const OfferMentoring: React.FC<PricingMentoringProps> = () => {
+const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.2 } },
+};
+
+const OfferMentoring: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById('pricing');
-    if (section) {
-      observer.observe(section);
-    }
+    observer.observe(section);
 
-    return () => observer.disconnect();
+    return () => {
+      if (section) observer.unobserve(section);
+    };
   }, []);
 
   return (
-    <section id="pricing" className="pricing-mentoring-section">
+    <motion.section
+      ref={sectionRef}
+      id="pricing"
+      className="pricing-mentoring-section"
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={staggerContainer}
+    >
       <div className="pricing-container">
-        <div className={`pricing-header-mentoring ${isVisible ? 'visible' : ''}`} data-aos="fade-down">
-          <span className="pricing-tag" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M7 1L8.5 5L12.5 5L9.5 8L11 12L7 9.5L3 12L4.5 8L1.5 5L5.5 5L7 1Z" fill="currentColor"/>
-            </svg>
-            Escolha seu Plano
-          </span>
-          <h2 className="pricing-title-mentoring" data-aos="fade-up" data-aos-delay="200">
+        {/* Header Section */}
+        <motion.div
+          className="pricing-header-mentoring"
+          variants={fadeInUp}
+        >
+          <span className="pricing-tag">Escolha seu Plano</span>
+          <h2 className="pricing-title-mentoring">
             Escolha o seu <span className="accent-gold">Próximo Passo</span>
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Single Enlarged Card */}
-        <div className={`pricing-card-mentoring vip-card ${isVisible ? 'visible' : ''}`} data-aos="fade-up" data-aos-delay="300">
+        {/* Pricing Card */}
+        <motion.div
+          className="pricing-card-mentoring vip-card"
+          variants={fadeInUp}
+          whileHover={{ y: -10, transition: { duration: 0.3 } }}
+        >
+          {/* Glow Effect */}
           <div className="card-glow-mentoring"></div>
-          <div className="badge-mentoring" data-aos="zoom-in" data-aos-delay="400">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <path d="M5 1L6 4H9L7 6.5L8 9.5L5 8L2 9.5L3 6.5L1 4H4L5 1Z" fill="currentColor"/>
-            </svg>
+
+          {/* Badge */}
+          <motion.div
+            className="badge-mentoring"
+            variants={fadeIn}
+            whileHover={{ scale: 1.1 }}
+          >
             Recomendado
-          </div>
-          <span className="card-tag-mentoring" data-aos="fade-down" data-aos-delay="450">Para quem quer autonomia</span>
-          <div className="card-name-mentoring" data-aos="fade-up" data-aos-delay="500">Mentoria VÉRSIA</div>
-          
-          <div className="card-price-wrapper-mentoring" data-aos="zoom-in" data-aos-delay="550">
+          </motion.div>
+
+          {/* Tag */}
+          <motion.span
+            className="card-tag-mentoring"
+            variants={fadeIn}
+          >
+            Para quem quer autonomia
+          </motion.span>
+
+          {/* Name */}
+          <motion.div
+            className="card-name-mentoring"
+            variants={fadeInUp}
+          >
+            Mentoria VÉRSIA
+          </motion.div>
+
+          {/* Price Section */}
+          <motion.div
+            className="card-price-wrapper-mentoring"
+            variants={fadeInUp}
+          >
             <div className="card-installment-mentoring">
               <span className="installment-label">12x</span>
               <span className="installment-price">R$ 29,17</span>
             </div>
             <div className="card-cash-price">ou R$ 350,00 à vista</div>
-          </div>
+          </motion.div>
 
-          <div className="card-divider"></div>
+          {/* Divider */}
+          <motion.div
+            className="card-divider"
+            variants={fadeIn}
+          ></motion.div>
 
-          <ul className="card-features-mentoring">
-            <li data-aos="fade-left" data-aos-delay="600">
-              <svg className="feature-icon" viewBox="0 0 16 16" fill="none">
-                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Acesso às gravações das aulas por <strong>6 meses</strong></span>
-            </li>
-            <li data-aos="fade-left" data-aos-delay="650">
-              <svg className="feature-icon" viewBox="0 0 16 16" fill="none">
-                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Planilha Exclusiva de Controle Orçamentário</span>
-            </li>
-            <li data-aos="fade-left" data-aos-delay="700">
-              <svg className="feature-icon" viewBox="0 0 16 16" fill="none">
-                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Material Complementar em PDF</span>
-            </li>
-            <li data-aos="fade-left" data-aos-delay="750">
-              <svg className="feature-icon" viewBox="0 0 16 16" fill="none">
-                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Checklist de Ações Propostas</span>
-            </li>
-            <li data-aos="fade-left" data-aos-delay="800">
-              <svg className="feature-icon" viewBox="0 0 16 16" fill="none">
-                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span><strong>Plano de Ação Estruturado</strong></span>
-            </li>
-          </ul>
+          {/* Features List */}
+          <motion.ul
+            className="card-features-mentoring"
+            variants={staggerContainer}
+          >
+            {[
+              "Acesso às gravações das aulas por 6 meses",
+              "Planilha Exclusiva de Controle Orçamentário",
+              "Material Complementar em PDF",
+              "Checklist de Ações Propostas",
+              "Plano de Ação Estruturado",
+            ].map((feature, index) => (
+              <motion.li key={index} variants={fadeInUp}>
+                <span>{feature}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
 
-          <a 
-            href="https://pay.kiwify.com.br/S42F8KF" 
+          {/* Call to Action */}
+          <motion.a
+            href="https://pay.kiwify.com.br/S42F8KF"
             className="btn-card-mentoring"
             target="_blank"
             rel="noopener noreferrer"
-            data-aos="zoom-in"
-            data-aos-delay="900"
+            variants={fadeInUp}
           >
             Quero Fazer Parte
-          </a>
+          </motion.a>
 
-          <div className="guarantee-box">
+          {/* Guarantee */}
+          <motion.div
+            className="guarantee-box"
+            variants={fadeIn}
+          >
             <p>
               <strong className="gold-text">Garantia:</strong> Se nas primeiras aulas você perceber que não é para você, devolvemos seu dinheiro. Sem burocracia.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

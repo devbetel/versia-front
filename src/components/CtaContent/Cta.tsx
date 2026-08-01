@@ -1,123 +1,67 @@
-import { useRef } from 'react';
-import { motion, useInView, Easing } from 'framer-motion';
-import { MessageCircle, Sparkles } from 'lucide-react';
-import './styles.css';
-
-// Criando easing customizado
-const customEase: Easing = (t: number) => {
-  // Cubic bezier: [0.22, 1, 0.36, 1]
-  const x = t;
-  const p0 = 0.22;
-  const p1 = 1;
-  const p2 = 0.36;
-  const p3 = 1;
-  
-  // Implementação simplificada do cubic-bezier
-  const cx = 3 * p0;
-  const bx = 3 * (p2 - p0) - cx;
-  const ax = 1 - cx - bx;
-  
-  const cy = 3 * p1;
-  const by = 3 * (p3 - p1) - cy;
-  const ay = 1 - cy - by;
-  
-  const bezierX = (t: number) => ((ax * t + bx) * t + cx) * t;
-  const bezierY = (t: number) => ((ay * t + by) * t + cy) * t;
-  
-  return bezierY(bezierX(x));
-};
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: customEase
-    }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { MessageCircle, Sparkles } from "lucide-react";
+import "./styles.css";
 
 export default function Cta() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section className="contato-section" id="contato">
-      <div className="contato-background">
-        <div className="contato-glow"></div>
-      </div>
-      
       <div className="contato-container">
-        <motion.div 
+        <motion.div
           ref={ref}
           className="contato-content"
-          variants={staggerContainer}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
         >
-          <motion.div className="contato-header" variants={fadeInUp} data-aos="fade-up">
-            <div className="contato-icon" data-aos="fade-up">
-              <Sparkles size={24} data-aos="fade-up"/>
+          <div className="contato-header">
+            <div className="contato-icon">
+              <Sparkles size={20} />
             </div>
-            <span className="contato-tag" data-aos="fade-up">Próximo passo</span>
-          </motion.div>
+            <span className="contato-tag">Próximo passo</span>
+          </div>
 
-          <motion.h2 className="contato-titulo" variants={fadeInUp}>
-            <p data-aos="fade-left">Você já trabalhou</p>
-            <span className="titulo-destaque" data-aos="fade-left">duro o suficiente.</span>
-            <em data-aos="fade-right">Agora é a vez do seu dinheiro trabalhar com você.</em>
-          </motion.h2>
+          <h2 className="contato-titulo">
+            Você já trabalhou
+            <span className="titulo-destaque">duro o suficiente.</span>
+            <em>Agora é a vez do seu dinheiro trabalhar com você.</em>
+          </h2>
 
-          <motion.div className="contato-texto-destaque" variants={fadeInUp}>
-            <p data-aos="fade-up">Você não precisa de perfeição.</p>
-            <p data-aos="fade-up">Precisa de lógica.</p>
-            <p data-aos="fade-up">Precisa de clareza.</p>
-            <p data-aos="fade-up">Precisa de um método que respeite sua história.</p>
-          </motion.div>
+          <div className="contato-texto-destaque">
+            <p>Você não precisa de perfeição.</p>
+            <p>Precisa de lógica.</p>
+            <p>Precisa de clareza.</p>
+            <p>Precisa de um método que respeite sua história.</p>
+          </div>
 
-          <motion.p className="contato-subtitulo" variants={fadeInUp}>
-            <p data-aos="fade-up">
-            Não sabe por onde começar? Me manda uma mensagem. Sem pressão, sem pitch. 
+          <div className="contato-subtitulo">
+            <p>
+              Não sabe por onde começar? Me manda uma mensagem. Sem pressão, sem pitch.
             </p>
-            <strong data-aos="fade-up"> Só uma conversa genuína.</strong>
-          </motion.p>
+            <strong>Só uma conversa genuína.</strong>
+          </div>
 
-          <motion.div className="contato-acoes" variants={fadeInUp}>
-            <motion.a 
-              href="https://pay.kiwify.com.br/S42F8KF" 
+          <div className="contato-acoes">
+            <a
+              href="https://pay.kiwify.com.br/S42F8KF"
               className="btn-versoes"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              data-aos="fade-left"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Quero minha versão financeiramente mais forte</span>
-            </motion.a>
+              Quero minha versão financeiramente mais forte
+            </a>
 
-            <motion.a 
-              href="https://wa.me/5587991097916" 
+            <a
+              href="https://wa.me/5587991097916"
               className="btn-whatsapp"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              data-aos="fade-right"
             >
-              <MessageCircle size={20} />
-              <span>Conversar no WhatsApp</span>
-            </motion.a>
-          </motion.div>
+              <MessageCircle size={18} />
+              Conversar no WhatsApp
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

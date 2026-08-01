@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ whatsappNumber = "5587991097916" }) => 
       </div>
       
       <span className="footer-copy">
-        © 2024 Vérsia Finance. Todos os direitos reservados.
+        © 2026 Vérsia Finance. Todos os direitos reservados.
       </span>
     </footer>
   );

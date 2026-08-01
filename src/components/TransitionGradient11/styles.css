@@ -1,0 +1,48 @@
+.gradient-transition-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gradient-transition-11 {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    #1f2937 0%,   /* Início */
+    #1a2432 25%,  /* Transição suave */
+    #151f2d 50%,  /* Meio termo */
+    #101a2a 75%,  /* Aproxima do final */
+    #0b1628 100%  /* Final */
+  );
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gradient-overlay-11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gradient-transition-11 {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-transition-11 {
+    height: 100px;
+  }
+}
