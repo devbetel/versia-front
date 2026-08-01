@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import  { useRef } from 'react';
 import { motion, useInView, Variants } from 'framer-motion';
 import './styles.css';
 import TransitionGradient9 from '../../TransitionGradient9/TransitionGradient9';
