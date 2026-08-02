@@ -103,8 +103,8 @@ const OfferMentoring: React.FC = () => {
             variants={fadeInUp}
           >
             <div className="card-installment-mentoring">
-              <span className="installment-label">12x</span>
-              <span className="installment-price">R$ 29,17</span>
+              <span className="installment-label">12x </span>
+              <span className="installment-price">R$ 36,20</span>
             </div>
             <div className="card-cash-price">ou R$ 350,00 à vista</div>
           </motion.div>

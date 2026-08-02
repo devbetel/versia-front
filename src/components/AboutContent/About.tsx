@@ -9,6 +9,8 @@ const paragraphs = [
   "Quase duas décadas no mercado financeiro e a certificação CFP® me deram técnica. O que me fez mudar foi ver que técnica sem compreensão do comportamento não gera paz.",
   "Eu rompi com o modelo que empurra produtos e lições de moral. Rompi com a ideia de que dinheiro é só matemática. ",
   "Este espaço nasceu para provar que você pode, sim, dominar suas finanças sem abrir mão de viver bem hoje. Sem sermão. Sem culpa.",
+  "Eu rompi com o modelo que empurra produtos e lições de moral. Rompi com a ideia de que dinheiro é só matemática. Rompi com a narrativa que culpa quem nunca foi ensinado a se enxergar.",
+  "Este espaço nasceu para provar que você pode, sim, dominar suas finanças sem abrir mão de viver bem hoje. Sem sermão. Sem culpa. Só clareza, lógica e respeito pela sua história."
 ];
 
 const fadeUp: Variants = {

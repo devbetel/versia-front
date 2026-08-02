@@ -27,7 +27,7 @@ body {
 
 .metodo-versia {
   width: 100%;
-  font-family: "BrownRosemary" !important;
+      font-family: 'Montserrat' !important;
   line-height: 1.6;
   color: var(--text-light);
 }
@@ -97,7 +97,7 @@ body {
 }
 
 .accent {
-  color: var(--text-light) !;
+  color: var(--text-light) !important;
   font-weight: 700;
 }
 

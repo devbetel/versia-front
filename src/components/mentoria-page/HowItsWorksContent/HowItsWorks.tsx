@@ -77,23 +77,12 @@ const scaleIn: Variants = {
   }
 };
 
-const zoomIn: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: { 
-      duration: 0.7, 
-      ease: [0.22, 1, 0.36, 1] 
-    }
-  }
-};
+
 
 function HowItsWorks() {
   // Refs separados para cada seção
   const heroRef = useRef(null);
   const statsRef = useRef(null);
-  const statsNumbersRef = useRef(null);
   const paraQuemRef = useRef(null);
   const paraQuemNaoRef = useRef(null);
   const benefitsRef = useRef(null);
@@ -101,7 +90,6 @@ function HowItsWorks() {
   // useInView separados para cada seção
   const heroInView = useInView(heroRef, { once: true, margin: "-100px" });
   const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
-  const statsNumbersInView = useInView(statsNumbersRef, { once: true, margin: "-100px" });
   const paraQuemInView = useInView(paraQuemRef, { once: true, margin: "-100px" });
   const paraQuemNaoInView = useInView(paraQuemNaoRef, { once: true, margin: "-100px" });
   const benefitsInView = useInView(benefitsRef, { once: true, margin: "-100px" });
@@ -128,23 +116,6 @@ function HowItsWorks() {
     ]
   };
 
-  const stats = [
-    {
-      number: '6',
-      label: 'Encontros ao Vivo Online',
-      description: 'Cada encontro tem 2h (ou mais, até que todas as dúvidas sejam sanadas). Formato exclusivo com conteúdo denso e aplicável.'
-    },
-    {
-      number: '30',
-      label: 'Mulheres por Turma (Máximo)',
-      description: 'Vagas limitadas para garantir foco total, networking qualificado e atendimento próximo de cada participante.'
-    },
-    {
-      number: '100%',
-      label: 'Foco em Comportamento',
-      description: 'Não é só planilha. É psicologia econômica, estratégia real e autonomia de verdade para você dominar o timão da sua vida.'
-    }
-  ];
 
   const paraQuemE = [
     'Ganha bem, mas sente que o dinheiro nunca acompanha o esforço.',
@@ -331,47 +302,8 @@ function HowItsWorks() {
           </div>
         </div>
       </motion.section>
-
       {/* STATS SECTION - NÚMEROS */}
-      <motion.section 
-        ref={statsNumbersRef}
-        className="stats-section"
-        variants={staggerContainer}
-        initial="hidden"
-        animate={statsNumbersInView ? "visible" : "hidden"}
-      >
-        <div className="stats-content">
-          <div className="stats-grid">
-            {stats.map((stat, idx) => (
-              <motion.div 
-                key={idx} 
-                className="stat-card"
-                variants={fadeInUp}
-                whileHover={{ y: -8, borderColor: 'var(--gold)', transition: { duration: 0.3 } }}
-              >
-                <motion.div 
-                  className="stat-card__number"
-                  variants={zoomIn}
-                >
-                  {stat.number}
-                </motion.div>
-                <motion.h3 
-                  className="stat-card__label"
-                  variants={fadeInUp}
-                >
-                  {stat.label}
-                </motion.h3>
-                <motion.p 
-                  className="stat-card__desc"
-                  variants={fadeInUp}
-                >
-                  {stat.description}
-                </motion.p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+     
 
       <TransitionGradient10 />
 

@@ -3,7 +3,6 @@ import "./styles.css";
 import SEO from "../../components/SEO.tsx";
 import HowItsWorks from "../../components/mentoria-page/HowItsWorksContent/HowItsWorks";
 import HeaderMentoring from "../../components/mentoria-page/HeaderMentoringContent/HeaderMentoring";
-import HeroMentoring from "../../components/mentoria-page/HeroContent/HeroMentoring";
 import OfferSectionMentoring from "../../components/mentoria-page/OfferMentoringContent/OfferMentoring.tsx";
 import Footer from "../../components/Footer/Footer.tsx";
 import Different from "../../components/DifferentContent/Different.tsx";
@@ -14,8 +13,10 @@ import Method from "../../components/MethodContent/Method.tsx";
 import Cta from "../../components/CtaContent/Cta.tsx";
 import TransitionGradient3 from "../../components/TransitionGradient3Content/TransitionGradient3.tsx";
 import TransitionGradient12 from "../../components/TransitionGradient12/TransitinoGradient12.tsx";
+import Main from "../../components/MainContent/Main.tsx";
 
 const MentoriaVersiaPage: React.FC = () => {
+  
   return (
     <>
       <SEO 
@@ -28,12 +29,14 @@ const MentoriaVersiaPage: React.FC = () => {
 
       <div style={{ overflowX: "hidden" }}>
         <HeaderMentoring />
-        <HeroMentoring />
+        <Main />
         <Method />
         <TransitionGradient8 />
         <Different />
         <TransitionGradient2 />
+        <div id='about'>
         <About />
+        </div>
         <TransitionGradient3 />
         <HowItsWorks />
         <TransitionGradient12 />

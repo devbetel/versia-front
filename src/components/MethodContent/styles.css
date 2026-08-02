@@ -201,8 +201,13 @@
   color: #042442;
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease;
 }
 
+/* ✅ MUDA SOMENTE O SPAN QUANDO PASSAR O MOUSE */
+.etapa-item:hover .etapa-numero span {
+  color: #c6ac8a;
+}
 @media (max-width: 768px) {
   .etapa-numero {
     width: 2rem;
