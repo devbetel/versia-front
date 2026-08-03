@@ -101,27 +101,7 @@
   font-weight: 300;
 }
 
-.metodo-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: #c6ac8a;
-  color: #0a1628;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(198, 172, 138, 0.3);
-  width: fit-content;
-}
 
-.metodo-cta:hover {
-  background: #d4bc94;
-  box-shadow: 0 6px 30px rgba(198, 172, 138, 0.4);
-  transform: translateY(-2px);
-}
 
 .etapas-container {
   position: relative;

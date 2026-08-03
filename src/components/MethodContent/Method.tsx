@@ -123,16 +123,7 @@ export default function Method() {
               </motion.p>
             </motion.div>
 
-            <motion.a 
-              href="#mentoria" 
-              className="metodo-cta"
-              variants={scaleIn}
-              custom={{ delay: 0.5 }}
-              whileHover={{ scale: 1.03, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Conhecer a mentoria
-            </motion.a>
+          
           </motion.div>
 
           <motion.div 
