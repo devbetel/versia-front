@@ -135,7 +135,7 @@ const paraQuemNaoE = [
   { bold: "Quer só aprender a investir", text: " sem antes organizar a vida financeira." },
   { bold: "Quer um orçamento rígido", text: " que não respeita sua rotina." },
   { bold: "Acredita que o problema", text: " é só ganhar mais." },
-  { bold: "Não está disposto", text: " a olhar para a própria história e entender seus padrões." },
+  { bold: "Não está disposto a olhar para a própria história", text: " e entender seus padrões." },
   { bold: "Quer terceirizar decisões", text: " sem assumir autonomia." }
 ];
   const benefits = [

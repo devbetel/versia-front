@@ -28,11 +28,13 @@ const Main = () => {
 
           
 
+<a href="https://pay.kiwify.com.br/S42F8KF">
           <button className="hero__cta">
+            
             Quero Minha Versão financeiramente mais forte
-
-
           </button>
+            </a>
+
           <p className="hero__badge">
             2 meses • Máximo 30 pessoas • Online ao vivo
 

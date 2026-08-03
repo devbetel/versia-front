@@ -395,6 +395,51 @@
     .left-accent-line { width: 2px; }
   }
 
+  @media (max-width: 393px) {
+
+  .hero__cta {
+    height: 3.8rem;
+    font-size: 0.7rem;
+    position: relative;
+    top: 3rem;
+    margin-right: 4rem;
+  }
+       .hero__badge {
+      position: absolute;
+      font-size: 0.58rem !important;
+      top: 21.2rem;
+      height: 2rem;
+      text-align: center;
+    }
+     /* ─── LINHA ─── */
+  .right-line {
+    position: absolute !important;
+    top: 240px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80% !important;
+    height: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 20 !important;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(245, 235, 220, 0.35) 20%,
+      rgba(245, 235, 220, 0.75) 50%,
+      rgba(245, 235, 220, 0.35) 80%,
+      transparent 100%
+    ) !important;
+    box-shadow: 0 0 10px rgba(245, 235, 220, 0.3) !important;
+    border: none !important;
+    border-radius: 2px !important;
+  }
+
+
+  }
   @media (max-width: 390px) {
   .left-side         { min-height: 24rem; }
   .title-principal   { font-size: 1rem;    top: 1.2rem; }

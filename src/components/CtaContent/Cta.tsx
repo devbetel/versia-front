@@ -25,7 +25,8 @@ export default function Cta() {
           </div>
 
           <h2 className="contato-titulo">
-            Você já trabalhou
+
+            <em>Você já trabalhou</em>
             <span className="titulo-destaque">duro o suficiente.</span>
             <em>Agora é a vez do seu dinheiro trabalhar com você.</em>
           </h2>
