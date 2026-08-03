@@ -108,7 +108,7 @@ const Different = () => {
                 custom={{ delay: 0.3 }}
               >
                 Cansada da narrativa que coloca culpa onde deveria existir compreensão. Cansada de ver pessoas inteligentes acreditando que "não nasceram para lidar com dinheiro".
-                Décadas dentro do mercado me mostraram algo que a maioria dos especialistas ignora: estar endividado no Brasil não é falta de caráter. 
+                Décadas dentro do mercado me mostraram algo que a maioria dos especialistas ignora: <strong className="accent">estar endividado no Brasil não é falta de caráter. </strong>
                 É consequência de um sistema que ensina você a gastar antes de ensinar você a se enxergar.
               </motion.p>
             </motion.div>

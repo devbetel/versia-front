@@ -91,6 +91,7 @@ export default function Method() {
               variants={fadeInUp}
               custom={{ delay: 0.1 }}
             >
+              
               O Método VÉRSIA
             </motion.span>
 
@@ -112,7 +113,7 @@ export default function Method() {
                 variants={fadeInUp}
                 custom={{ delay: 0.35 }}
               >
-                O Método VÉRSIA não é fórmula mágica. É processo. É sequência. É lógica aplicada ao comportamento.
+                <strong className="accent-2">O Método VÉRSIA </strong> não é fórmula mágica. É processo. É sequência. É lógica aplicada ao comportamento.
               </motion.p>
               <motion.p
                 variants={fadeInUp}

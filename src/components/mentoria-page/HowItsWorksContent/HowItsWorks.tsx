@@ -171,7 +171,7 @@ function HowItsWorks() {
             className="hero-title"
             variants={fadeInUp}
           >
-            O processo que transforma <span className="accent">independência</span> em <span className="accent">autonomia real</span>
+            O processo que transforma <span className="accent-2">independência</span> em <span className="accent-2">autonomia real</span>
           </motion.h1>
 
           <motion.p 
@@ -192,7 +192,7 @@ function HowItsWorks() {
             className="hero-process"
             variants={fadeInUp}
           >
-            É um processo de <strong>2 meses</strong>, totalmente prático, coletivo, guiado, criado para quem ganha bem, vive no automático e quer clareza, controle e autonomia financeira.
+            É um processo de <strong className='accent-2'>2 meses</strong>, totalmente <strong className='accent-2'>prático, coletivo, guiado,</strong> criado para quem ganha bem, vive no automático e quer <strong className='accent-2'>clareza, controle e autonomia financeira.</strong>
           </motion.p>
         </div>
       </motion.section>
@@ -406,7 +406,7 @@ function HowItsWorks() {
             className="section-title-3"
             variants={fadeInUp}
           >
-            O que você <span className="accent">ganha</span>
+            O que você <span className="accent-2">ganha</span>
           </motion.h2>
           
           <div className="benefits-grid">

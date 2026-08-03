@@ -31,10 +31,11 @@ export default function Cta() {
           </h2>
 
           <div className="contato-texto-destaque">
-            <p>Você não precisa de perfeição.</p>
-            <p>Precisa de lógica.</p>
-            <p>Precisa de clareza.</p>
-            <p>Precisa de um método que respeite sua história.</p>
+
+            <p><strong className="accent-2">Você não precisa de perfeição.</strong></p>
+            <p><strong className="accent-2">Precisa de lógica.</strong></p>
+            <p><strong className="accent-2">Precisa de clareza.</strong></p>
+            <p><strong className="accent-2">Precisa de um método que respeite sua história.</strong></p>
           </div>
 
           <div className="contato-subtitulo">
