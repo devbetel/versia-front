@@ -167,6 +167,19 @@
   z-index: 1;
 }
 
+@media (max-width:480px) {
+  .metodo-tag {
+    position: relative;
+    left: 5rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .metodo-tag {
+    position: relative;
+    left: 3rem;
+  }
+}
 @media (max-width: 768px) {
   .etapa-item {
     gap: 1.5rem;

@@ -408,6 +408,18 @@ body {
   font-size: 1rem;
   flex-shrink: 0;
 }
+.para-quem-nao-bullet-red {
+  color: #e74c3c;
+    width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
 
 .para-quem-item p,
 .para-quem-nao-item p {
@@ -572,6 +584,8 @@ body {
     height: 32px;
     font-size: 0.9rem;
   }
+
+ 
 
   .benefit-icon {
     width: 50px;

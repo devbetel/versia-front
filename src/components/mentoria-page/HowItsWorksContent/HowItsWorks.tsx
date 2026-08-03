@@ -116,30 +116,28 @@ function HowItsWorks() {
     ]
   };
 
+const paraQuemE = [
+  { bold: "Ganha bem,", text: " mas sente que o dinheiro nunca acompanha o esforço." },
+  { bold: "Vive no automático", text: " e não sabe explicar para onde o dinheiro vai." },
+  { bold: "Sente culpa", text: " sempre que tenta organizar a vida financeira." },
+  { bold: "Já tentou planilhas, apps e métodos prontos", text: " — e sempre volta ao mesmo lugar." },
+  { bold: "Tem medo de olhar para números", text: ' porque acha que vai descobrir algo "ruim".' },
+  { bold: "Sente que vive apagando incêndios", text: " mesmo tendo uma boa renda." },
+  { bold: "Tem vergonha de pedir ajuda", text: ' porque acha que "já deveria saber lidar com dinheiro".' },
+  { bold: "Quer clareza", text: " para decidir sem impulsos." },
+  { bold: "Quer autonomia", text: " para viver com tranquilidade, não com improviso." },
+  { bold: "Quer parar de sobreviver", text: " e começar a viver com lógica." }
+];
 
-  const paraQuemE = [
-    'Ganha bem, mas sente que o dinheiro nunca acompanha o esforço.',
-    'Vive no automático e não sabe explicar para onde o dinheiro vai.',
-    'Sente culpa sempre que tenta organizar a vida financeira.',
-    'Já tentou planilhas, apps e métodos prontos — e sempre volta ao mesmo lugar.',
-    'Tem medo de olhar para números porque acha que vai descobrir algo "ruim".',
-    'Sente que vive apagando incêndios mesmo tendo uma boa renda.',
-    'Tem vergonha de pedir ajuda porque acha que "já deveria saber lidar com dinheiro".',
-    'Quer clareza para decidir sem impulsos.',
-    'Quer autonomia para viver com tranquilidade, não com improviso.',
-    'Quer parar de sobreviver e começar a viver com lógica.'
-  ];
-
-  const paraQuemNaoE = [
-    'Quer apenas quitar dívidas sem olhar para os padrões que criaram essas dívidas.',
-    'Procura uma fórmula mágica para enriquecer rápido.',
-    'Quer só aprender a investir sem antes organizar a vida financeira.',
-    'Quer um orçamento rígido que não respeita sua rotina.',
-    'Acredita que o problema é só ganhar mais.',
-    'Não está disposto a olhar para a própria história e entender seus padrões.',
-    'Quer terceirizar decisões sem assumir autonomia.'
-  ];
-
+const paraQuemNaoE = [
+  { bold: "Quer apenas quitar dívidas", text: " sem olhar para os padrões que criaram essas dívidas." },
+  { bold: "Procura uma fórmula mágica", text: " para enriquecer rápido." },
+  { bold: "Quer só aprender a investir", text: " sem antes organizar a vida financeira." },
+  { bold: "Quer um orçamento rígido", text: " que não respeita sua rotina." },
+  { bold: "Acredita que o problema", text: " é só ganhar mais." },
+  { bold: "Não está disposto", text: " a olhar para a própria história e entender seus padrões." },
+  { bold: "Quer terceirizar decisões", text: " sem assumir autonomia." }
+];
   const benefits = [
     { title: 'Clareza', icon: '💎' },
     { title: 'Controle', icon: '🎯' },
@@ -331,20 +329,25 @@ function HowItsWorks() {
             </motion.h2>
           </div>
 
-          <div className="para-quem-list">
-            {paraQuemE.map((item, idx) => (
-              <motion.div 
-                key={idx} 
-                className="para-quem-item"
-                variants={fadeInLeft}
-                custom={{ delay: idx * 0.05 }}
-                whileHover={{ x: 8, transition: { duration: 0.2 } }}
-              >
-                <span className="para-quem-bullet">•</span>
-                <p>{item}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="para-quem-list">
+  {paraQuemE.map((item, idx) => (
+    <motion.div 
+      key={idx} 
+      className="para-quem-item"
+      variants={fadeInLeft}
+      custom={{ delay: idx * 0.05 }}
+      whileHover={{ x: 8, transition: { duration: 0.2 } }}
+    >
+      <span className="para-quem-bullet">•</span>
+      <p>
+        <strong className="accent-2">
+          {item.bold}
+        </strong>
+        {item.text}
+      </p>
+    </motion.div>
+  ))}
+</div>
         </div>
       </motion.section>
 
@@ -374,20 +377,25 @@ function HowItsWorks() {
             </motion.h2>
           </div>
 
-          <div className="para-quem-nao-list">
-            {paraQuemNaoE.map((item, idx) => (
-              <motion.div 
-                key={idx} 
-                className="para-quem-nao-item"
-                variants={fadeInRight}
-                custom={{ delay: idx * 0.05 }}
-                whileHover={{ x: -8, transition: { duration: 0.2 } }}
-              >
-                <span className="para-quem-nao-bullet">✕</span>
-                <p>{item}</p>
-              </motion.div>
-            ))}
-          </div>
+       <div className="para-quem-nao-list">
+  {paraQuemNaoE.map((item, idx) => (
+    <motion.div 
+      key={idx} 
+      className="para-quem-nao-item"
+      variants={fadeInRight}
+      custom={{ delay: idx * 0.05 }}
+      whileHover={{ x: -8, transition: { duration: 0.2 } }}
+    >
+      <span className="para-quem-nao-bullet-red">✕</span>
+      <p>
+        <strong className="accent-negative">
+          {item.bold}
+        </strong>
+        {item.text}
+      </p>
+    </motion.div>
+  ))}
+</div>
         </div>
       </motion.section>
 
