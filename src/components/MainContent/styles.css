@@ -441,6 +441,7 @@
 
   }
   @media (max-width: 390px) {
+    .main { height: 55rem;}
   .left-side         { min-height: 24rem; }
   .title-principal   { font-size: 1rem;    top: 1.2rem; }
   .subtitle          { font-size: 0.95rem; top: 1.6rem; }
@@ -455,8 +456,7 @@
     right: 0;
     max-width: 245px;
     margin-top: 1rem;
-    height: 24rem;
-    min-height: unset;
+    height: 18rem;
     padding: 1rem;
     overflow: visible !important;
   }
