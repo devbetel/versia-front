@@ -38,7 +38,9 @@ const MentoriaVersiaPage: React.FC = () => {
         <About />
         </div>
         <TransitionGradient3 />
+        <div id='howitworks'>
         <HowItsWorks />
+        </div>
         <TransitionGradient12 />
         <OfferSectionMentoring />
         <Cta />

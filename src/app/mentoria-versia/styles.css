@@ -16,6 +16,8 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+    scroll-behavior: smooth;
+
   overflow-x: hidden; /* Evita scroll horizontal */
   box-sizing: border-box; /* Garante que padding/margin respeitem o container */
 }

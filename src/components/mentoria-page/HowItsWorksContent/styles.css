@@ -162,30 +162,6 @@ body {
   margin: 0 auto;
 }
 
-.metodo-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  left: 25rem;
-  padding: 1rem 2rem;
-  background: #c6ac8a;
-  color: #0a1628;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(198, 172, 138, 0.3);
-  width: fit-content;
-}
-
-.metodo-cta:hover {
-  background: #d4bc94;
-  box-shadow: 0 6px 30px rgba(198, 172, 138, 0.4);
-  transform: translateY(-2px);
-}
-
 .section-title-pratica {
     color: var(--text-muted) !important;
   font-size: 2.6rem;
@@ -627,12 +603,12 @@ body {
   .benefits-section {
     padding: 4rem 1.5rem;
   }
-  .metodo-cta {
+  /* .metodo-cta {
     position: relative;
     left: 4.6rem;
-  }
+  } */
 }
-
+/* 
 @media (max-width: 393px) {
     .metodo-cta {
       position: relative;
@@ -646,4 +622,4 @@ body {
     position: relative;
     left: 2rem;
   }
-}
+} */
